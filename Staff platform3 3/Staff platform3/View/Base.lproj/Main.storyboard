@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqt-cG-UdL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g8N-BV-Tr0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -822,6 +822,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Sign Out"/>
+                                                        <connections>
+                                                            <action selector="signOutPressed:" destination="19V-k6-C4U" eventType="touchUpInside" id="jJm-i6-JMO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -917,6 +920,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="updateDataPressed:" destination="DIW-WI-vhS" eventType="touchUpInside" id="aRn-3t-zLS"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1010,6 +1016,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <connections>
+                                                    <action selector="updateDataPressed:" destination="qE9-vG-wTC" eventType="touchUpInside" id="tS5-3b-uUy"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1064,7 +1073,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-h7-k9j">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jX-zA-Hri">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
@@ -1094,6 +1103,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Send"/>
+                                                        <connections>
+                                                            <action selector="sendPressed:" destination="g8N-BV-Tr0" eventType="touchUpInside" id="e8T-QC-Ba0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1129,8 +1141,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="oKO-ot-801"/>
                     <connections>
-                        <outlet property="EmailTF" destination="2bn-kj-5cA" id="dUl-Dw-YwX"/>
-                        <outlet property="imageLogo" destination="0jX-zA-Hri" id="drL-P1-VYY"/>
+                        <outlet property="EmailTF" destination="MBV-x7-iiZ" id="PYj-OE-Q0y"/>
                         <outlet property="sendBtn" destination="KsU-Hu-wrt" id="rLX-OV-v4O"/>
                     </connections>
                 </viewController>
@@ -1334,7 +1345,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="8ku-hM-TPD"/>
+        <segue reference="UER-22-0Jz"/>
         <segue reference="SAf-ry-amb"/>
     </inferredMetricsTieBreakers>
     <resources>

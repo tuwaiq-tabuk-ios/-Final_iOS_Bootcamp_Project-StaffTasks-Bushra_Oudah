@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Firebase
 
 
 class SettingVC: UIViewController{
@@ -25,7 +25,18 @@ class SettingVC: UIViewController{
     shadow()
   }
   
-
+  @IBAction func signOutPressed(_ sender: UIButton) {
+    let firebaseAuth = Auth.auth()
+    do {
+      try firebaseAuth.signOut()
+      self.navigationController?.popToRootViewController(animated: true)
+      print("signOut")
+    } catch let signOutError as NSError {
+      print("Error signing out: %@", signOutError)
+    }
+    
+  }
+  
   
 }
 
