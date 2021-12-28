@@ -12,7 +12,7 @@ import FirebaseFirestore
 class EditeMobileVC : UIViewController {
   
   @IBOutlet weak var imageLogo: UIImageView!
-  @IBOutlet weak var newMobileTF: MainTF!
+  @IBOutlet weak var newMobileTF: CMTextField!
   @IBOutlet weak var saveBtn: UIButton!
   
   var boos:Boos!
@@ -21,8 +21,7 @@ class EditeMobileVC : UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-      conerReduis()
-      shadow()
+    saveBtn.cmShadow()
   }
   
   func updateMobileEmployee(_ employee:Employee) {

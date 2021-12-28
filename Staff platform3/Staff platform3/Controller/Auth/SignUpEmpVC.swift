@@ -12,11 +12,11 @@ import FirebaseFirestore
 class SignUpEmpVC: UIViewController {
   
   @IBOutlet weak var imageLogo: UIImageView!
-  @IBOutlet weak var nameTF: MainTF!
-  @IBOutlet weak var emaiTF: MainTF!
-  @IBOutlet weak var mobileTF: MainTF!
-  @IBOutlet weak var idTF: MainTF!
-  @IBOutlet weak var passwordTF: MainTF!
+  @IBOutlet weak var nameTF: CMTextField!
+  @IBOutlet weak var emaiTF: CMTextField!
+  @IBOutlet weak var mobileTF: CMTextField!
+  @IBOutlet weak var idTF: CMTextField!
+  @IBOutlet weak var passwordTF: CMTextField!
   @IBOutlet weak var SignUpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
   
@@ -26,8 +26,8 @@ class SignUpEmpVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    conerReduis()
-    shadow()
+    SignUpBtn.cmShadow()
+    LoginBtn.cmShadow()
   }
   
   

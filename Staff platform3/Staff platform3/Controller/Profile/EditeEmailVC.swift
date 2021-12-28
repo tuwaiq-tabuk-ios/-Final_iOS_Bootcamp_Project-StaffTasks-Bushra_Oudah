@@ -10,14 +10,13 @@ import Firebase
 class EditeEmailVC : UIViewController {
   
   @IBOutlet weak var imageLog: UIImageView!
-  @IBOutlet weak var newEmailTF: MainTF!
+  @IBOutlet weak var newEmailTF: CMTextField!
   
   @IBOutlet weak var saveBotn: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    conerReduis()
-    shadow()
+    saveBotn.cmShadow()
   }
   
   @IBAction func updateDataPressed(_ sender: UIButton) {

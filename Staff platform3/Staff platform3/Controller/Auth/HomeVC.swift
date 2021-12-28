@@ -11,15 +11,18 @@ import UIKit
 class HomeVC: UIViewController {
   
   
-  @IBOutlet weak var imageLogo: UIImageView!
+ 
+  
   @IBOutlet weak var bossButton: UIButton!
   @IBOutlet weak var employeeButton: UIButton!
 
+  @IBOutlet weak var LoginBtn: UIButton!
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    shadow()
-    conerReduis()
+    bossButton.cmShadow()
+    employeeButton.cmShadow()
+    LoginBtn.cmShadow()
     
   }
   

@@ -21,9 +21,16 @@ class SettingVC: UIViewController{
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    conerReduis()
-    shadow()
+
+    
+    languageBtn.cmShadow()
+    updatePassBtn.cmShadow()
+    updateEmail.cmShadow()
+    updateMobile.cmShadow()
+    signOut.cmShadow()
+    
   }
+  
   
   @IBAction func signOutPressed(_ sender: UIButton) {
     let firebaseAuth = Auth.auth()
@@ -36,7 +43,6 @@ class SettingVC: UIViewController{
     }
     
   }
-  
   
 }
 

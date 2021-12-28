@@ -12,13 +12,13 @@ class EditePasswordVC: UIViewController  {
   
 
   
-  @IBOutlet weak var EmailTF:MainTF!
+  @IBOutlet weak var EmailTF:CMTextField!
   
   @IBOutlet weak var sendBtn: UIButton!
   
   override func viewDidLoad() {
       super.viewDidLoad()
-      conerReduis()
+    sendBtn.cmShadow()
   }
   
   @IBAction func sendPressed(_ sender: Any) {

@@ -11,8 +11,8 @@ import Firebase
 class LoginVC: UIViewController {
   
   @IBOutlet weak var imageLogo: UIImageView!
-  @IBOutlet weak var emailTF: MainTF!
-  @IBOutlet weak var passwordTF: MainTF!
+  @IBOutlet weak var emailTF: CMTextField!
+  @IBOutlet weak var passwordTF: CMTextField!
   @IBOutlet weak var login: UIButton!
   @IBOutlet weak var signUp: UIButton!
   @IBOutlet weak var forgetPassword: UIButton!
@@ -22,8 +22,9 @@ class LoginVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    shadow()
-    conerReduis()
+    login.cmShadow()
+    signUp.cmShadow()
+    
   }
   
   

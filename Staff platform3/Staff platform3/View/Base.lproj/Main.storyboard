@@ -24,11 +24,14 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrk-HM-5w4">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.64705884459999996" green="0.73333334920000004" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SjW-fx-lwa"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <segue destination="6Hh-TX-g8e" kind="show" id="KiR-4f-JKi"/>
                                         </connections>
@@ -41,7 +44,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="tintColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title=" sign up Boss"/>
+                                        <state key="normal" title="Sign Up Boss">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <segue destination="uLw-aU-8dt" kind="show" id="65f-Ke-OGo"/>
                                         </connections>
@@ -53,7 +58,7 @@
                                             <constraint firstAttribute="height" constant="50" id="MCh-v4-Ard"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="Employee">
+                                        <state key="normal" title="Sign Up Employee">
                                             <color key="titleColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -77,6 +82,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Eip-Dq-khY"/>
                     <connections>
+                        <outlet property="LoginBtn" destination="Hrk-HM-5w4" id="tpX-dj-5ZK"/>
                         <outlet property="bossButton" destination="YAR-PJ-3gU" id="OJP-YJ-jEW"/>
                         <outlet property="employeeButton" destination="lYC-mN-UB7" id="ror-a2-fpF"/>
                     </connections>
@@ -132,7 +138,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QJD-ji-JUN">
                                         <rect key="frame" x="40" y="180" width="334" height="330"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXj-ab-Mzi" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DXj-ab-Mzi" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="O3M-Y4-zA8"/>
@@ -143,7 +149,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="withBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPP-vP-cbq" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FPP-vP-cbq" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0SF-HV-xZv"/>
@@ -154,7 +160,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="withBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z95-Om-vPI" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z95-Om-vPI" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="140" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="zv9-vV-2mb"/>
@@ -165,7 +171,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="withBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-Sg-sWf" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eMe-Sg-sWf" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="210" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="FoN-XP-V33"/>
@@ -176,7 +182,7 @@
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="withBorder" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUm-H4-nHL" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oUm-H4-nHL" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="280" width="334" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="tTC-x1-JUE"/>
@@ -272,7 +278,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9Ww-aY-hf6">
                                                 <rect key="frame" x="40" y="180" width="326" height="330"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-s9-veI" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHC-s9-veI" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="rQ5-E2-0v3"/>
@@ -280,7 +286,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NS0-8g-CGN" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NS0-8g-CGN" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="70" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="eD3-Cv-aZA"/>
@@ -288,7 +294,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-KH-yqb" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-KH-yqb" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="140" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="HhJ-u1-p2p"/>
@@ -296,7 +302,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6r-Zr-wjE" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V6r-Zr-wjE" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="210" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Eud-Ge-vyL"/>
@@ -304,7 +310,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PV7-1C-oma" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PV7-1C-oma" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="280" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="Pn3-Ns-Eum"/>
@@ -421,7 +427,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dJi-RV-miM">
                                                 <rect key="frame" x="40" y="180" width="326" height="120"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A79-Mm-Tqb" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A79-Mm-Tqb" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="oQw-qf-oh6"/>
@@ -429,7 +435,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-Pn-VcM" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0GI-Pn-VcM" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="70" width="326" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="7fL-i7-dQx"/>
@@ -849,10 +855,10 @@
             </objects>
             <point key="canvasLocation" x="-965" y="2524"/>
         </scene>
-        <!--Item-->
+        <!--Setting-->
         <scene sceneID="usx-SJ-Wfd">
             <objects>
-                <viewController id="19V-k6-C4U" customClass="SettingVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="19V-k6-C4U" userLabel="Setting" customClass="SettingVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ide-OS-ggp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -873,7 +879,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Fpf-mP-SIM">
                                                 <rect key="frame" x="40" y="180" width="326" height="330"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd8-dg-55Z">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bd8-dg-55Z" customClass="CMShadowButton" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="326" height="50"/>
                                                         <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -976,7 +982,7 @@
                     <navigationItem key="navigationItem" id="1XG-LI-848"/>
                     <connections>
                         <outlet property="imageLog" destination="75f-AT-QMm" id="D98-mA-orF"/>
-                        <outlet property="languageBtn" destination="Bd8-dg-55Z" id="At2-rL-OpY"/>
+                        <outlet property="languageBtn" destination="Bd8-dg-55Z" id="F8k-ft-V8F"/>
                         <outlet property="signOut" destination="F9S-fK-tcE" id="DZa-Sb-gT6"/>
                         <outlet property="updateEmail" destination="8dc-O3-7zK" id="T0d-f0-qcu"/>
                         <outlet property="updateMobile" destination="yrh-6E-3AU" id="8QI-pb-prb"/>
@@ -1011,7 +1017,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="glW-Br-4Rt">
                                                 <rect key="frame" x="40" y="180" width="326" height="120"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" New Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-FX-ufZ" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" New Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-FX-ufZ" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="35" width="286" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="syU-yb-hbX"/>
@@ -1116,7 +1122,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b5K-R8-hyl">
                                                 <rect key="frame" x="40" y="180" width="326" height="120"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-ts-aYv" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGa-ts-aYv" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="35" width="286" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="X1Q-Z3-xMW"/>
@@ -1221,7 +1227,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="2bn-kj-5cA">
                                                 <rect key="frame" x="40" y="300" width="334" height="140"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBV-x7-iiZ" customClass="MainTF" customModule="Staff_platform3" customModuleProvider="target">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MBV-x7-iiZ" customClass="CMTextField" customModule="Staff_platform3" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="LcD-Ak-MAy"/>
@@ -1462,56 +1468,56 @@
     </scenes>
     <designables>
         <designable name="0GI-Pn-VcM">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="A79-Mm-Tqb">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="DXj-ab-Mzi">
-            <size key="intrinsicContentSize" width="58" height="48.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="FPP-vP-cbq">
-            <size key="intrinsicContentSize" width="54.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="MBV-x7-iiZ">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="NS0-8g-CGN">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="PPQ-KH-yqb">
-            <size key="intrinsicContentSize" width="77.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
         <designable name="PV7-1C-oma">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="SGa-ts-aYv">
-            <size key="intrinsicContentSize" width="110" height="52.5"/>
+            <size key="intrinsicContentSize" width="104" height="34"/>
         </designable>
         <designable name="V6r-Zr-wjE">
-            <size key="intrinsicContentSize" width="46.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="eMe-Sg-sWf">
-            <size key="intrinsicContentSize" width="32.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="oUm-H4-nHL">
-            <size key="intrinsicContentSize" width="82.5" height="47"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="wHC-s9-veI">
-            <size key="intrinsicContentSize" width="72" height="52.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="wcB-FX-ufZ">
-            <size key="intrinsicContentSize" width="118" height="56"/>
+            <size key="intrinsicContentSize" width="112" height="34"/>
         </designable>
         <designable name="z95-Om-vPI">
-            <size key="intrinsicContentSize" width="63.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="lwQ-MA-iWa"/>
+        <segue reference="tlL-jz-7Bs"/>
         <segue reference="UER-22-0Jz"/>
-        <segue reference="XD7-mK-7Ya"/>
-        <segue reference="SAf-ry-amb"/>
+        <segue reference="h7a-sX-8uk"/>
+        <segue reference="owy-07-fiV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="IMG_0600" width="736" height="1308"/>

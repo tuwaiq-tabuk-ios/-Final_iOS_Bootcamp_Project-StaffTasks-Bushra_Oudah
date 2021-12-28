@@ -15,8 +15,10 @@ class EmployeeCell: UITableViewCell {
   
   override func awakeFromNib() {
       super.awakeFromNib()
-      conerReduis()
-      shadow()
+    rateBtn.cmShadow()
+    taskBtn.cmShadow()
+    rateBtn.cmShadow(cornerRadius: 15)
+    taskBtn.cmShadow(cornerRadius: 15)
   }
 
 
