@@ -1333,7 +1333,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zwm-BD-Mbx">
-                                            <rect key="frame" x="60" y="189.5" width="80" height="30"/>
+                                            <rect key="frame" x="40" y="169.5" width="80" height="30"/>
                                             <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="6Ls-if-QTg"/>
@@ -1342,34 +1342,84 @@
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Task"/>
+                                            <connections>
+                                                <action selector="addTask:" destination="UZ7-a0-nU2" eventType="touchUpInside" id="R5C-5I-oVd"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xov-4y-x2R">
-                                            <rect key="frame" x="244" y="189.5" width="110" height="30"/>
+                                            <rect key="frame" x="140" y="169.5" width="110" height="31"/>
                                             <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="110" id="E8B-4I-B8R"/>
-                                                <constraint firstAttribute="height" constant="30" id="Shz-EF-F37"/>
                                             </constraints>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="Evaluation"/>
+                                            <connections>
+                                                <action selector="addEvalution:" destination="UZ7-a0-nU2" eventType="touchUpInside" id="mLR-3L-EMU"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-nA-BRQ">
+                                            <rect key="frame" x="270" y="169.5" width="130" height="31"/>
+                                            <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="130" id="hrC-d8-rDP"/>
+                                            </constraints>
+                                            <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Add Certificate"/>
+                                            <connections>
+                                                <action selector="addCerticate:" destination="UZ7-a0-nU2" eventType="touchUpInside" id="2hH-50-8NC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clJ-mb-rA0">
+                                            <rect key="frame" x="60" y="220.5" width="140" height="31"/>
+                                            <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="w7L-n4-cdP"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Download Payroll"/>
+                                            <connections>
+                                                <action selector="downloadPDF:" destination="UZ7-a0-nU2" eventType="touchUpInside" id="xsG-3j-9fS"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teF-Qy-PLO">
+                                            <rect key="frame" x="220" y="220.5" width="120" height="31"/>
+                                            <color key="backgroundColor" red="0.70980393890000004" green="0.8078432083" blue="0.72156864399999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="120" id="wJc-b0-lUe"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Open Payroll"/>
+                                            <connections>
+                                                <action selector="openPDF:" destination="UZ7-a0-nU2" eventType="touchUpInside" id="EHT-ib-7F0"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.97647058959999999" green="0.9529411793" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <constraints>
                                         <constraint firstItem="hhJ-qq-Jdv" firstAttribute="centerX" secondItem="KR5-7F-eHQ" secondAttribute="centerX" id="11w-Ap-aJD"/>
+                                        <constraint firstItem="clJ-mb-rA0" firstAttribute="leading" secondItem="KR5-7F-eHQ" secondAttribute="leadingMargin" constant="40" id="1fS-bz-EQg"/>
+                                        <constraint firstItem="clJ-mb-rA0" firstAttribute="top" secondItem="Xov-4y-x2R" secondAttribute="bottom" constant="20" id="29L-HQ-Wcl"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="DhY-uu-EXk" secondAttribute="trailing" constant="40" id="4bq-9p-GS0"/>
                                         <constraint firstItem="hhJ-qq-Jdv" firstAttribute="leading" secondItem="KR5-7F-eHQ" secondAttribute="leadingMargin" constant="40" id="7ji-4C-mpQ"/>
                                         <constraint firstItem="DhY-uu-EXk" firstAttribute="top" secondItem="hhJ-qq-Jdv" secondAttribute="bottom" constant="42.5" id="Eu9-Od-gVi"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="hhJ-qq-Jdv" secondAttribute="trailing" constant="40" id="Fi4-La-FEn"/>
+                                        <constraint firstItem="teF-Qy-PLO" firstAttribute="leading" secondItem="clJ-mb-rA0" secondAttribute="trailing" constant="20" id="Kl6-Wb-MqZ"/>
+                                        <constraint firstItem="teF-Qy-PLO" firstAttribute="top" secondItem="Xov-4y-x2R" secondAttribute="bottom" constant="20" id="LQz-hd-Jey"/>
                                         <constraint firstItem="DhY-uu-EXk" firstAttribute="centerY" secondItem="KR5-7F-eHQ" secondAttribute="centerY" id="O5z-Fu-eXe"/>
+                                        <constraint firstItem="zwm-BD-Mbx" firstAttribute="leading" secondItem="KR5-7F-eHQ" secondAttribute="leadingMargin" constant="20" id="Xea-OM-rKx"/>
                                         <constraint firstItem="hhJ-qq-Jdv" firstAttribute="top" secondItem="KR5-7F-eHQ" secondAttribute="topMargin" constant="40" id="Zzf-y8-N6L"/>
-                                        <constraint firstItem="zwm-BD-Mbx" firstAttribute="leading" secondItem="KR5-7F-eHQ" secondAttribute="leadingMargin" constant="40" id="b0x-c2-Tf8"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Xov-4y-x2R" secondAttribute="trailing" constant="40" id="f22-rG-1Nl"/>
-                                        <constraint firstItem="Xov-4y-x2R" firstAttribute="top" secondItem="DhY-uu-EXk" secondAttribute="bottom" constant="40" id="gAP-Fc-iAp"/>
+                                        <constraint firstItem="qeb-nA-BRQ" firstAttribute="top" secondItem="DhY-uu-EXk" secondAttribute="bottom" constant="20" id="bvT-6a-12E"/>
+                                        <constraint firstItem="Xov-4y-x2R" firstAttribute="top" secondItem="DhY-uu-EXk" secondAttribute="bottom" constant="20" id="gAP-Fc-iAp"/>
                                         <constraint firstItem="DhY-uu-EXk" firstAttribute="centerX" secondItem="KR5-7F-eHQ" secondAttribute="centerX" id="mt7-uw-qW6"/>
                                         <constraint firstItem="DhY-uu-EXk" firstAttribute="leading" secondItem="KR5-7F-eHQ" secondAttribute="leadingMargin" constant="40" id="qWM-dr-2gK"/>
-                                        <constraint firstItem="zwm-BD-Mbx" firstAttribute="top" secondItem="DhY-uu-EXk" secondAttribute="bottom" constant="40" id="zxm-mF-t9B"/>
+                                        <constraint firstItem="Xov-4y-x2R" firstAttribute="leading" secondItem="zwm-BD-Mbx" secondAttribute="trailing" constant="20" id="u1Q-sY-d43"/>
+                                        <constraint firstItem="qeb-nA-BRQ" firstAttribute="leading" secondItem="Xov-4y-x2R" secondAttribute="trailing" constant="20" id="vDY-0r-tIg"/>
+                                        <constraint firstItem="zwm-BD-Mbx" firstAttribute="top" secondItem="DhY-uu-EXk" secondAttribute="bottom" constant="20" id="zxm-mF-t9B"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -1517,7 +1567,7 @@
         <segue reference="tlL-jz-7Bs"/>
         <segue reference="UER-22-0Jz"/>
         <segue reference="h7a-sX-8uk"/>
-        <segue reference="owy-07-fiV"/>
+        <segue reference="KiR-4f-JKi"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="IMG_0600" width="736" height="1308"/>

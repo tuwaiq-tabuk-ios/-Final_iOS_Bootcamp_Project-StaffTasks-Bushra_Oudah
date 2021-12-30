@@ -22,7 +22,7 @@ class EditePasswordVC: UIViewController  {
   }
   
   @IBAction func sendPressed(_ sender: Any) {
-    Auth.auth().currentUser?(withEmail: EmailTF.text!) { error in
+    Auth.auth().sendPasswordReset(withEmail: EmailTF.text!) { error in
       if error == nil{
         print("Sign Up Successful")
       }else{
@@ -31,4 +31,3 @@ class EditePasswordVC: UIViewController  {
     }
   }
 }
-
