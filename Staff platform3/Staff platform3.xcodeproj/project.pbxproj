@@ -39,6 +39,7 @@
 		3FDCE8D827723EF100150B8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FDCE8D627723EF100150B8C /* LaunchScreen.storyboard */; };
 		3FDCE8E82772510D00150B8C /* SignUpEmpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCE8E72772510D00150B8C /* SignUpEmpVC.swift */; };
 		3FDCE8EA2772513500150B8C /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDCE8E92772513500150B8C /* LoginVC.swift */; };
+		3FF3B075277DCE8600237893 /* ResignationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3B074277DCE8600237893 /* ResignationVC.swift */; };
 		996DAA50BDCBEF4C9D120794 /* Pods_Staff_platform3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CE9A36880797459AE795FBA /* Pods_Staff_platform3.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		3FDCE8D927723EF100150B8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3FDCE8E72772510D00150B8C /* SignUpEmpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpEmpVC.swift; sourceTree = "<group>"; };
 		3FDCE8E92772513500150B8C /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		3FF3B074277DCE8600237893 /* ResignationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResignationVC.swift; sourceTree = "<group>"; };
 		6CE9A36880797459AE795FBA /* Pods_Staff_platform3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Staff_platform3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78800088232F174EA44AF02B /* Pods-Staff platform3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Staff platform3.debug.xcconfig"; path = "Target Support Files/Pods-Staff platform3/Pods-Staff platform3.debug.xcconfig"; sourceTree = "<group>"; };
 		931D590896F55C5D04863DC4 /* Pods-Staff platform3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Staff platform3.release.xcconfig"; path = "Target Support Files/Pods-Staff platform3/Pods-Staff platform3.release.xcconfig"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				3FA2C9FA27749702000B5F4D /* EditePasswordVC.swift */,
 				3FA2C9FC27749859000B5F4D /* EditeEmailVC.swift */,
 				3FA2C9FE27749AB6000B5F4D /* EditeMobileVC.swift */,
+				3FF3B074277DCE8600237893 /* ResignationVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				3F3DE9A3277B27C700819A64 /* Validation.swift in Sources */,
 				3F873518277453E1002AEDCF /* HomeVC.swift in Sources */,
 				3F96015827779D380050C35C /* EmployeeCell.swift in Sources */,
+				3FF3B075277DCE8600237893 /* ResignationVC.swift in Sources */,
 				3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */,
 				3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */,
 				3FDCE8E82772510D00150B8C /* SignUpEmpVC.swift in Sources */,

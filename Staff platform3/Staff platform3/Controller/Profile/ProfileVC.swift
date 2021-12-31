@@ -41,7 +41,7 @@ class ProfileVC: UIViewController {
           self.emailLabel.text = document.data()?["email"] as? String
           self.PhoneLabel.text = document.data()?["phone"] as? String
           self.idLabel.text = document.data()?["id"] as? String
-          _ = Employee(name: self.nameLabel.text!, email: self.emailLabel.text!, phone: self.PhoneLabel.text!, id: self.idLabel.text!,task: "",evaluation: "")
+          _ = Employee(name: self.nameLabel.text!, email: self.emailLabel.text!, phone: self.PhoneLabel.text!, id: self.idLabel.text!,task: nil,evaluation: nil, resignation: nil)
           print("Document data")
         } else {
           print("Document does not exist\(error?.localizedDescription)")

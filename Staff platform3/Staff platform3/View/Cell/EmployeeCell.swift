@@ -12,6 +12,10 @@ class EmployeeCell: UITableViewCell {
   @IBOutlet weak var idLabel: UILabel!
   @IBOutlet weak var rateBtn: UIButton!
   @IBOutlet weak var taskBtn: UIButton!
+  @IBOutlet weak var downloadPayroll: UIButton!
+  @IBOutlet weak var addCertificate: UIButton!
+  @IBOutlet weak var openPayroll: UIButton!
+  
   
   override func awakeFromNib() {
       super.awakeFromNib()
@@ -19,6 +23,9 @@ class EmployeeCell: UITableViewCell {
     taskBtn.cmShadow()
     rateBtn.cmShadow(cornerRadius: 15)
     taskBtn.cmShadow(cornerRadius: 15)
+    downloadPayroll.cmShadow()
+    addCertificate.cmShadow()
+    openPayroll.cmShadow()
   }
 
 

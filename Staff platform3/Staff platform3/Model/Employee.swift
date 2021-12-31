@@ -13,4 +13,5 @@ struct Employee {
     let id:String?
     let task:String?
     let evaluation:String?
+   let resignation: String?
 }

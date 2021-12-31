@@ -44,7 +44,7 @@ class EmployeeTabelVC: UITableViewController {
            print("doc.documentID\(doc.documentID)")
           let name = doc.data()["name"] as? String
           let id = doc.data()["id"] as? String
-            let employees = Employee(name: name, email: nil, phone: nil, id: id,task: nil,evaluation: nil)
+          let employees = Employee(name: name, email: nil, phone: nil, id: id,task: nil,evaluation: nil, resignation: nil)
           self.employee.append(employees)
           self.tableView.reloadData()
         }
