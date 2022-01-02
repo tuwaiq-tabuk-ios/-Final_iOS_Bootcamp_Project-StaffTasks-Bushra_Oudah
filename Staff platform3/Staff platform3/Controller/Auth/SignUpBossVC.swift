@@ -37,9 +37,10 @@ class SignUpBossVC: UIViewController {
     Auth.auth().createUser(withEmail: emailTF.text!,
                            password: passwordTF.text!) { authResult, error in
       if error == nil{
-        self.boos = Boos.init(name: self.nameTF.text!,                           phone: self.mobileTF.text!,
-                     email: self.emailTF.text!,
-                     id: self.idTF.text!)
+        self.boos = Boos.init(name: self.nameTF.text!,
+                              phone: self.mobileTF.text!,
+                              email: self.emailTF.text!,
+                              id: self.idTF.text!)
         
         self.saveBoos(self.boos)
         print("Sign Up Successful")
@@ -71,7 +72,7 @@ class SignUpBossVC: UIViewController {
   }
 }
 extension SignUpBossVC:Storyboarded{
-    static var storyboardName: StoryboardName = .main
+  static var storyboardName: StoryboardName = .main
 }
 
 
