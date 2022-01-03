@@ -32,13 +32,15 @@ class SignUpEmpVC: UIViewController {
   
   
   @IBAction func signUpPressed(_ sender: UIButton) {
-    Auth.auth().createUser(withEmail: emaiTF.text!, password: passwordTF.text!) { authResult, error in
+    Auth.auth().createUser(withEmail: emaiTF.text!,
+                           password: passwordTF.text!) { authResult, error in
       if error == nil{
         self.employee = Employee.init(name: self.nameTF.text!,
                                       email: self.emaiTF.text!,
                                       phone: self.mobileTF.text!,
                                       id: self.idTF.text!,
-                                      task: "",evaluation: "", resignation: nil)
+                                      task: nil ,evaluation: nil, resignation: nil,
+                                      holiday: nil)
         
         self.saveEmployee(self.employee)
         print("Sign Up Successful")

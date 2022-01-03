@@ -7,11 +7,12 @@
 
 import Foundation
 struct Employee {
-    let name:String?
-    let email:String?
-    let phone:String?
-    let id:String?
-    let task:String?
-    let evaluation:String?
-   let resignation: String?
+  let name:String?
+  let email:String?
+  let phone:String?
+  let id:String?
+  let task:String?
+  let evaluation:String?
+  let resignation: String?
+  let holiday: String?
 }

@@ -8,11 +8,11 @@
 
 import UIKit
 import Firebase
+
 class EditePasswordVC: UIViewController  {
   
 
-  
-  @IBOutlet weak var EmailTF:CMTextField!
+  @IBOutlet weak var passTF: CMTextField!
   
   @IBOutlet weak var sendBtn: UIButton!
   
@@ -22,8 +22,10 @@ class EditePasswordVC: UIViewController  {
   }
   
   @IBAction func sendPressed(_ sender: Any) {
-    Auth.auth().sendPasswordReset(withEmail: EmailTF.text!) { error in
+    Auth.auth().currentUser?.updatePassword(to: passTF.text!) { error in
       if error == nil{
+       
+
         print("Sign Up Successful")
       }else{
         print("Error \(error?.localizedDescription)")

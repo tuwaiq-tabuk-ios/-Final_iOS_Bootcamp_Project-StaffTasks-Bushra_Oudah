@@ -38,14 +38,20 @@ class SettingVC: UIViewController{
   
   
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) { let firebaseAuth = Auth.auth()
+
     do {
       try firebaseAuth.signOut()
-      self.navigationController?.popToRootViewController(animated: true)
-      print("signOut")
+        let vc = HomeVC.instantiate()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        print("signOut")
+        
     } catch let signOutError as NSError {
       print("Error signing out: %@", signOutError)
     }
+  
   }
+  
   @IBAction func payroll(_ sender: UIButton) {
     guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
 

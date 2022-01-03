@@ -36,9 +36,15 @@ class LoginVC: UIViewController {
       guard let self = self else { return }
       if error == nil{
         print("Login Successful")
-        let vc = EmployeeTBC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-      }else{
+        if self.boos != nil{
+            let vc = BoosTBC.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }else if (self.employee != nil){
+            let vc = EmployeeTBC.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
+              }else{
         print("error\(error?.localizedDescription)")
       }
     }

@@ -55,21 +55,26 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     return arrPic.count
   }
   
+  
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! CollectionCollectionViewCell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! CollectionViewCell
     
     cell.imageCollection.image = arrPic[indexPath.row]
     return cell
   }
   
+  
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
+  
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
   
 }
-
+extension HomeVC :Storyboarded{
+    static var storyboardName: StoryboardName = .main
+}
 

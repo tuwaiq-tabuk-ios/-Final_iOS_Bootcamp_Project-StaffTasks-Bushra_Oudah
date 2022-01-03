@@ -45,7 +45,16 @@ class EvaluationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
           let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
           let evaluation = document.data()?["evaluation"] as? String
           print(evaluation)
-          let emp  = Employee(name:nil, email: nil, phone: nil, id: nil,task: nil,evaluation: evaluation, resignation: nil)
+          let emp  = Employee(name:nil,
+                              email: nil,
+                              phone: nil,
+                              id: nil,
+                              task: nil,
+                              evaluation: evaluation,
+                              resignation: nil,
+                              holiday: nil)
+          
+          
           self.employee.append(emp)
           print("Document data")
           self.tabelView.reloadData()

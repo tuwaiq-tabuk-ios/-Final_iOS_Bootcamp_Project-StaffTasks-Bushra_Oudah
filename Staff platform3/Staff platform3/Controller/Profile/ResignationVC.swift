@@ -10,8 +10,7 @@
   import FirebaseFirestore
 
   class ResignationVC: UIViewController {
-      @IBOutlet weak var reasonResignationTF: CMTextField!
-    
+    @IBOutlet weak var reasonResignationTF: CMTextField!
     @IBOutlet weak var sendBtn: UIButton!
     @IBOutlet weak var imagelogo: UIImageView!
     
@@ -21,6 +20,7 @@
           super.viewDidLoad()
         sendBtn.cmShadow()
       }
+    
     
       @IBAction func sendPressed(_ sender: UIButton) {
           let washingtonRef = db.collection("Users").document(Auth.auth().currentUser!.uid)
