@@ -38,9 +38,9 @@ class SignUpEmpVC: UIViewController {
         self.employee = Employee.init(name: self.nameTF.text!,
                                       email: self.emaiTF.text!,
                                       phone: self.mobileTF.text!,
-                                      id: self.idTF.text!,
+                                      idNumber: self.idTF.text!,
                                       task: nil ,evaluation: nil, resignation: nil,
-                                      holiday: nil)
+                                      holiday: nil,active: nil,user:nil)
         
         self.saveEmployee(self.employee)
         print("Sign Up Successful")

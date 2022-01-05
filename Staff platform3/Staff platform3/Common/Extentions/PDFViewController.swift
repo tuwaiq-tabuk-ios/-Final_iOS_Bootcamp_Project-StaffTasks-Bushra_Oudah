@@ -12,7 +12,7 @@ class PDFViewController: UIViewController {
         
         view.addSubview(pdfView)
         
-        if let document = PDFDocument(url: pdfURL) {
+        if let document = PDFDocument(url: pdfURL!) {
             pdfView.document = document
         }
         

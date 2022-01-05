@@ -6,11 +6,17 @@
 //
 
 import Foundation
-struct Boos {
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+import UIKit
+
+struct Boos:Codable {
+  @DocumentID var documentID : String? = ""
     let name:String?
     let phone:String?
     let email:String?
     let id:String?
+//  let user:DocumentReference
     
 }
 

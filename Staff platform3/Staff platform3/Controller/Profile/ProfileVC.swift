@@ -45,11 +45,11 @@ class ProfileVC: UIViewController {
           _ = Employee(name: self.nameLabel.text!,
                        email: self.emailLabel.text!,
                        phone: self.PhoneLabel.text!,
-                       id: self.idLabel.text!,
+                       idNumber: self.idLabel.text!,
                        task: nil,
                        evaluation: nil,
                        resignation: nil,
-                       holiday: nil)
+                       holiday: nil,active: nil,user:nil)
           
           print("Document data")
         } else {

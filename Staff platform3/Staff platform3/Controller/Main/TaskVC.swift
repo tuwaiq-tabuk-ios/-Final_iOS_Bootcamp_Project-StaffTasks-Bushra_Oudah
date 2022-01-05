@@ -42,11 +42,11 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
           let emp  = Employee(name:nil,
                               email: nil,
                               phone: nil,
-                              id: nil,
+                              idNumber: nil,
                               task: task,
                               evaluation: nil,
                               resignation: nil,
-                              holiday: nil)
+                              holiday: nil,active: nil,user:nil)
           
           self.employee.append(emp)
           print("Document data")

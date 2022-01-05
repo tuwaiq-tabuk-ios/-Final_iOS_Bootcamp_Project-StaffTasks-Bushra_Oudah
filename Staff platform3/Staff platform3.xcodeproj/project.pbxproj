@@ -11,15 +11,16 @@
 		3F3DE9A1277B279900819A64 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A0277B279900819A64 /* Alert.swift */; };
 		3F3DE9A3277B27C700819A64 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A2277B27C700819A64 /* Validation.swift */; };
 		3F3DE9A5277DA94A00819A64 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */; };
+		3F7BF8202784ED50004B7E0C /* DetailsEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7BF81F2784ED50004B7E0C /* DetailsEmployeeVC.swift */; };
 		3F873518277453E1002AEDCF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F873517277453E1002AEDCF /* HomeVC.swift */; };
 		3F96015827779D380050C35C /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015727779D380050C35C /* EmployeeCell.swift */; };
 		3F96015A27779D9C0050C35C /* EvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015927779D9C0050C35C /* EvaluationCell.swift */; };
+		3F9ABE772785AE4900A7A390 /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */; };
 		3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D3277507EF00220BE1 /* CMTextField.swift */; };
 		3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D527750A0900220BE1 /* Boss.swift */; };
 		3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D727750A3600220BE1 /* Employee.swift */; };
 		3FA1C6DA27750A5700220BE1 /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D927750A5700220BE1 /* UserType.swift */; };
 		3FA1C6DC27750E7D00220BE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3FA1C6DB27750E7D00220BE1 /* GoogleService-Info.plist */; };
-		3FA1C6E02777796100220BE1 /* EmployeeTabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6DF2777796100220BE1 /* EmployeeTabelVC.swift */; };
 		3FA1C6E22777799900220BE1 /* EvaluationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E12777799900220BE1 /* EvaluationVC.swift */; };
 		3FA1C6E4277779B000220BE1 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E3277779B000220BE1 /* TaskVC.swift */; };
 		3FA1C6E627777A7300220BE1 /* EmployeeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E527777A7300220BE1 /* EmployeeTBC.swift */; };
@@ -51,15 +52,16 @@
 		3F3DE9A0277B279900819A64 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3F3DE9A2277B27C700819A64 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		3F7BF81F2784ED50004B7E0C /* DetailsEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsEmployeeVC.swift; sourceTree = "<group>"; };
 		3F873517277453E1002AEDCF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3F96015727779D380050C35C /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		3F96015927779D9C0050C35C /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
+		3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
 		3FA1C6D3277507EF00220BE1 /* CMTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTextField.swift; sourceTree = "<group>"; };
 		3FA1C6D527750A0900220BE1 /* Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boss.swift; sourceTree = "<group>"; };
 		3FA1C6D727750A3600220BE1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		3FA1C6D927750A5700220BE1 /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
 		3FA1C6DB27750E7D00220BE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3FA1C6DF2777796100220BE1 /* EmployeeTabelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTabelVC.swift; sourceTree = "<group>"; };
 		3FA1C6E12777799900220BE1 /* EvaluationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationVC.swift; sourceTree = "<group>"; };
 		3FA1C6E3277779B000220BE1 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		3FA1C6E527777A7300220BE1 /* EmployeeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTBC.swift; sourceTree = "<group>"; };
@@ -141,9 +143,10 @@
 		3FA1C6DD277778A800220BE1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				3FA1C6DF2777796100220BE1 /* EmployeeTabelVC.swift */,
 				3FA1C6E12777799900220BE1 /* EvaluationVC.swift */,
 				3FA1C6E3277779B000220BE1 /* TaskVC.swift */,
+				3F7BF81F2784ED50004B7E0C /* DetailsEmployeeVC.swift */,
+				3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -407,11 +410,12 @@
 				3FDCE8E82772510D00150B8C /* SignUpEmpVC.swift in Sources */,
 				3FA2C9F727748EC6000B5F4D /* ProfileVC.swift in Sources */,
 				3FA1C6E22777799900220BE1 /* EvaluationVC.swift in Sources */,
-				3FA1C6E02777796100220BE1 /* EmployeeTabelVC.swift in Sources */,
 				3FDCE8EA2772513500150B8C /* LoginVC.swift in Sources */,
+				3F9ABE772785AE4900A7A390 /* EmployeeVC.swift in Sources */,
 				3FA2C9FD27749859000B5F4D /* EditeEmailVC.swift in Sources */,
 				3FDCE8CC27723EEE00150B8C /* AppDelegate.swift in Sources */,
 				3FBE000A2782E4AA00D7C4CE /* HolidayVC.swift in Sources */,
+				3F7BF8202784ED50004B7E0C /* DetailsEmployeeVC.swift in Sources */,
 				3FA1C6E827777A8C00220BE1 /* BoosTBC.swift in Sources */,
 				3FA1C6DA27750A5700220BE1 /* UserType.swift in Sources */,
 				3FA1C6E4277779B000220BE1 /* TaskVC.swift in Sources */,

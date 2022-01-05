@@ -6,13 +6,21 @@
 //
 
 import Foundation
-struct Employee {
-  let name:String?
-  let email:String?
-  let phone:String?
-  let id:String?
-  let task:String?
-  let evaluation:String?
-  let resignation: String?
-  let holiday: String?
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+
+struct Employee:Codable {
+    @DocumentID var id : String? = ""
+    let name:String?
+    let email:String?
+    let phone:String?
+    let idNumber:String?
+    let task:String?
+    let evaluation:String?
+    let resignation:String?
+    let holiday:String?
+    let active:String?
+    let user: DocumentReference?
+    
 }
+
