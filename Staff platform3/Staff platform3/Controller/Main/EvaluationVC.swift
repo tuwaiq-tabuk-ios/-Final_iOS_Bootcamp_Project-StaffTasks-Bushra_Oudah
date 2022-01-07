@@ -17,6 +17,7 @@ class EvaluationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     tabelView.dataSource = self
     tabelView.delegate = self
     readEvaluation()
+    overrideUserInterfaceStyle = .light
     
   }
   
@@ -52,7 +53,7 @@ class EvaluationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                               task: nil,
                               evaluation: evaluation,
                               resignation: nil,
-                              holiday: nil,active: nil,user:nil)
+                              holiday: nil,active: nil,user:nil,zoomURL: nil)
           
           
           self.employee.append(emp)

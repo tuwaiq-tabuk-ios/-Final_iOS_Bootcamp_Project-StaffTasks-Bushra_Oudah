@@ -23,7 +23,7 @@ class EmployeeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
      tabelView.dataSource = self
      tabelView.delegate = self
      readEmployee()
-     
+     overrideUserInterfaceStyle = .light
    }
    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,27 +63,23 @@ class EmployeeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
      
    }
      func readEmployee(){
-         db.collection("Users").addSnapshotListener { (querySnapshot, error) in
-             self.employee = []
-             guard let documents = querySnapshot?.documents else {
-                     print("Error fetching documents: \(error!)")
-                     return
+       db.collection("Users").addSnapshotListener { (querySnapshot, error) in
+         guard let documents = querySnapshot?.documents else {
+           print("Error fetching documents: \(error!)")
+           return
          }
-             for doc in documents{
-                do{
-                 if (doc.data()["userType"] as? String == UserType.EMPLOYEE.rawValue){
-                     let employee = try doc.data(as: Employee.self)
-                     if let employee = employee {
-                      self.employee.append(employee)
-                      }
-                     self.tabelView.reloadData()
-                 }
-  
-         }catch let error{
-         print("Error\(error.localizedDescription)")
-             }
-             }
+         for doc in documents{
+           if (doc.data()["userType"] as? String == UserType.EMPLOYEE.rawValue) {
+              print("doc.documentID\(doc.documentID)")
+             let name = doc.data()["name"] as? String
+             let id = doc.data()["idNumber"] as? String
+             let employees = Employee(name: name, email: nil, phone: nil, idNumber: id,task: nil,evaluation: nil, resignation: nil, holiday: nil,active: nil,user:nil,zoomURL: nil)
+             self.employee.append(employees)
+            
+           }
          }
+         self.tabelView.reloadData()
+       }
      }
   
 
@@ -91,7 +87,7 @@ class EmployeeVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
       if segue.identifier == updateSegueIdentifier {
           let destination =  segue.destination as! DetailsEmployeeVC
-          destination.employees = selectedEmployee
+          destination.employee = selectedEmployee
       }
   }
 

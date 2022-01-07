@@ -25,7 +25,7 @@ class SettingVC: UIViewController{
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    
+    overrideUserInterfaceStyle = .light
     resignation.cmShadow()
     updatePassBtn.cmShadow()
     updateEmail.cmShadow()

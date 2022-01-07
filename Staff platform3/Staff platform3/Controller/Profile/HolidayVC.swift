@@ -22,7 +22,7 @@ class HolidayVC: UIViewController {
   let db = Firestore.firestore()
   override func viewDidLoad() {
         super.viewDidLoad()
-    
+    overrideUserInterfaceStyle = .light
     addDateBtn.cmShadow()
 
         // Do any additional setup after loading the view.
@@ -43,7 +43,7 @@ class HolidayVC: UIViewController {
 
   let washingtonRef = db.collection("Users").document(Auth.auth().currentUser!.uid)
   washingtonRef.updateData([
-      "phone": displayDateLabel.text!
+      "holiday": displayDateLabel.text!
   ]) { err in
       if let err = err {
           print("Error updating document: \(err)")

@@ -22,6 +22,7 @@ class EditeMobileVC : UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
+    overrideUserInterfaceStyle = .light
     saveBtn.cmShadow()
   }
 

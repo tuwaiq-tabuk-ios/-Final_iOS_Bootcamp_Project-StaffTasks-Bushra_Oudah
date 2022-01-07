@@ -1,18 +1,16 @@
 //
-//  ProfileVC.swift
+//  ProfileBoosVC.swift
 //  Staff platform3
 //
-//  Created by Bushra alatwi on 19/05/1443 AH.
+//  Created by Bushra alatwi on 03/06/1443 AH.
 //
-
 
 import UIKit
 import Firebase
 import FirebaseFirestore
+import FirebaseFirestoreSwift
+class ProfileBoosVC: UIViewController {
 
-
-class ProfileVC: UIViewController {
-  
   @IBOutlet weak var imageLog: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var emailLabel: UILabel!
@@ -41,16 +39,9 @@ class ProfileVC: UIViewController {
           self.nameLabel.text = document.data()?["name"] as? String
           self.emailLabel.text = document.data()?["email"] as? String
           self.PhoneLabel.text = document.data()?["phone"] as? String
-          self.idLabel.text = document.data()?["idNumber"] as? String
+          self.idLabel.text = document.data()?["id"] as? String
           
-          _ = Employee(name: self.nameLabel.text!,
-                       email: self.emailLabel.text!,
-                       phone: self.PhoneLabel.text!,
-                       idNumber: self.idLabel.text!,
-                       task: nil,
-                       evaluation: nil,
-                       resignation: nil,
-                       holiday: nil,active: nil,user:nil,zoomURL: nil)
+          _ = Boos.init(name: self.nameLabel.text, phone: self.PhoneLabel.text!, email: self.emailLabel.text!, id: self.idLabel.text)
           
           print("Document data")
         } else {
@@ -61,4 +52,6 @@ class ProfileVC: UIViewController {
     }
   }
   
+
+
 }

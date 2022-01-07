@@ -18,6 +18,7 @@
       var employee:Employee!
       override func viewDidLoad() {
           super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         sendBtn.cmShadow()
       }
     

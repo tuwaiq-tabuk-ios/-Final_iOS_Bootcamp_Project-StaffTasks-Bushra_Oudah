@@ -23,7 +23,7 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    overrideUserInterfaceStyle = .light
     collectionView.delegate = self
     collectionView.dataSource = self
     pageControl.numberOfPages = arrPic.count
@@ -32,6 +32,7 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     employeeButton.cmShadow()
     LoginBtn.cmShadow()
     startTimer()
+    navigationItem.setHidesBackButton(true, animated: true)
   }
   
   

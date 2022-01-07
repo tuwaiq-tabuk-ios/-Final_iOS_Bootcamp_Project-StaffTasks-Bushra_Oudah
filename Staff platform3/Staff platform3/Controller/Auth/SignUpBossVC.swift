@@ -27,7 +27,7 @@ class SignUpBossVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    overrideUserInterfaceStyle = .light
     SignUp.cmShadow()
     Login.cmShadow()
   }
@@ -44,10 +44,20 @@ class SignUpBossVC: UIViewController {
         
         self.saveBoos(self.boos)
         print("Sign Up Successful")
+        
+  
         let vc = BoosTBC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
       }else{
         print("Error \(error?.localizedDescription)")
+        
+        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
       }
     }
   }
@@ -58,8 +68,8 @@ class SignUpBossVC: UIViewController {
       "name": boos.name,
       "email": boos.email,
       "phone": boos.phone,
-      "id":boos.id,
-      "userType":UserType.BOOS.rawValue
+      "id": boos.id,
+      "userType": UserType.BOOS.rawValue
     ]
     
     db.collection("Users").document(Auth.auth().currentUser!.uid).setData(docData) { err in

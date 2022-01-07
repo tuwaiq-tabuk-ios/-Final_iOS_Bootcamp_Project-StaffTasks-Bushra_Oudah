@@ -16,6 +16,8 @@
 		3F96015827779D380050C35C /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015727779D380050C35C /* EmployeeCell.swift */; };
 		3F96015A27779D9C0050C35C /* EvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015927779D9C0050C35C /* EvaluationCell.swift */; };
 		3F9ABE772785AE4900A7A390 /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */; };
+		3F9ABE792786159600A7A390 /* SettingBoosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE782786159600A7A390 /* SettingBoosVC.swift */; };
+		3F9ABE7B2786E37E00A7A390 /* ProfileBoosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */; };
 		3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D3277507EF00220BE1 /* CMTextField.swift */; };
 		3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D527750A0900220BE1 /* Boss.swift */; };
 		3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D727750A3600220BE1 /* Employee.swift */; };
@@ -57,6 +59,8 @@
 		3F96015727779D380050C35C /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		3F96015927779D9C0050C35C /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
 		3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
+		3F9ABE782786159600A7A390 /* SettingBoosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBoosVC.swift; sourceTree = "<group>"; };
+		3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBoosVC.swift; sourceTree = "<group>"; };
 		3FA1C6D3277507EF00220BE1 /* CMTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTextField.swift; sourceTree = "<group>"; };
 		3FA1C6D527750A0900220BE1 /* Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boss.swift; sourceTree = "<group>"; };
 		3FA1C6D727750A3600220BE1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				3FA2C9FE27749AB6000B5F4D /* EditeMobileVC.swift */,
 				3FF3B074277DCE8600237893 /* ResignationVC.swift */,
 				3FBE00092782E4AA00D7C4CE /* HolidayVC.swift */,
+				3F9ABE782786159600A7A390 /* SettingBoosVC.swift */,
+				3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -405,6 +411,7 @@
 				3F96015827779D380050C35C /* EmployeeCell.swift in Sources */,
 				3FF3B075277DCE8600237893 /* ResignationVC.swift in Sources */,
 				3FBE00082782DB5200D7C4CE /* ViewController.swift in Sources */,
+				3F9ABE7B2786E37E00A7A390 /* ProfileBoosVC.swift in Sources */,
 				3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */,
 				3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */,
 				3FDCE8E82772510D00150B8C /* SignUpEmpVC.swift in Sources */,
@@ -428,6 +435,7 @@
 				3FDCE8CE27723EEE00150B8C /* SceneDelegate.swift in Sources */,
 				3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */,
 				3FF3B07727818F7000237893 /* CollectionViewCell.swift in Sources */,
+				3F9ABE792786159600A7A390 /* SettingBoosVC.swift in Sources */,
 				3FA2C9FF27749AB6000B5F4D /* EditeMobileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

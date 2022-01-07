@@ -14,6 +14,7 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     tabelView.dataSource = self
     tabelView.delegate = self
     readTask()
+    overrideUserInterfaceStyle = .light
     
   }
   
@@ -46,7 +47,7 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
                               task: task,
                               evaluation: nil,
                               resignation: nil,
-                              holiday: nil,active: nil,user:nil)
+                              holiday: nil,active: nil,user:nil,zoomURL: nil)
           
           self.employee.append(emp)
           print("Document data")

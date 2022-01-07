@@ -22,9 +22,10 @@ class LoginVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    overrideUserInterfaceStyle = .light
     login.cmShadow()
     signUp.cmShadow()
-    
+    overrideUserInterfaceStyle = .light 
   }
   
   
@@ -36,16 +37,23 @@ class LoginVC: UIViewController {
       guard let self = self else { return }
       if error == nil{
         print("Login Successful")
-        if self.boos != nil{
-            let vc = BoosTBC.instantiate()
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else if (self.employee != nil){
-            let vc = EmployeeTBC.instantiate()
-            self.navigationController?.pushViewController(vc, animated: true)
 
-        }
-              }else{
+          let vc = BoosTBC.instantiate()
+          self.navigationController?.pushViewController(vc, animated: true)
+      //  }else{
+//          let vc = EmployeeTBC.instantiate()
+//          self.navigationController?.pushViewController(vc, animated: true)
+        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+     //   }
+
+      }else{
         print("error\(error?.localizedDescription)")
+        
+        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
       }
     }
   }
