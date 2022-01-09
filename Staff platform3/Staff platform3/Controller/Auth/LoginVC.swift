@@ -17,48 +17,79 @@ class LoginVC: UIViewController {
   @IBOutlet weak var signUp: UIButton!
   @IBOutlet weak var forgetPassword: UIButton!
   
-  var boos:Boos!
-  var employee:Employee!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    overrideUserInterfaceStyle = .light
-    login.cmShadow()
-    signUp.cmShadow()
-    overrideUserInterfaceStyle = .light 
-  }
-  
-  
-  @IBAction func loginPreesed(_ sender: UIButton) {
-    Auth.auth().signIn(withEmail: emailTF.text!,
-                       password: passwordTF.text!)
-    
-    { [weak self] authResult, error in
-      guard let self = self else { return }
-      if error == nil{
-        print("Login Successful")
+  let db = Firestore.firestore()
 
-          let vc = BoosTBC.instantiate()
-          self.navigationController?.pushViewController(vc, animated: true)
-      //  }else{
-//          let vc = EmployeeTBC.instantiate()
-//          self.navigationController?.pushViewController(vc, animated: true)
-        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-     //   }
+var boos:Boos!
+var employee:Employee!
 
-      }else{
-        print("error\(error?.localizedDescription)")
-        
-        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-      }
+override func viewDidLoad() {
+  super.viewDidLoad()
+  overrideUserInterfaceStyle = .light
+  login.cmShadow()
+  signUp.cmShadow()
+  overrideUserInterfaceStyle = .light
+}
+
+
+@IBAction func loginPreesed(_ sender: UIButton) {
+  Auth.auth().signIn(withEmail: emailTF.text!,
+                     password: passwordTF.text!)
+  
+  { [weak self] authResult, error in
+    guard let self = self else { return }
+    if error == nil{
+      print("Login Successful")
+        if let email  = Auth.auth().currentUser?.email {
+             self.db.collection("Users").whereField("email", isEqualTo: email).getDocuments(){ (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    guard let documents = querySnapshot?.documents else {
+                      print("Error fetching documents: \(error!)")
+                      return
+                    }
+                    
+                    if let firstResult = documents.first{
+                         
+                        if let type = firstResult.data()["userType"] as? String{
+                            let userType = UserType(rawValue: type)
+                            
+                            switch userType {
+                            case .BOOS:
+                              let vc = BoosTBC.instantiate()
+                              self.navigationController?.pushViewController(vc, animated: true)
+                            case .EMPLOYEE:
+                                let vc = EmployeeTBC.instantiate()
+                                self.navigationController?.pushViewController(vc, animated: true)
+                       
+                              let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
+                              alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                              self.present(alert, animated: true, completion: nil)
+                            case .none:
+                                fatalError("Unexptcted case")
+                            }
+                            
+                        }
+                           
+                        
+                    }
+                }
+            
+          }
+
+    }else{
+      print("error\(error?.localizedDescription)")
+      
+      let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+      alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
     }
   }
 }
+}
+  
+}
 
 extension LoginVC :Storyboarded{
-    static var storyboardName: StoryboardName = .main
+  static var storyboardName: StoryboardName = .main
 }

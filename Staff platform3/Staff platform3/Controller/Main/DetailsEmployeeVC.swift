@@ -45,7 +45,6 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
   }
   
   
-  
   @IBAction func addTask(_ sender: Any) {
     print("\n\n----------------------------- \(#function)")
     
@@ -89,8 +88,6 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     
     self.present(alert, animated: true, completion: nil)
   }
-  
-  
   @IBAction func addEvalution(_ sender: Any) {
     let alert = UIAlertController(title: "Evalution",
                                   message: "Enter Evalution ",
@@ -108,7 +105,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
       let bookRef = self.db.collection("Users").document((self.employee?.id)!)
       
       bookRef.updateData([
-        "evalution":textField!.text
+        "evaluation":textField!.text
       ])
       { err in
         if let err = err {
@@ -117,8 +114,6 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
           print("Document successfully updated")
           
         }
-        
-        
         print("Text field: \(textField!.text)")
       }}))
     self.present(alert, animated: true, completion: nil)
@@ -128,43 +123,23 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     
   }
   @IBAction func active(_ sender: Any) {
-    let alert = UIAlertController(title: "Active",
-                                  message: "Enter Active ",
-                                  preferredStyle: .alert)
     
-    alert.addTextField { textField in
-      textField.placeholder = "Enter Active"
+    let bookRef = self.db.collection("Users").document((self.employee?.id)!)
+    
+    bookRef.updateData([
+      "active":"Un active "
+    ])
+    { err in
+      if let err = err {
+        print("Error updating document: \(err)")
+      } else {
+        print("Document successfully updated")
+        
+      }
+
     }
-    alert.addAction(UIAlertAction(title: "Ok",
-                                  style: .default,
-                                  handler: {  [weak alert] (_) in
-      
-      let textField = alert?.textFields![0]
-      print("Text field: \(textField!.text)")
-      let bookRef = self.db.collection("Users").document((self.employee?.id)!)
-      
-      bookRef.updateData([
-        "active":textField!.text
-      ])
-      { err in
-        if let err = err {
-          print("Error updating document: \(err)")
-        } else {
-          print("Document successfully updated")
-          
-        }
-        
-        
-        print("Text field: \(textField!.text)")
-      }}))
-    self.present(alert, animated: true, completion: nil)
-    
-    
-    
-    
-  }
   
-  
+}
   @IBAction func addCerticate(_ sender: UIButton) {
     setupImage()
   }
@@ -189,8 +164,6 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     self.present(picker, animated: true, completion: nil)
   }
   
-  
-  
   @IBAction func downloadPDF(_ sender: Any) {
     guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
     
@@ -201,7 +174,6 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     let downloadTask = urlSession.downloadTask(with: url)
     downloadTask.resume()
   }
-  
   @IBAction func openPDF(_ sender: UIButton) {
     let pdfViewController = PDFViewController()
     pdfViewController.pdfURL = self.pdfURL

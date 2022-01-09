@@ -18,7 +18,6 @@ class ProfileVC: UIViewController {
   @IBOutlet weak var emailLabel: UILabel!
   @IBOutlet weak var PhoneLabel: UILabel!
   @IBOutlet weak var idLabel: UILabel!
-  
   var boos = [Boos]()
   var employee = [Employee]()
   let db = Firestore.firestore()

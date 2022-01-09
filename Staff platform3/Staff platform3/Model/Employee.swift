@@ -9,19 +9,20 @@ import Foundation
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 
-struct Employee: Codable {
-  //    @DocumentID var id : String? = ""
-  var id : String? = ""
-  let name:String?
-  let email:String?
-  let phone:String?
-  let idNumber:String?
-  let task:String?
-  let evaluation:String?
-  let resignation:String?
-  let holiday:String?
-  let active:String?
-  let user: DocumentReference?
-  let zoomURL:String?
-}
 
+  struct Employee: Codable , Identifiable {
+       
+      
+  @DocumentID var id : String?  = UUID().uuidString
+     let name:String?
+    let email:String?
+    let phone:String?
+    let idNumber:String?
+    let task:String?
+    let evaluation:String?
+    let resignation:String?
+    let holiday:String?
+    let active:String?
+    let user: DocumentReference?
+    let zoomURL:String?
+  }

@@ -11,6 +11,7 @@ import PDFKit
 
 class SettingVC: UIViewController{
   
+  
   @IBOutlet weak var imageLog: UIImageView!
   @IBOutlet weak var resignation: UIButton!
   @IBOutlet weak var updatePassBtn: UIButton!
@@ -36,9 +37,8 @@ class SettingVC: UIViewController{
   }
   
   
-  
-  @IBAction func signOutPressed(_ sender: UIBarButtonItem) { let firebaseAuth = Auth.auth()
-
+  @IBAction func signOutPressed(_ sender: UIBarButtonItem) {   let firebaseAuth = Auth.auth()
+    
     do {
       try firebaseAuth.signOut()
         let vc = HomeVC.instantiate()
