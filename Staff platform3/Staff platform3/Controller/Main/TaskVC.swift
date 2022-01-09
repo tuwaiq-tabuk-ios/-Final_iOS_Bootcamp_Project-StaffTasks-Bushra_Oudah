@@ -6,6 +6,7 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
   
   @IBOutlet weak var tabelView: UITableView!
   
+  
   let db = Firestore.firestore()
   var employee = [Employee]()
   
@@ -14,6 +15,7 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     tabelView.dataSource = self
     tabelView.delegate = self
     readTask()
+    overrideUserInterfaceStyle = .light
     
   }
   
@@ -39,7 +41,15 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
           let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
           let task = document.data()?["task"] as? String
           print(task)
-          let emp  = Employee(name:nil, email: nil, phone: nil, id: nil,task: task,evaluation: nil)
+          let emp  = Employee(name:nil,
+                              email: nil,
+                              phone: nil,
+                              idNumber: nil,
+                              task: task,
+                              evaluation: nil,
+                              resignation: nil,
+                              holiday: nil,active: nil,user:nil,zoomURL: nil)
+          
           self.employee.append(emp)
           print("Document data")
           self.tabelView.reloadData()

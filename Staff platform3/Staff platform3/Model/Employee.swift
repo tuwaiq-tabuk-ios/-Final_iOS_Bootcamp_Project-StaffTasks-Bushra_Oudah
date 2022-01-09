@@ -6,11 +6,23 @@
 //
 
 import Foundation
-struct Employee {
-    let name:String?
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+
+
+  struct Employee: Codable , Identifiable {
+       
+      
+  @DocumentID var id : String?  = UUID().uuidString
+     let name:String?
     let email:String?
     let phone:String?
-    let id:String?
+    let idNumber:String?
     let task:String?
     let evaluation:String?
-}
+    let resignation:String?
+    let holiday:String?
+    let active:String?
+    let user: DocumentReference?
+    let zoomURL:String?
+  }

@@ -12,41 +12,56 @@ import FirebaseFirestore
 class SignUpEmpVC: UIViewController {
   
   @IBOutlet weak var imageLogo: UIImageView!
-  @IBOutlet weak var nameTF: MainTF!
-  @IBOutlet weak var emaiTF: MainTF!
-  @IBOutlet weak var mobileTF: MainTF!
-  @IBOutlet weak var idTF: MainTF!
-  @IBOutlet weak var passwordTF: MainTF!
+  @IBOutlet weak var nameTF: CMTextField!
+  @IBOutlet weak var emaiTF: CMTextField!
+  @IBOutlet weak var mobileTF: CMTextField!
+  @IBOutlet weak var idTF: CMTextField!
+  @IBOutlet weak var passwordTF: CMTextField!
   @IBOutlet weak var SignUpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
   
   let db = Firestore.firestore()
+//  let id = result?.user.uid
   var employee:Employee!
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    conerReduis()
-    shadow()
+    SignUpBtn.cmShadow()
+    LoginBtn.cmShadow()
+    overrideUserInterfaceStyle = .light
   }
   
   
   @IBAction func signUpPressed(_ sender: UIButton) {
-    Auth.auth().createUser(withEmail: emaiTF.text!, password: passwordTF.text!) { authResult, error in
+    Auth.auth().createUser(withEmail: emaiTF.text!,
+                           password: passwordTF.text!) { authResult, error in
+      
       if error == nil{
         self.employee = Employee.init(name: self.nameTF.text!,
                                       email: self.emaiTF.text!,
                                       phone: self.mobileTF.text!,
-                                      id: self.idTF.text!,
-                                      task: "",evaluation: "")
+                                      idNumber: self.idTF.text!,
+                                      task: nil ,evaluation: nil, resignation: nil,
+                                      holiday: nil,active: nil,user:nil,zoomURL: nil)
         
         self.saveEmployee(self.employee)
         print("Sign Up Successful")
+ 
         let vc = EmployeeTBC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
         
+        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
       }else{
+
         print("Error\(error?.localizedDescription)")
+        
+        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
       }
     }
   }
@@ -57,7 +72,10 @@ class SignUpEmpVC: UIViewController {
       "name": employee.name,
       "email": employee.email,
       "phone": employee.phone,
-      "id":employee.id,
+      "idNumber":employee.idNumber,
+      "evaluation":employee.evaluation,
+      "task":employee.task,
+      "active":"active",
       "userType":UserType.EMPLOYEE.rawValue
     ]
     

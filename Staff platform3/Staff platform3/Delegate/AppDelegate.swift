@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import IQKeyboardManagerSwift
 
-@main
+ @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 

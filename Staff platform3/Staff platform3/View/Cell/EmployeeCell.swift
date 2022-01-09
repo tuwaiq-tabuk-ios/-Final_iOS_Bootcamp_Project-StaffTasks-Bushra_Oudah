@@ -10,13 +10,11 @@ import UIKit
 class EmployeeCell: UITableViewCell {
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var idLabel: UILabel!
-  @IBOutlet weak var rateBtn: UIButton!
-  @IBOutlet weak var taskBtn: UIButton!
+
   
   override func awakeFromNib() {
       super.awakeFromNib()
-      conerReduis()
-      shadow()
+ 
   }
 
 

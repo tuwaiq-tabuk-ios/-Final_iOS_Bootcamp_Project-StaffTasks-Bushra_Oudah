@@ -17,6 +17,7 @@ class EvaluationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     tabelView.dataSource = self
     tabelView.delegate = self
     readEvaluation()
+    overrideUserInterfaceStyle = .light
     
   }
   
@@ -45,7 +46,16 @@ class EvaluationVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
           let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
           let evaluation = document.data()?["evaluation"] as? String
           print(evaluation)
-          let emp  = Employee(name:nil, email: nil, phone: nil, id: nil,task: nil,evaluation: evaluation)
+          let emp  = Employee(name:nil,
+                              email: nil,
+                              phone: nil,
+                              idNumber: nil,
+                              task: nil,
+                              evaluation: evaluation,
+                              resignation: nil,
+                              holiday: nil,active: nil,user:nil,zoomURL: nil)
+          
+          
           self.employee.append(emp)
           print("Document data")
           self.tabelView.reloadData()
