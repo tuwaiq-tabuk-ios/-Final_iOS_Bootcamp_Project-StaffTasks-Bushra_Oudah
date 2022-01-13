@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class SignUpEmpVC: UIViewController {
   
+  // MARK: - IBOoutLet
+  
   @IBOutlet weak var imageLogo: UIImageView!
   @IBOutlet weak var nameTF: CMTextField!
   @IBOutlet weak var emaiTF: CMTextField!
@@ -21,15 +23,16 @@ class SignUpEmpVC: UIViewController {
   @IBOutlet weak var LoginBtn: UIButton!
   
   let db = Firestore.firestore()
-//  let id = result?.user.uid
   var employee:Employee!
   
-  
   override func viewDidLoad() {
+    
     super.viewDidLoad()
     SignUpBtn.cmShadow()
     LoginBtn.cmShadow()
     overrideUserInterfaceStyle = .light
+    self.dismissKeyboard()
+    
   }
   
   
@@ -52,15 +55,14 @@ class SignUpEmpVC: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
         let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         
       }else{
-
         print("Error\(error?.localizedDescription)")
         
         let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
       }
     }
@@ -78,7 +80,6 @@ class SignUpEmpVC: UIViewController {
       "active":"active",
       "userType":UserType.EMPLOYEE.rawValue
     ]
-    
     db.collection("Users").document(Auth.auth().currentUser!.uid).setData(docData) { err in
       if let err = err {
         print("Error writing document: \(err)")
@@ -88,6 +89,8 @@ class SignUpEmpVC: UIViewController {
     }
   }
 }
+
+
 extension SignUpEmpVC :Storyboarded{
     static var storyboardName: StoryboardName = .main
 }

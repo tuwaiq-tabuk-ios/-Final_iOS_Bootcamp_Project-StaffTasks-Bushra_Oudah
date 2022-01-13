@@ -8,9 +8,11 @@
 import UIKit
 import Firebase
 import PDFKit
+import FirebaseFirestore
+import WebKit
+class SettingVC: UIViewController,WKUIDelegate{
+  var webView: WKWebView!
 
-class SettingVC: UIViewController{
-  
   
   @IBOutlet weak var imageLog: UIImageView!
   @IBOutlet weak var resignation: UIButton!
@@ -22,6 +24,7 @@ class SettingVC: UIViewController{
   @IBOutlet weak var holiday: UIButton!
   var pdfView = PDFView()
   var pdfURL: URL!
+  let db = Firestore.firestore()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,6 +64,45 @@ class SettingVC: UIViewController{
             downloadTask.resume()
   }
   
+  
+  @IBAction func zoomURL(_ sender: UIButton) {
+    if  let user = Auth.auth().currentUser?.uid{
+      let docRef = db.collection("Users").document(user)
+      docRef.getDocument { [self] (document, error) in
+        if let document = document, document.exists {
+          if let error = error {
+            print(error.localizedDescription)
+            return
+          }
+          let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+          let zoomURL = document.data()?["zoomURL"] as? String
+          
+              let webConfiguration = WKWebViewConfiguration()
+          self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
+          self.webView.uiDelegate = self
+              view = webView
+              let myURL = URL(string:zoomURL!)
+          let myRequest = URLRequest(url: myURL!)
+              webView.load(myRequest)
+          print(zoomURL)
+        
+          let emp  = Employee(name:nil,
+                              email: nil,
+                              phone: nil,
+                              idNumber: nil,
+                              task: nil,
+                              evaluation: nil,
+                              resignation: nil,
+                              holiday: nil,active: nil,user:nil,zoomURL: zoomURL)
+          
+          print("Document data")
+    
+        } else {
+          print("Document does not exist\(error?.localizedDescription)")
+        }
+      }
+    }
+  }
 }
 extension SettingVC:  URLSessionDownloadDelegate {
   func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {

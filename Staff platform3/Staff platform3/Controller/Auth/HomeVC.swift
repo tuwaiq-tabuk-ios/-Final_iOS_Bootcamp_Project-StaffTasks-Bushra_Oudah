@@ -10,14 +10,20 @@ import UIKit
 
 class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
   
+  // MARK: - IBOoutLet
   
   @IBOutlet weak var pageControl: UIPageControl!
   @IBOutlet weak var collectionView: UICollectionView!
-  @IBOutlet weak var bossButton: UIButton!
-  @IBOutlet weak var employeeButton: UIButton!
+  @IBOutlet weak var signUpBossBtn: UIButton!
+  @IBOutlet weak var signUpEmpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
   
-  var arrPic = [UIImage(named: "pic1"),UIImage(named: "pic2"),UIImage(named: "pic3"),UIImage(named: "pic4"),UIImage(named: "pic5")]
+  var arrPic = [UIImage(named: "pic1"),
+                UIImage(named: "pic2"),
+                UIImage(named: "pic3"),
+                UIImage(named: "pic4"),
+                UIImage(named: "pic5")]
+  
   var timer: Timer?
   var currentCellIndex = 0
   
@@ -28,8 +34,8 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     collectionView.dataSource = self
     pageControl.numberOfPages = arrPic.count
     
-    bossButton.cmShadow()
-    employeeButton.cmShadow()
+    signUpBossBtn.cmShadow()
+    signUpEmpBtn.cmShadow()
     LoginBtn.cmShadow()
     startTimer()
     navigationItem.setHidesBackButton(true, animated: true)
@@ -59,7 +65,6 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "homeCell", for: indexPath) as! CollectionViewCell
-    
     cell.imageCollection.image = arrPic[indexPath.row]
     return cell
   }
@@ -73,9 +78,9 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return 0
   }
-  
 }
+
 extension HomeVC :Storyboarded{
-    static var storyboardName: StoryboardName = .main
+  static var storyboardName: StoryboardName = .main
 }
 

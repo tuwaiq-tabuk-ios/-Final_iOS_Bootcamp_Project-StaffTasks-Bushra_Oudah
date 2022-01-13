@@ -9,7 +9,11 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-class ProfileBoosVC: UIViewController {
+
+
+class ProfileBossVC: UIViewController {
+  
+  // MARK: - IBOoutLet
 
   @IBOutlet weak var imageLog: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
@@ -17,13 +21,16 @@ class ProfileBoosVC: UIViewController {
   @IBOutlet weak var PhoneLabel: UILabel!
   @IBOutlet weak var idLabel: UILabel!
   
-  var boos = [Boos]()
+  var boss = [Boss]()
   var employee = [Employee]()
   let db = Firestore.firestore()
   
+  
+  // View controller lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-//    conerReduis()
+
     readUsers()
     overrideUserInterfaceStyle = .light
   }
@@ -41,7 +48,7 @@ class ProfileBoosVC: UIViewController {
           self.PhoneLabel.text = document.data()?["phone"] as? String
           self.idLabel.text = document.data()?["id"] as? String
           
-          _ = Boos.init(name: self.nameLabel.text, phone: self.PhoneLabel.text!, email: self.emailLabel.text!, id: self.idLabel.text)
+          _ = Boss.init(name: self.nameLabel.text, phone: self.PhoneLabel.text!, email: self.emailLabel.text!, id: self.idLabel.text)
           
           print("Document data")
         } else {

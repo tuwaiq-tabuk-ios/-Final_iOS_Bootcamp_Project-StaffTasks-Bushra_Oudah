@@ -20,6 +20,7 @@ class EditePasswordVC: UIViewController  {
       super.viewDidLoad()
     overrideUserInterfaceStyle = .light
     sendBtn.cmShadow()
+    self.dismissKeyboard()
   }
   
   @IBAction func sendPressed(_ sender: Any) {

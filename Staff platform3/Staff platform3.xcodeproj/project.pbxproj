@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F3DE99F277AFC8900819A64 /* UIButton+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE99E277AFC8900819A64 /* UIButton+Ext.swift */; };
+		3F3DE99F277AFC8900819A64 /* UIButton+KeyboardExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE99E277AFC8900819A64 /* UIButton+KeyboardExt.swift */; };
 		3F3DE9A1277B279900819A64 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A0277B279900819A64 /* Alert.swift */; };
 		3F3DE9A3277B27C700819A64 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A2277B27C700819A64 /* Validation.swift */; };
 		3F3DE9A5277DA94A00819A64 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */; };
@@ -16,8 +16,8 @@
 		3F96015827779D380050C35C /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015727779D380050C35C /* EmployeeCell.swift */; };
 		3F96015A27779D9C0050C35C /* EvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015927779D9C0050C35C /* EvaluationCell.swift */; };
 		3F9ABE772785AE4900A7A390 /* EmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */; };
-		3F9ABE792786159600A7A390 /* SettingBoosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE782786159600A7A390 /* SettingBoosVC.swift */; };
-		3F9ABE7B2786E37E00A7A390 /* ProfileBoosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */; };
+		3F9ABE792786159600A7A390 /* SettingBossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE782786159600A7A390 /* SettingBossVC.swift */; };
+		3F9ABE7B2786E37E00A7A390 /* ProfileBossVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9ABE7A2786E37E00A7A390 /* ProfileBossVC.swift */; };
 		3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D3277507EF00220BE1 /* CMTextField.swift */; };
 		3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D527750A0900220BE1 /* Boss.swift */; };
 		3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6D727750A3600220BE1 /* Employee.swift */; };
@@ -26,7 +26,7 @@
 		3FA1C6E22777799900220BE1 /* EvaluationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E12777799900220BE1 /* EvaluationVC.swift */; };
 		3FA1C6E4277779B000220BE1 /* TaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E3277779B000220BE1 /* TaskVC.swift */; };
 		3FA1C6E627777A7300220BE1 /* EmployeeTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E527777A7300220BE1 /* EmployeeTBC.swift */; };
-		3FA1C6E827777A8C00220BE1 /* BoosTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E727777A8C00220BE1 /* BoosTBC.swift */; };
+		3FA1C6E827777A8C00220BE1 /* BossTBC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA1C6E727777A8C00220BE1 /* BossTBC.swift */; };
 		3FA2C9F727748EC6000B5F4D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2C9F627748EC6000B5F4D /* ProfileVC.swift */; };
 		3FA2C9F92774914E000B5F4D /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2C9F82774914E000B5F4D /* SettingVC.swift */; };
 		3FA2C9FB27749702000B5F4D /* EditePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA2C9FA27749702000B5F4D /* EditePasswordVC.swift */; };
@@ -50,7 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F3DE99E277AFC8900819A64 /* UIButton+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Ext.swift"; sourceTree = "<group>"; };
+		3F3DE99E277AFC8900819A64 /* UIButton+KeyboardExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+KeyboardExt.swift"; sourceTree = "<group>"; };
 		3F3DE9A0277B279900819A64 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		3F3DE9A2277B27C700819A64 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
@@ -59,8 +59,8 @@
 		3F96015727779D380050C35C /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		3F96015927779D9C0050C35C /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
 		3F9ABE762785AE4900A7A390 /* EmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeVC.swift; sourceTree = "<group>"; };
-		3F9ABE782786159600A7A390 /* SettingBoosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBoosVC.swift; sourceTree = "<group>"; };
-		3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBoosVC.swift; sourceTree = "<group>"; };
+		3F9ABE782786159600A7A390 /* SettingBossVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBossVC.swift; sourceTree = "<group>"; };
+		3F9ABE7A2786E37E00A7A390 /* ProfileBossVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileBossVC.swift; sourceTree = "<group>"; };
 		3FA1C6D3277507EF00220BE1 /* CMTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMTextField.swift; sourceTree = "<group>"; };
 		3FA1C6D527750A0900220BE1 /* Boss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boss.swift; sourceTree = "<group>"; };
 		3FA1C6D727750A3600220BE1 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		3FA1C6E12777799900220BE1 /* EvaluationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationVC.swift; sourceTree = "<group>"; };
 		3FA1C6E3277779B000220BE1 /* TaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskVC.swift; sourceTree = "<group>"; };
 		3FA1C6E527777A7300220BE1 /* EmployeeTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTBC.swift; sourceTree = "<group>"; };
-		3FA1C6E727777A8C00220BE1 /* BoosTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoosTBC.swift; sourceTree = "<group>"; };
+		3FA1C6E727777A8C00220BE1 /* BossTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BossTBC.swift; sourceTree = "<group>"; };
 		3FA2C9F627748EC6000B5F4D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		3FA2C9F82774914E000B5F4D /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		3FA2C9FA27749702000B5F4D /* EditePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditePasswordVC.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				3FA1C6E527777A7300220BE1 /* EmployeeTBC.swift */,
-				3FA1C6E727777A8C00220BE1 /* BoosTBC.swift */,
+				3FA1C6E727777A8C00220BE1 /* BossTBC.swift */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -186,8 +186,8 @@
 				3FA2C9FE27749AB6000B5F4D /* EditeMobileVC.swift */,
 				3FF3B074277DCE8600237893 /* ResignationVC.swift */,
 				3FBE00092782E4AA00D7C4CE /* HolidayVC.swift */,
-				3F9ABE782786159600A7A390 /* SettingBoosVC.swift */,
-				3F9ABE7A2786E37E00A7A390 /* ProfileBoosVC.swift */,
+				3F9ABE782786159600A7A390 /* SettingBossVC.swift */,
+				3F9ABE7A2786E37E00A7A390 /* ProfileBossVC.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -214,12 +214,12 @@
 			isa = PBXGroup;
 			children = (
 				3F3DE99D277AFC3E00819A64 /* Common */,
+				3F39163E2779F97800EBB4C2 /* Custom_Views */,
 				3FDCE8EB2772519D00150B8C /* Delegate */,
 				3FDCE8E12772495100150B8C /* View */,
 				3FDCE8E02772492D00150B8C /* Model */,
 				3FDCE8DF2772490E00150B8C /* Controller */,
 				3FBE00052781B69000D7C4CE /* Assets.xcassets */,
-				3F39163E2779F97800EBB4C2 /* Custom_Views */,
 				3FDCE8D927723EF100150B8C /* Info.plist */,
 				3FA1C6DB27750E7D00220BE1 /* GoogleService-Info.plist */,
 			);
@@ -261,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				3FB4A8CD2778D48E000BD303 /* Storyboarded.swift */,
-				3F3DE99E277AFC8900819A64 /* UIButton+Ext.swift */,
+				3F3DE99E277AFC8900819A64 /* UIButton+KeyboardExt.swift */,
 				3F3DE9A0277B279900819A64 /* Alert.swift */,
 				3F3DE9A2277B27C700819A64 /* Validation.swift */,
 				3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */,
@@ -411,7 +411,7 @@
 				3F96015827779D380050C35C /* EmployeeCell.swift in Sources */,
 				3FF3B075277DCE8600237893 /* ResignationVC.swift in Sources */,
 				3FBE00082782DB5200D7C4CE /* ViewController.swift in Sources */,
-				3F9ABE7B2786E37E00A7A390 /* ProfileBoosVC.swift in Sources */,
+				3F9ABE7B2786E37E00A7A390 /* ProfileBossVC.swift in Sources */,
 				3FA1C6D627750A0900220BE1 /* Boss.swift in Sources */,
 				3FA1C6D4277507EF00220BE1 /* CMTextField.swift in Sources */,
 				3FDCE8E82772510D00150B8C /* SignUpEmpVC.swift in Sources */,
@@ -423,19 +423,19 @@
 				3FDCE8CC27723EEE00150B8C /* AppDelegate.swift in Sources */,
 				3FBE000A2782E4AA00D7C4CE /* HolidayVC.swift in Sources */,
 				3F7BF8202784ED50004B7E0C /* DetailsEmployeeVC.swift in Sources */,
-				3FA1C6E827777A8C00220BE1 /* BoosTBC.swift in Sources */,
+				3FA1C6E827777A8C00220BE1 /* BossTBC.swift in Sources */,
 				3FA1C6DA27750A5700220BE1 /* UserType.swift in Sources */,
 				3FA1C6E4277779B000220BE1 /* TaskVC.swift in Sources */,
 				3F3DE9A5277DA94A00819A64 /* PDFViewController.swift in Sources */,
 				3F3DE9A1277B279900819A64 /* Alert.swift in Sources */,
-				3F3DE99F277AFC8900819A64 /* UIButton+Ext.swift in Sources */,
+				3F3DE99F277AFC8900819A64 /* UIButton+KeyboardExt.swift in Sources */,
 				3FB4A8D02778E359000BD303 /* TaskCell.swift in Sources */,
 				3FA2C9F92774914E000B5F4D /* SettingVC.swift in Sources */,
 				3FA2C9FB27749702000B5F4D /* EditePasswordVC.swift in Sources */,
 				3FDCE8CE27723EEE00150B8C /* SceneDelegate.swift in Sources */,
 				3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */,
 				3FF3B07727818F7000237893 /* CollectionViewCell.swift in Sources */,
-				3F9ABE792786159600A7A390 /* SettingBoosVC.swift in Sources */,
+				3F9ABE792786159600A7A390 /* SettingBossVC.swift in Sources */,
 				3FA2C9FF27749AB6000B5F4D /* EditeMobileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

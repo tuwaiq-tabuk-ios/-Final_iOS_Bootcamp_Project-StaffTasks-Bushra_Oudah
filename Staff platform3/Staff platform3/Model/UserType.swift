@@ -7,6 +7,6 @@
 import Foundation
 
 enum UserType:String {
-    case BOOS = "Boos"
+    case BOSS = "Boos"
     case EMPLOYEE = "Employee"
 }

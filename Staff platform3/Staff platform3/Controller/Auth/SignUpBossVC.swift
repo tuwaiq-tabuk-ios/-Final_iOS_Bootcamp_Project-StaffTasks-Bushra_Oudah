@@ -11,42 +11,43 @@ import FirebaseFirestore
 
 class SignUpBossVC: UIViewController {
   
+  // MARK: - IBOoutLet
+  
   @IBOutlet weak var imageLogo: UIImageView!
   @IBOutlet weak var nameTF: CMTextField!
   @IBOutlet weak var emailTF: CMTextField!
   @IBOutlet weak var mobileTF: CMTextField!
   @IBOutlet weak var idTF: CMTextField!
   @IBOutlet weak var passwordTF: CMTextField!
-  
-  @IBOutlet weak var SignUp: UIButton!
-  
-  @IBOutlet weak var Login: UIButton!
+  @IBOutlet weak var signUpBtn: UIButton!
+  @IBOutlet weak var loginBtn: UIButton!
   
   let db = Firestore.firestore()
-  var boos:Boos!
+  var boss:Boss!
   
   override func viewDidLoad() {
     super.viewDidLoad()
     overrideUserInterfaceStyle = .light
-    SignUp.cmShadow()
-    Login.cmShadow()
+    signUpBtn.cmShadow()
+    loginBtn.cmShadow()
+    self.dismissKeyboard()
   }
   
   
   @IBAction func signUpPressed(_ sender: UIButton) {
     Auth.auth().createUser(withEmail: emailTF.text!,
-                           password: passwordTF.text!) { authResult, error in
+                           password: passwordTF.text!) { authDataResult, error in
       if error == nil{
-        self.boos = Boos.init(name: self.nameTF.text!,
+        self.boss = Boss.init(name: self.nameTF.text!,
                               phone: self.mobileTF.text!,
                               email: self.emailTF.text!,
                               id: self.idTF.text!)
         
-        self.saveBoos(self.boos)
+        self.saveBoss(self.boss)
         print("Sign Up Successful")
         
-  
-        let vc = BoosTBC.instantiate()
+        
+        let vc = BossTBC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
         let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
@@ -63,13 +64,13 @@ class SignUpBossVC: UIViewController {
   }
   
   
-  func saveBoos(_ boos: Boos) {
+  func saveBoss(_ boss: Boss) {
     let docData: [String: Any] = [
-      "name": boos.name,
-      "email": boos.email,
-      "phone": boos.phone,
-      "id": boos.id,
-      "userType": UserType.BOOS.rawValue
+      "name": boss.name,
+      "email": boss.email,
+      "phone": boss.phone,
+      "id": boss.id,
+      "userType": UserType.BOSS.rawValue
     ]
     
     db.collection("Users").document(Auth.auth().currentUser!.uid).setData(docData) { err in

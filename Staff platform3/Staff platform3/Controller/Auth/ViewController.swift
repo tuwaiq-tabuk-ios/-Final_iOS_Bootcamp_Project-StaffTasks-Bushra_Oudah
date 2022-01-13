@@ -8,16 +8,15 @@
 import UIKit
 
 class ViewController: UINavigationController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-    
+    // Do any additional setup after loading the view.
+  }
 }
+
+
 extension ViewController :Storyboarded{
-    static var storyboardName: StoryboardName = .main
+  static var storyboardName: StoryboardName = .main
 }

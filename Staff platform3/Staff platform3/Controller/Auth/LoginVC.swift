@@ -10,6 +10,8 @@ import Firebase
 
 class LoginVC: UIViewController {
   
+  // MARK: - IBOoutLet
+  
   @IBOutlet weak var imageLogo: UIImageView!
   @IBOutlet weak var emailTF: CMTextField!
   @IBOutlet weak var passwordTF: CMTextField!
@@ -19,7 +21,7 @@ class LoginVC: UIViewController {
   
   let db = Firestore.firestore()
 
-var boos:Boos!
+var boos:Boss!
 var employee:Employee!
 
 override func viewDidLoad() {
@@ -28,6 +30,7 @@ override func viewDidLoad() {
   login.cmShadow()
   signUp.cmShadow()
   overrideUserInterfaceStyle = .light
+  self.dismissKeyboard()
 }
 
 
@@ -55,8 +58,8 @@ override func viewDidLoad() {
                             let userType = UserType(rawValue: type)
                             
                             switch userType {
-                            case .BOOS:
-                              let vc = BoosTBC.instantiate()
+                            case .BOSS:
+                              let vc = BossTBC.instantiate()
                               self.navigationController?.pushViewController(vc, animated: true)
                             case .EMPLOYEE:
                                 let vc = EmployeeTBC.instantiate()
@@ -77,13 +80,13 @@ override func viewDidLoad() {
             
           }
 
-    }else{
-      print("error\(error?.localizedDescription)")
-      
-      let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-      alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-      self.present(alert, animated: true, completion: nil)
     }
+  }else{
+    print("error\(error?.localizedDescription)")
+    
+    let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
 }
 }
