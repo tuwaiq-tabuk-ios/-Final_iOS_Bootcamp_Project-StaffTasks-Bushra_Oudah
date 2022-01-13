@@ -12,7 +12,7 @@ import FirebaseFirestoreSwift
 import FirebaseFirestore
 import WebKit
 
-class DetailsEmployeeVC: UIViewController, WKUIDelegate{
+class DetailsEmployeeVC: UIViewController, WKUIDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
   let db = Firestore.firestore()
   var employees = [Employee]()
   var employee: Employee?
@@ -21,7 +21,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
   var pdfView = PDFView()
   var pdfURL: URL!
   var webView: WKWebView!
-  
+ 
   @IBOutlet weak var imageCleact: UIImageView!
   
   @IBOutlet weak var zoom: UIButton!
@@ -33,6 +33,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
   
   @IBOutlet var active: UIButton!
   
+  @IBOutlet weak var activeSwitch: UISwitch!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -41,8 +42,35 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     dowlondPayroll.cmShadow()
     addTasks.cmShadow()
     addEvaluation.cmShadow()
+    active.cmShadow()
     nameLabel.text = employee?.name
   }
+//  @objc func presentPicker(){
+//    let picker = UIImagePickerController()
+//    picker.sourceType = .photoLibrary
+//    picker.allowsEditing = true
+//    picker.delegate = self
+//    self.present(picker,animated: true,completion: nil)
+//  }
+//  func setupImage(){
+//    imageCleact.contentMode = .scaleAspectFit
+//    imageCleact.layer.borderWidth = 1
+//    imageCleact.layer.masksToBounds = false
+//    imageCleact.layer.borderColor = UIColor.black.cgColor
+//    imageCleact.layer.cornerRadius = imageCleact.frame.height/2
+//    imageCleact.clipsToBounds = true
+//    imageCleact.isUserInteractionEnabled = true
+//    let tab = UITapGestureRecognizer(target: self, action: #selector(presentPicker))
+//    imageCleact.addGestureRecognizer(tab)
+//
+//
+//  }
+//  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+////    if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+//
+//    }
+        
+//  }
   
   
   @IBAction func addTask(_ sender: Any) {
@@ -87,7 +115,9 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
       }   }))
     
     self.present(alert, animated: true, completion: nil)
+   
   }
+  
   @IBAction func addEvalution(_ sender: Any) {
     let alert = UIAlertController(title: "Evalution",
                                   message: "Enter Evalution ",
@@ -123,46 +153,47 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
     
   }
   @IBAction func active(_ sender: Any) {
-    
-    let bookRef = self.db.collection("Users").document((self.employee?.id)!)
-    
-    bookRef.updateData([
-      "active":"Un active "
-    ])
-    { err in
-      if let err = err {
-        print("Error updating document: \(err)")
-      } else {
-        print("Document successfully updated")
-        
-      }
+    if activeSwitch.isOn{
+      let bookRef = self.db.collection("Users").document((self.employee?.id)!)
+      
+      bookRef.updateData([
+        "active":"active "
+      ])
+      { err in
+        if let err = err {
+          print("Error updating document: \(err)")
+        } else {
+          print("Document successfully updated")
+         
+        }
 
+      }
+      activeSwitch.setOn(true, animated: true)
+    }else {
+      let bookRef = self.db.collection("Users").document((self.employee?.id)!)
+      
+      bookRef.updateData([
+        "active":"Un active "
+      ])
+      { err in
+        if let err = err {
+          print("Error updating document: \(err)")
+        } else {
+          print("Document successfully updated")
+          
+        }
+
+      }
+      activeSwitch.setOn(false, animated: true)
     }
-  
+    let alert = UIAlertController(title: "succeeded", message: "The Employee has been Un active ", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
 }
-  @IBAction func addCerticate(_ sender: UIButton) {
-    setupImage()
-  }
-  
-  func setupImage() {
-    imageCleact.contentMode = .scaleAspectFit
-    imageCleact.layer.borderWidth = 1
-    imageCleact.layer.masksToBounds = false
-    imageCleact.layer.borderColor = UIColor.black.cgColor
-    imageCleact.layer.cornerRadius = imageCleact.frame.height/2
-    imageCleact.clipsToBounds = true
-    imageCleact.isUserInteractionEnabled = true
-    let tabGesture = UITapGestureRecognizer(target: self, action: #selector(presntPicker))
-    imageCleact.addGestureRecognizer(tabGesture)
-  }
-  
-  @objc func presntPicker() {
-    let picker = UIImagePickerController()
-    picker.sourceType = .photoLibrary
-    picker.allowsEditing = true
-    picker.delegate = self
-    self.present(picker, animated: true, completion: nil)
-  }
+//  @IBAction func addCerticate(_ sender: UIButton) {
+//
+//  }
+
   
   @IBAction func downloadPDF(_ sender: Any) {
     guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
@@ -184,13 +215,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
   }
   
   @IBAction func zoom(_ sender: Any) {
-    let webConfiguration = WKWebViewConfiguration()
-    webView = WKWebView(frame: .zero, configuration: webConfiguration)
-    webView.uiDelegate = self
-    view = webView
-    let myURL = URL(string:"https://zoom.us")
-    let myRequest = URLRequest(url: myURL!)
-    webView.load(myRequest)
+
     
     let alert = UIAlertController(title: "Zoom",
                                   message: "Enter URL Zoom ",
@@ -225,21 +250,25 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate{
   }
   
 }
-extension DetailsEmployeeVC:UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-  
-  private func imagePickerController(_ picker: UIImagePickerController,
-                                     didFinishPickingMediaWithInfo info: [String : Any]) {
-    picker.dismiss(animated: true, completion: nil)
-    guard let imageSelected = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-      return
-    }
-    image = imageSelected
-    imageCleact.image = imageSelected
-  }
-  func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-    picker.dismiss(animated: true, completion: nil)
-  }
-}
+
+//extension DetailsEmployeeVC:UIImagePickerControllerDelegate{
+//
+//  private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+//          if let imageSelected = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+//              image = imageSelected
+//            imageCleact.image = imageSelected
+//        }
+//        if let imageOriginal = info[UIImagePickerController.InfoKey.editedImage] as? UIImage{
+//              image = imageOriginal
+//            imageCleact.image = imageOriginal
+//        }
+//
+//          picker.dismiss(animated: true, completion: nil)
+//    }
+//      func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+//          picker.dismiss(animated: true, completion: nil)
+//      }
+//}
 
 
 

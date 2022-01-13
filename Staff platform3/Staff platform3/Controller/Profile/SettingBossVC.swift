@@ -8,13 +8,15 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class SettingBoosVC: UIViewController {
+class SettingBossVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      
       overrideUserInterfaceStyle = .light
         // Do any additional setup after loading the view.
     }
+  
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
     let firebaseAuth = Auth.auth()
 

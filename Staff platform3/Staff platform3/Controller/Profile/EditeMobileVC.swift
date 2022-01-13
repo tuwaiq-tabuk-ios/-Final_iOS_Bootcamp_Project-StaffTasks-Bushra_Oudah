@@ -16,7 +16,7 @@ class EditeMobileVC : UIViewController {
   @IBOutlet weak var newMobileTF: CMTextField!
   @IBOutlet weak var saveBtn: UIButton!
   
-  var boos:Boos!
+  var boss:Boss!
   var employee:Employee!
   let db = Firestore.firestore()
   
@@ -24,6 +24,7 @@ class EditeMobileVC : UIViewController {
       super.viewDidLoad()
     overrideUserInterfaceStyle = .light
     saveBtn.cmShadow()
+    self.dismissKeyboard()
   }
 
   @IBAction func updateDataPressed(_ sender: UIButton) {

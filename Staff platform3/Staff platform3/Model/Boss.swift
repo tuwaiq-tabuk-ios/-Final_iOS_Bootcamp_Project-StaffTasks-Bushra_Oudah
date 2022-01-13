@@ -12,10 +12,10 @@ import UIKit
 
 
 
-struct Boos:Codable {
+struct Boss:Codable {
   @DocumentID var documentID : String? = ""
-    let name:String?
-    let phone:String?
+    var name:String?
+    var phone:String?
     let email:String?
     let id:String?
 //  let user:DocumentReference

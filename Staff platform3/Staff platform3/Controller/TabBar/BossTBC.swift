@@ -1,6 +1,6 @@
 import UIKit
 
-class BoosTBC: UITabBarController {
+class BossTBC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -11,6 +11,6 @@ class BoosTBC: UITabBarController {
 
 
 }
-extension BoosTBC:Storyboarded{
+extension BossTBC:Storyboarded{
     static var storyboardName: StoryboardName = .main
 }

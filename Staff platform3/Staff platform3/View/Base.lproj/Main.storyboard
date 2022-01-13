@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqt-cG-UdL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rpr-qy-TI5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -132,10 +132,10 @@
                     <navigationItem key="navigationItem" id="Eip-Dq-khY"/>
                     <connections>
                         <outlet property="LoginBtn" destination="Hrk-HM-5w4" id="tpX-dj-5ZK"/>
-                        <outlet property="bossButton" destination="YAR-PJ-3gU" id="OJP-YJ-jEW"/>
                         <outlet property="collectionView" destination="nIF-Zt-AkA" id="pYC-Dx-6Vp"/>
-                        <outlet property="employeeButton" destination="lYC-mN-UB7" id="ror-a2-fpF"/>
                         <outlet property="pageControl" destination="hbz-6p-42q" id="uUq-EQ-Z2Q"/>
+                        <outlet property="signUpBossBtn" destination="YAR-PJ-3gU" id="OJP-YJ-jEW"/>
+                        <outlet property="signUpEmpBtn" destination="lYC-mN-UB7" id="ror-a2-fpF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UeV-nY-3q3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,14 +291,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="UPn-e3-dhh"/>
                     <connections>
-                        <outlet property="Login" destination="ekJ-13-VBx" id="Y27-s0-dLb"/>
-                        <outlet property="SignUp" destination="sgh-vH-Lkx" id="j4n-8H-iKm"/>
                         <outlet property="emailTF" destination="FPP-vP-cbq" id="NdA-Su-bID"/>
                         <outlet property="idTF" destination="eMe-Sg-sWf" id="6s5-r2-02Y"/>
                         <outlet property="imageLogo" destination="niC-lD-jtG" id="ke2-u1-ldm"/>
+                        <outlet property="loginBtn" destination="ekJ-13-VBx" id="Y27-s0-dLb"/>
                         <outlet property="mobileTF" destination="z95-Om-vPI" id="vHH-mB-VgW"/>
                         <outlet property="nameTF" destination="DXj-ab-Mzi" id="3cw-KQ-Wgi"/>
                         <outlet property="passwordTF" destination="oUm-H4-nHL" id="t5M-E0-VQS"/>
+                        <outlet property="signUpBtn" destination="sgh-vH-Lkx" id="j4n-8H-iKm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xj8-Sf-mWG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -596,19 +596,19 @@
             </objects>
             <point key="canvasLocation" x="2024.6376811594205" y="316.07142857142856"/>
         </scene>
-        <!--BoosTBC-->
+        <!--BossTBC-->
         <scene sceneID="vWl-Y7-E6a">
             <objects>
-                <tabBarController storyboardIdentifier="BoosTBC" id="rpr-qy-TI5" customClass="BoosTBC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="BossTBC" id="rpr-qy-TI5" customClass="BossTBC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1j-HY-jpJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9Lm-Lj-WM2" kind="relationship" relationship="viewControllers" id="RlT-dC-aPs"/>
-                        <segue destination="gkt-fs-h43" kind="relationship" relationship="viewControllers" id="fhF-lT-h2d"/>
-                        <segue destination="XPM-fp-GXM" kind="relationship" relationship="viewControllers" id="z7C-lf-jfy"/>
+                        <segue destination="XPM-fp-GXM" kind="relationship" relationship="viewControllers" id="HRn-qI-K0q"/>
+                        <segue destination="9Lm-Lj-WM2" kind="relationship" relationship="viewControllers" id="BF0-oc-xmj"/>
+                        <segue destination="gkt-fs-h43" kind="relationship" relationship="viewControllers" id="6m6-sk-gz2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhz-WI-H4c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -620,6 +620,7 @@
             <objects>
                 <navigationController id="9Lm-Lj-WM2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Add" image="list.bullet.rectangle" catalog="system" id="6S4-H8-013"/>
+                    <navigationItem key="navigationItem" id="MmU-A6-yYA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Mh-CA-QpJ">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -632,11 +633,12 @@
             </objects>
             <point key="canvasLocation" x="2506" y="2347"/>
         </scene>
-        <!--Item-->
+        <!--Setting-->
         <scene sceneID="NAL-ja-1U2">
             <objects>
                 <navigationController id="gkt-fs-h43" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="1dw-s8-sOj"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="gearshape.fill" catalog="system" id="1dw-s8-sOj"/>
+                    <navigationItem key="navigationItem" id="6hK-8L-dZ3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bR6-Wl-f8X">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -649,11 +651,12 @@
             </objects>
             <point key="canvasLocation" x="3399" y="2364"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="8ak-3h-9Ke">
             <objects>
                 <navigationController id="XPM-fp-GXM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Aa5-3n-rKG"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="list.dash.header.rectangle" catalog="system" id="Aa5-3n-rKG"/>
+                    <navigationItem key="navigationItem" id="LbG-z4-Tbg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1RA-2d-LkU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -666,10 +669,10 @@
             </objects>
             <point key="canvasLocation" x="4270" y="2293"/>
         </scene>
-        <!--Profile BoosVC-->
+        <!--Profile BossVC-->
         <scene sceneID="42n-Cq-j5U">
             <objects>
-                <viewController id="gzo-HH-ZiP" customClass="ProfileBoosVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gzo-HH-ZiP" customClass="ProfileBossVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ovk-vp-h3K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1174,6 +1177,9 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
+                                                        <connections>
+                                                            <action selector="zoomURL:" destination="19V-k6-C4U" eventType="touchUpInside" id="CvJ-Px-JOz"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -1746,12 +1752,12 @@
                                                     <constraint firstAttribute="width" constant="100" id="PME-EJ-wwY"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q7-T1-CHx">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q7-T1-CHx">
                                                 <rect key="frame" x="40" y="180" width="334" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="Lye-9s-3tc"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1813,17 +1819,25 @@
                                                             <action selector="zoom:" destination="piV-xv-RTg" eventType="touchUpInside" id="JmB-RF-Gar"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-a4-R18" userLabel="Active">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-oH-umV">
                                                         <rect key="frame" x="0.0" y="350" width="334" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="jZO-oN-PXP"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="active"/>
-                                                        <connections>
-                                                            <action selector="active:" destination="piV-xv-RTg" eventType="touchUpInside" id="9NA-1B-dhj"/>
-                                                        </connections>
-                                                    </button>
+                                                        <subviews>
+                                                            <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgr-D1-znv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
+                                                            </switch>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-a4-R18" userLabel="Active">
+                                                                <rect key="frame" x="177" y="0.0" width="157" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="jZO-oN-PXP"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="active"/>
+                                                                <connections>
+                                                                    <action selector="active:" destination="piV-xv-RTg" eventType="touchUpInside" id="9NA-1B-dhj"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="tintColor" systemColor="systemBackgroundColor"/>
                                             </stackView>
@@ -1832,7 +1846,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title=""/>
                                                 <connections>
-                                                    <action selector="addCerticate:" destination="piV-xv-RTg" eventType="touchUpInside" id="PLf-MV-6tg"/>
+                                                    <action selector="addCerticate:" destination="piV-xv-RTg" eventType="touchUpInside" id="DFn-mP-Foj"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1875,9 +1889,11 @@
                     <navigationItem key="navigationItem" id="hLj-GU-6K1"/>
                     <connections>
                         <outlet property="active" destination="AC2-a4-R18" id="nFF-Wu-fim"/>
+                        <outlet property="activeSwitch" destination="Fgr-D1-znv" id="SeT-qz-3zp"/>
                         <outlet property="addEvaluation" destination="84f-dv-qmf" id="Cuk-w6-Jy2"/>
                         <outlet property="addTasks" destination="izk-vb-vDd" id="JeZ-6f-3Qi"/>
                         <outlet property="dowlondPayroll" destination="HQm-ym-oWy" id="hOL-q4-05L"/>
+                        <outlet property="imageCleact" destination="jHx-FC-MCF" id="zhW-gm-8oV"/>
                         <outlet property="nameLabel" destination="1Q7-T1-CHx" id="cyO-hW-aRp"/>
                         <outlet property="openPayroll" destination="ZyG-Cm-LGh" id="d8q-Xx-jAM"/>
                         <outlet property="zoom" destination="I7g-5f-RWt" id="Qpg-kd-8ME"/>
@@ -1906,21 +1922,21 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="220"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-i0-5Mm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-i0-5Mm">
                                                     <rect key="frame" x="60" y="31" width="294" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="xYx-JW-XDu"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-ZP-3DE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZu-ZP-3DE">
                                                     <rect key="frame" x="60" y="99.5" width="294" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="ToS-D3-UJ7"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1935,6 +1951,7 @@
                                                 <constraint firstItem="wZu-ZP-3DE" firstAttribute="top" secondItem="lBm-i0-5Mm" secondAttribute="bottom" constant="38.5" id="nvZ-ok-ANh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.97647058959999999" green="0.9529411793" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="idLabel" destination="wZu-ZP-3DE" id="vpO-OW-qaD"/>
                                             <outlet property="nameLabel" destination="lBm-i0-5Mm" id="HuG-dC-zHi"/>
@@ -1945,7 +1962,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0q-v8-I5S"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.97647058959999999" green="0.9529411793" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="K0q-v8-I5S" firstAttribute="bottom" secondItem="PBG-RV-4kz" secondAttribute="bottom" id="B6a-q4-ydT"/>
                             <constraint firstItem="PBG-RV-4kz" firstAttribute="leading" secondItem="K0q-v8-I5S" secondAttribute="leading" id="Ffe-6d-fwM"/>
@@ -1962,10 +1979,10 @@
             </objects>
             <point key="canvasLocation" x="2442" y="3042"/>
         </scene>
-        <!--Setting BoosVC-->
+        <!--Setting BossVC-->
         <scene sceneID="3Bd-2J-2px">
             <objects>
-                <viewController id="Hcp-Va-ttj" customClass="SettingBoosVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Hcp-Va-ttj" customClass="SettingBossVC" customModule="Staff_platform3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6xz-In-30x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1994,7 +2011,8 @@
                                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Edite Password">
-                                                            <color key="baseForegroundColor" name="AccentColor"/>
+                                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="baseForegroundColor" red="0.64705884459999996" green="0.73333334920000004" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="g8N-BV-Tr0" kind="show" id="YkL-OD-riq"/>
@@ -2008,6 +2026,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Edite Email">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="baseForegroundColor" red="0.64705884459999996" green="0.73333334920000004" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="DIW-WI-vhS" kind="show" id="G6q-5v-ZU7"/>
@@ -2021,6 +2040,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Edite Mobile">
                                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="baseForegroundColor" red="0.64705884459999996" green="0.73333334920000004" blue="0.71764707569999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <segue destination="qE9-vG-wTC" kind="show" id="DH1-vG-kp2"/>
@@ -2144,52 +2164,52 @@
     </scenes>
     <designables>
         <designable name="0GI-Pn-VcM">
-            <size key="intrinsicContentSize" width="90.5" height="34"/>
+            <size key="intrinsicContentSize" width="96.5" height="51"/>
         </designable>
         <designable name="A79-Mm-Tqb">
-            <size key="intrinsicContentSize" width="62.5" height="34"/>
+            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
         </designable>
         <designable name="DXj-ab-Mzi">
-            <size key="intrinsicContentSize" width="66" height="34"/>
+            <size key="intrinsicContentSize" width="58" height="48.5"/>
         </designable>
         <designable name="EJ7-j7-yGL">
-            <size key="intrinsicContentSize" width="207" height="34"/>
+            <size key="intrinsicContentSize" width="213" height="56"/>
         </designable>
         <designable name="FPP-vP-cbq">
-            <size key="intrinsicContentSize" width="62.5" height="34"/>
+            <size key="intrinsicContentSize" width="54.5" height="48.5"/>
         </designable>
         <designable name="MBV-x7-iiZ">
-            <size key="intrinsicContentSize" width="123" height="34"/>
+            <size key="intrinsicContentSize" width="129" height="52.5"/>
         </designable>
         <designable name="NS0-8g-CGN">
-            <size key="intrinsicContentSize" width="62.5" height="34"/>
+            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
         </designable>
         <designable name="PPQ-KH-yqb">
-            <size key="intrinsicContentSize" width="71.5" height="34"/>
+            <size key="intrinsicContentSize" width="77.5" height="52.5"/>
         </designable>
         <designable name="PV7-1C-oma">
-            <size key="intrinsicContentSize" width="90.5" height="34"/>
+            <size key="intrinsicContentSize" width="96.5" height="51"/>
         </designable>
         <designable name="SGa-ts-aYv">
-            <size key="intrinsicContentSize" width="104" height="34"/>
+            <size key="intrinsicContentSize" width="110" height="52.5"/>
         </designable>
         <designable name="V6r-Zr-wjE">
-            <size key="intrinsicContentSize" width="40.5" height="34"/>
+            <size key="intrinsicContentSize" width="46.5" height="52.5"/>
         </designable>
         <designable name="eMe-Sg-sWf">
-            <size key="intrinsicContentSize" width="40.5" height="34"/>
+            <size key="intrinsicContentSize" width="32.5" height="48.5"/>
         </designable>
         <designable name="oUm-H4-nHL">
-            <size key="intrinsicContentSize" width="90.5" height="34"/>
+            <size key="intrinsicContentSize" width="82.5" height="47"/>
         </designable>
         <designable name="wHC-s9-veI">
-            <size key="intrinsicContentSize" width="66" height="34"/>
+            <size key="intrinsicContentSize" width="72" height="52.5"/>
         </designable>
         <designable name="wcB-FX-ufZ">
-            <size key="intrinsicContentSize" width="112" height="34"/>
+            <size key="intrinsicContentSize" width="118" height="56"/>
         </designable>
         <designable name="z95-Om-vPI">
-            <size key="intrinsicContentSize" width="71.5" height="34"/>
+            <size key="intrinsicContentSize" width="63.5" height="48.5"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
@@ -2201,8 +2221,10 @@
     <resources>
         <image name="1" width="500" height="500"/>
         <image name="IMG_0600" width="736" height="1308"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal.decrease.circle.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="list.dash.header.rectangle" catalog="system" width="128" height="93"/>
         <image name="person.crop.rectangle.stack" catalog="system" width="128" height="122"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="undraw_envelope_re_f5j4" width="703.81719970703125" height="573.3704833984375"/>
@@ -2212,9 +2234,6 @@
         <image name="undraw_mobile_login_re_9ntv" width="708" height="555.867431640625"/>
         <image name="undraw_profile_pic_ic-5-t" width="698" height="698"/>
         <image name="wrench.and.screwdriver" catalog="system" width="128" height="120"/>
-        <namedColor name="AccentColor">
-            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

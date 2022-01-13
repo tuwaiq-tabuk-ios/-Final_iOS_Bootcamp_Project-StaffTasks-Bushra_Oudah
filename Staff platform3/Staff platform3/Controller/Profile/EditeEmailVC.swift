@@ -20,6 +20,7 @@ let db = Firestore.firestore()
     super.viewDidLoad()
     overrideUserInterfaceStyle = .light
     saveBotn.cmShadow()
+    self.dismissKeyboard()
   }
   
   @IBAction func updateDataPressed(_ sender: UIButton) {

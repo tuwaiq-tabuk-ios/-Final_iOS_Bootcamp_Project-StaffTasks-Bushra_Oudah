@@ -14,9 +14,9 @@ import FirebaseFirestore
        
       
   @DocumentID var id : String?  = UUID().uuidString
-     let name:String?
+     var name:String?
     let email:String?
-    let phone:String?
+    var phone:String?
     let idNumber:String?
     let task:String?
     let evaluation:String?

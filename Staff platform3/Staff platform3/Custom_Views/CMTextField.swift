@@ -150,11 +150,9 @@ final  class CMTextField: UITextField {
     
     
   }
-  //    override func layoutSubviews() {
-  //        self.updateView()
-  //
-  //    }
+ 
 }
+
 
 
 
