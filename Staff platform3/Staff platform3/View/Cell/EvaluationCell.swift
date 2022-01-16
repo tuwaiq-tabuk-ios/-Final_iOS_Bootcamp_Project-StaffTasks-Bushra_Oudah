@@ -2,7 +2,12 @@ import UIKit
 
 class EvaluationCell: UITableViewCell {
 
+  // MARK: - IBOutlets
+  
     @IBOutlet weak var evaluationLabel: UILabel!
+  
+  // MARK: - View controller lifecycle
+  
   override func awakeFromNib() {
       super.awakeFromNib()
       

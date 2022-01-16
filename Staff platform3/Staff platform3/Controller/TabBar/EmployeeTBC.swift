@@ -2,6 +2,8 @@ import UIKit
 
 class EmployeeTBC: UITabBarController {
   
+  // MARK: - View controller lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     overrideUserInterfaceStyle = .light
@@ -10,6 +12,7 @@ class EmployeeTBC: UITabBarController {
   
   
   
+  // MARK: - Navigation
   
 }
 extension EmployeeTBC:Storyboarded{

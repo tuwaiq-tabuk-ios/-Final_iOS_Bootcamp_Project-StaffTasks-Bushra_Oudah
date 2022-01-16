@@ -8,29 +8,29 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class SettingBossVC: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      overrideUserInterfaceStyle = .light
-        // Do any additional setup after loading the view.
-    }
+
+class SettingBossVC: UIViewController {
+  
+  // MARK: - View controller lifecycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    overrideUserInterfaceStyle = .light
+  }
+  
+  // MARK: - Methods
+  
   
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
     let firebaseAuth = Auth.auth()
-
     do {
       try firebaseAuth.signOut()
-        let vc = HomeVC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-        
-        print("signOut")
-        
+      let vc = HomeVC.instantiate()
+      self.navigationController?.pushViewController(vc, animated: true)
+      print("signOut")
     } catch let signOutError as NSError {
       print("Error signing out: %@", signOutError)
     }
-  
   }
-
 }

@@ -9,7 +9,6 @@ class ValidationError: Error {
   
   init(_ message: String) {
     self.message = message
-    
   }
 }
 

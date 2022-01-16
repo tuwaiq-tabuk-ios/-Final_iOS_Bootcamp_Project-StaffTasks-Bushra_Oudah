@@ -10,18 +10,28 @@ import Firebase
 import FirebaseFirestore
 
 class ResignationVC: UIViewController {
+  
+  // MARK: - Properties
+  
+  let db = Firestore.firestore()
+  var employee:Employee!
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var reasonResignationTF: CMTextField!
   @IBOutlet weak var sendBtn: UIButton!
   @IBOutlet weak var imagelogo: UIImageView!
   
-  let db = Firestore.firestore()
-  var employee:Employee!
+  // MARK: - View controller lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     overrideUserInterfaceStyle = .light
     sendBtn.cmShadow()
     self.dismissKeyboard()
   }
+  
+  // MARK: - Methods
   
   
   @IBAction func sendPressed(_ sender: UIButton) {
@@ -35,6 +45,9 @@ class ResignationVC: UIViewController {
         print("Document successfully updated")
       }
     }
+    let alert1 = UIAlertController(title: "succeeded", message: "The reason Resignation has been Sended", preferredStyle: UIAlertControllerStyle.alert)
+                alert1.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert1, animated: true, completion: nil)
   }
 }
 

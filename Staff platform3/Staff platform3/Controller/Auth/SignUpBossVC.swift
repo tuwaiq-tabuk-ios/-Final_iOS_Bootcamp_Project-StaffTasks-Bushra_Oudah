@@ -10,6 +10,10 @@ import Firebase
 import FirebaseFirestore
 
 class SignUpBossVC: UIViewController {
+  // MARK: - Properties
+  
+  let db = Firestore.firestore()
+  var boss:Boss!
   
   // MARK: - IBOoutLet
   
@@ -22,8 +26,8 @@ class SignUpBossVC: UIViewController {
   @IBOutlet weak var signUpBtn: UIButton!
   @IBOutlet weak var loginBtn: UIButton!
   
-  let db = Firestore.firestore()
-  var boss:Boss!
+ 
+  // MARK: - View controller lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,6 +37,7 @@ class SignUpBossVC: UIViewController {
     self.dismissKeyboard()
   }
   
+  // MARK: - Methods
   
   @IBAction func signUpPressed(_ sender: UIButton) {
     Auth.auth().createUser(withEmail: emailTF.text!,
@@ -42,20 +47,15 @@ class SignUpBossVC: UIViewController {
                               phone: self.mobileTF.text!,
                               email: self.emailTF.text!,
                               id: self.idTF.text!)
-        
         self.saveBoss(self.boss)
         print("Sign Up Successful")
-        
-        
         let vc = BossTBC.instantiate()
         self.navigationController?.pushViewController(vc, animated: true)
         let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        
       }else{
         print("Error \(error?.localizedDescription)")
-        
         let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
@@ -72,7 +72,6 @@ class SignUpBossVC: UIViewController {
       "id": boss.id,
       "userType": UserType.BOSS.rawValue
     ]
-    
     db.collection("Users").document(Auth.auth().currentUser!.uid).setData(docData) { err in
       if let err = err {
         print("Error writing document: \(err)")
@@ -82,6 +81,9 @@ class SignUpBossVC: UIViewController {
     }
   }
 }
+
+// MARK: - Navigation
+
 extension SignUpBossVC:Storyboarded{
   static var storyboardName: StoryboardName = .main
 }

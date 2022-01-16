@@ -11,29 +11,36 @@ import FirebaseFirestore
 
 class HolidayVC: UIViewController {
   
+  // MARK: - Properties
+  
+  let db = Firestore.firestore()
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var imageLogo: UIImageView!
   @IBOutlet weak var datePicker: UIDatePicker!
   @IBOutlet weak var displayDateLabel: UILabel!
   @IBOutlet weak var addDateBtn: UIButton!
   
-  let db = Firestore.firestore()
+  // MARK: - View controller lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     overrideUserInterfaceStyle = .light
     addDateBtn.cmShadow()
-    
-    // Do any additional setup after loading the view.
   }
+  
+  
+  // MARK: - Methods
   
   @IBAction func datePickerPressed(_ sender: Any) {
     let dateFormatter = DateFormatter()
-    
     dateFormatter.dateStyle = DateFormatter.Style.short
     //     dateFormatter.timeStyle = DateFormatter.Style.short
     let strDate = dateFormatter.string(from: datePicker.date)
     displayDateLabel.text = strDate
   }
+  
   
   @IBAction func addDatePressed(_ sender: UIButton) {
     let washingtonRef = db.collection("Users").document(Auth.auth().currentUser!.uid)
@@ -46,7 +53,9 @@ class HolidayVC: UIViewController {
         print("Document successfully updated")
       }
     }
+    let alert1 = UIAlertController(title: "succeeded", message: "The Date has been sent", preferredStyle: UIAlertControllerStyle.alert)
+                alert1.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert1, animated: true, completion: nil)
   }
-  
 }
 

@@ -1,6 +1,8 @@
 import UIKit
 
 class BossTBC: UITabBarController {
+  
+  // MARK: - View controller lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,7 +11,8 @@ class BossTBC: UITabBarController {
     }
     
 
-
+  // MARK: - Navigation
+  
 }
 extension BossTBC:Storyboarded{
     static var storyboardName: StoryboardName = .main

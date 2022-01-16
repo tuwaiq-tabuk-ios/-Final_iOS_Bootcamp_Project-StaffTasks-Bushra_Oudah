@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rpr-qy-TI5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqt-cG-UdL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -585,11 +585,11 @@
                     <navigationItem key="navigationItem" id="YW3-m8-8k2"/>
                     <connections>
                         <outlet property="emailTF" destination="A79-Mm-Tqb" id="8HS-3o-kGa"/>
-                        <outlet property="forgetPassword" destination="lmU-Ah-94V" id="HaJ-cb-cg7"/>
+                        <outlet property="forgetPasswordBton" destination="lmU-Ah-94V" id="HaJ-cb-cg7"/>
                         <outlet property="imageLogo" destination="5rz-nx-eQH" id="yOD-Ts-CG7"/>
-                        <outlet property="login" destination="S6w-aO-Yr3" id="brQ-50-eup"/>
+                        <outlet property="loginBotn" destination="S6w-aO-Yr3" id="brQ-50-eup"/>
                         <outlet property="passwordTF" destination="0GI-Pn-VcM" id="Ydx-8g-IJq"/>
-                        <outlet property="signUp" destination="ASl-oM-29E" id="5dc-yQ-ivm"/>
+                        <outlet property="signUpBotn" destination="ASl-oM-29E" id="5dc-yQ-ivm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0wC-wM-AVi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1175,6 +1175,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="spv-NO-FpC"/>
                                                         </constraints>
+                                                        <color key="tintColor" systemColor="systemBackgroundColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Zoom"/>
                                                         <connections>
@@ -1223,12 +1224,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="holiday" destination="w0h-5H-V6o" id="6Nw-Co-ohA"/>
+                        <outlet property="ZoomBtn" destination="Djh-OJ-AGe" id="zz0-aS-2Kd"/>
+                        <outlet property="holidayBtn" destination="w0h-5H-V6o" id="6Nw-Co-ohA"/>
                         <outlet property="imageLog" destination="75f-AT-QMm" id="D98-mA-orF"/>
-                        <outlet property="payroll" destination="F9S-fK-tcE" id="84R-u1-KI6"/>
-                        <outlet property="resignation" destination="Bd8-dg-55Z" id="fVv-gE-aDZ"/>
-                        <outlet property="updateEmail" destination="8dc-O3-7zK" id="T0d-f0-qcu"/>
-                        <outlet property="updateMobile" destination="yrh-6E-3AU" id="8QI-pb-prb"/>
+                        <outlet property="payrollBtn" destination="F9S-fK-tcE" id="84R-u1-KI6"/>
+                        <outlet property="resignationBtn" destination="Bd8-dg-55Z" id="fVv-gE-aDZ"/>
+                        <outlet property="updateEmailBtn" destination="8dc-O3-7zK" id="T0d-f0-qcu"/>
+                        <outlet property="updateMobileBtn" destination="yrh-6E-3AU" id="8QI-pb-prb"/>
                         <outlet property="updatePassBtn" destination="RkT-qd-FhL" id="hvK-dL-7mY"/>
                     </connections>
                 </viewController>
@@ -1646,7 +1648,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-h7-k9j">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jX-zA-Hri">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
@@ -1762,7 +1764,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="UUA-ub-gGp">
-                                                <rect key="frame" x="40" y="260" width="334" height="400"/>
+                                                <rect key="frame" x="40" y="260" width="334" height="381"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="izk-vb-vDd">
                                                         <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
@@ -1820,22 +1822,20 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-oH-umV">
-                                                        <rect key="frame" x="0.0" y="350" width="334" height="50"/>
+                                                        <rect key="frame" x="0.0" y="350" width="334" height="31"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fgr-D1-znv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
-                                                            </switch>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AC2-a4-R18" userLabel="Active">
-                                                                <rect key="frame" x="177" y="0.0" width="157" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="50" id="jZO-oN-PXP"/>
-                                                                </constraints>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="active"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="159" height="31"/>
                                                                 <connections>
-                                                                    <action selector="active:" destination="piV-xv-RTg" eventType="touchUpInside" id="9NA-1B-dhj"/>
+                                                                    <action selector="activeSwitchPressed:" destination="piV-xv-RTg" eventType="valueChanged" id="lOb-Wl-aUJ"/>
                                                                 </connections>
-                                                            </button>
+                                                            </switch>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active - In Active" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tN5-hA-8pi">
+                                                                <rect key="frame" x="177" y="0.0" width="157" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -1888,15 +1888,15 @@
                     </view>
                     <navigationItem key="navigationItem" id="hLj-GU-6K1"/>
                     <connections>
-                        <outlet property="active" destination="AC2-a4-R18" id="nFF-Wu-fim"/>
+                        <outlet property="activeInactiveLabel" destination="tN5-hA-8pi" id="Hlp-re-fA5"/>
                         <outlet property="activeSwitch" destination="Fgr-D1-znv" id="SeT-qz-3zp"/>
-                        <outlet property="addEvaluation" destination="84f-dv-qmf" id="Cuk-w6-Jy2"/>
-                        <outlet property="addTasks" destination="izk-vb-vDd" id="JeZ-6f-3Qi"/>
-                        <outlet property="dowlondPayroll" destination="HQm-ym-oWy" id="hOL-q4-05L"/>
+                        <outlet property="addEvaluationBtn" destination="84f-dv-qmf" id="3uI-3a-eyN"/>
+                        <outlet property="addTasksBtn" destination="izk-vb-vDd" id="ljT-b5-Xgc"/>
+                        <outlet property="dowlondPayrollBtn" destination="HQm-ym-oWy" id="yrK-8x-c6o"/>
                         <outlet property="imageCleact" destination="jHx-FC-MCF" id="zhW-gm-8oV"/>
                         <outlet property="nameLabel" destination="1Q7-T1-CHx" id="cyO-hW-aRp"/>
-                        <outlet property="openPayroll" destination="ZyG-Cm-LGh" id="d8q-Xx-jAM"/>
-                        <outlet property="zoom" destination="I7g-5f-RWt" id="Qpg-kd-8ME"/>
+                        <outlet property="openPayrollBtn" destination="ZyG-Cm-LGh" id="Qcv-ct-V4c"/>
+                        <outlet property="zoomBtn" destination="I7g-5f-RWt" id="OsF-zP-r7N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5z-Sz-uJj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1955,7 +1955,7 @@
                                         <connections>
                                             <outlet property="idLabel" destination="wZu-ZP-3DE" id="vpO-OW-qaD"/>
                                             <outlet property="nameLabel" destination="lBm-i0-5Mm" id="HuG-dC-zHi"/>
-                                            <segue destination="piV-xv-RTg" kind="showDetail" identifier="DetailsSegue" id="0nu-Uf-H00"/>
+                                            <segue destination="piV-xv-RTg" kind="showDetail" identifier="go_to_DetailsEmployeeVC" id="0nu-Uf-H00"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2164,59 +2164,59 @@
     </scenes>
     <designables>
         <designable name="0GI-Pn-VcM">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="A79-Mm-Tqb">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="DXj-ab-Mzi">
-            <size key="intrinsicContentSize" width="58" height="48.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="EJ7-j7-yGL">
-            <size key="intrinsicContentSize" width="213" height="56"/>
+            <size key="intrinsicContentSize" width="207" height="34"/>
         </designable>
         <designable name="FPP-vP-cbq">
-            <size key="intrinsicContentSize" width="54.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="MBV-x7-iiZ">
-            <size key="intrinsicContentSize" width="129" height="52.5"/>
+            <size key="intrinsicContentSize" width="123" height="34"/>
         </designable>
         <designable name="NS0-8g-CGN">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="PPQ-KH-yqb">
-            <size key="intrinsicContentSize" width="77.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
         <designable name="PV7-1C-oma">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="SGa-ts-aYv">
-            <size key="intrinsicContentSize" width="110" height="52.5"/>
+            <size key="intrinsicContentSize" width="104" height="34"/>
         </designable>
         <designable name="V6r-Zr-wjE">
-            <size key="intrinsicContentSize" width="46.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="eMe-Sg-sWf">
-            <size key="intrinsicContentSize" width="32.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="oUm-H4-nHL">
-            <size key="intrinsicContentSize" width="82.5" height="47"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="wHC-s9-veI">
-            <size key="intrinsicContentSize" width="72" height="52.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="wcB-FX-ufZ">
-            <size key="intrinsicContentSize" width="118" height="56"/>
+            <size key="intrinsicContentSize" width="112" height="34"/>
         </designable>
         <designable name="z95-Om-vPI">
-            <size key="intrinsicContentSize" width="63.5" height="48.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="YkL-OD-riq"/>
-        <segue reference="DH1-vG-kp2"/>
-        <segue reference="G6q-5v-ZU7"/>
-        <segue reference="KiR-4f-JKi"/>
+        <segue reference="8ku-hM-TPD"/>
+        <segue reference="nXy-Hy-fOM"/>
+        <segue reference="elM-3B-Z9g"/>
+        <segue reference="SAf-ry-amb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="500" height="500"/>

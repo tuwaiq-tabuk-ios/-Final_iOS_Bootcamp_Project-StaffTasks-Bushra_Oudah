@@ -8,9 +8,13 @@
 import UIKit
 
 class EmployeeCell: UITableViewCell {
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var idLabel: UILabel!
 
+  // MARK: - View controller lifecycle
   
   override func awakeFromNib() {
       super.awakeFromNib()

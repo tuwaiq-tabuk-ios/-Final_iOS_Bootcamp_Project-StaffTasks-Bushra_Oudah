@@ -13,21 +13,29 @@ import FirebaseFirestore
 
 class ProfileVC: UIViewController {
   
+  // MARK: - Properties
+  
+  var boos = [Boss]()
+  var employee = [Employee]()
+  let db = Firestore.firestore()
+  
+  // MARK: - IBOutlets
+  
   @IBOutlet weak var imageLog: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var emailLabel: UILabel!
   @IBOutlet weak var PhoneLabel: UILabel!
   @IBOutlet weak var idLabel: UILabel!
-  var boos = [Boss]()
-  var employee = [Employee]()
-  let db = Firestore.firestore()
+  
+  // MARK: - View controller lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-//    conerReduis()
     readUsers()
     overrideUserInterfaceStyle = .light
   }
+  
+  // MARK: - Methods
   
   
   func readUsers(){
