@@ -2,14 +2,19 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class TaskVC: UIViewController {
+  
+  // MARK: - Properties
+  let db = Firestore.firestore()
+  var employee = [Employee]()
+  
+  // MARK: - IBOutlets
   
   @IBOutlet weak var tabelView: UITableView!
   
   
-  let db = Firestore.firestore()
-  var employee = [Employee]()
-  
+  // MARK: - View controller lifecycle
+ 
   override func viewDidLoad() {
     super.viewDidLoad()
     tabelView.dataSource = self
@@ -19,15 +24,7 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
   }
   
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return employee.count
-    
-  }
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskCell
-    cell.nameLabel.text = employee[indexPath.row].task
-    return cell
-  }
+  // MARK: - Methods
   
   func readTask(){
     if  let user = Auth.auth().currentUser?.uid{
@@ -59,7 +56,26 @@ class TaskVC: UIViewController,UITableViewDelegate,UITableViewDataSource {
       }
     }
   }
+}
+  // MARK: - Table data source
+  extension TaskVC: UITableViewDataSource {
   
   
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return employee.count
+  }
+  }
   
+  // MARK: - Navigation
+
+  extension TaskVC: UITableViewDelegate {
+    
+    
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskCell
+    cell.nameLabel.text = employee[indexPath.row].task
+    return cell
+  }
+  
+
 }

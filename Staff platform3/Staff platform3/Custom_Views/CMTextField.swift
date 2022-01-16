@@ -82,11 +82,12 @@ final  class CMTextField: UITextField {
     
     if isPasswordTF {
       rightViewMode = UITextField.ViewMode.always
-      
       let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
       imageView.contentMode = .scaleAspectFit
       imageView.image = UIImage(systemName: "eye.fill")
+      
       // Note: In order for your image to use the tint color, you have to select the image in the Assets.xcassets and change the "Render As" property to "Template Image".
+      
       imageView.tintColor = color
       rightView = imageView
       let tap = UITapGestureRecognizer(target: self, action: #selector(self.updateTextFieldType(_:)))
@@ -98,12 +99,12 @@ final  class CMTextField: UITextField {
     }
     
     let rightPadding:CGFloat = isPasswordTF ? 35:5
-    
     padding = UIEdgeInsets(top: 0,
                            left: textPadding+leftPadding ,
                            bottom: 0,
                            right: rightPadding )
   }
+  
   
   @objc func updateTextFieldType(_ sender: UITapGestureRecognizer? = nil) {
     // handling code
@@ -113,7 +114,6 @@ final  class CMTextField: UITextField {
         sender.image = UIImage(systemName: "eye.fill")
       }else{
         sender.image = UIImage(systemName: "eye.slash")
-        
       }
     }
   }
@@ -122,30 +122,25 @@ final  class CMTextField: UITextField {
   func updateView() {
     if let image = leftImage {
       leftViewMode = UITextField.ViewMode.always
-      
       let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
       imageView.contentMode = .scaleAspectFit
       imageView.image = image
       // Note: In order for your image to use the tint color, you have to select the image in the Assets.xcassets and change the "Render As" property to "Template Image".
       imageView.tintColor = color
       leftView = imageView
-      
     } else {
       leftViewMode = UITextField.ViewMode.never
       leftView = nil
-      
     }
     let rightPadding:CGFloat = isPasswordTF ? 35:5
     padding = UIEdgeInsets(top: 0, left: textPadding+leftPadding , bottom: 0, right: rightPadding )
     self.borderStyle = .none
     
     // Placeholder text color
+    
     attributedPlaceholder = NSAttributedString(string: placeholder != nil ?  placeholder! : "", attributes:[NSAttributedString.Key.foregroundColor: color])
-    
-    
     layer.borderWidth = 1
     layer.borderColor = borderColor != nil ? borderColor?.cgColor :  color.cgColor
-    
     layer.cornerRadius = bounds.height/4
     
     

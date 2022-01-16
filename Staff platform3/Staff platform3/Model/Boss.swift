@@ -13,12 +13,15 @@ import UIKit
 
 
 struct Boss:Codable {
+  
+  // MARK: - Properties
+  
   @DocumentID var documentID : String? = ""
     var name:String?
     var phone:String?
     let email:String?
     let id:String?
-//  let user:DocumentReference
+
     
 }
 

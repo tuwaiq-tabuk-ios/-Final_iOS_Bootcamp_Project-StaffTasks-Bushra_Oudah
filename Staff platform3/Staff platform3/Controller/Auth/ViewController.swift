@@ -9,13 +9,15 @@ import UIKit
 
 class ViewController: UINavigationController {
   
+  // MARK: - View controller lifecycle
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    // Do any additional setup after loading the view.
   }
 }
 
+// MARK: - Navigation
 
 extension ViewController :Storyboarded{
   static var storyboardName: StoryboardName = .main

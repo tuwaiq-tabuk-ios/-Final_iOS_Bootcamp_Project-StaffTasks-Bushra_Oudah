@@ -8,7 +8,18 @@
 import UIKit
 
 
-class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataSource , UICollectionViewDelegateFlowLayout {
+class HomeVC: UIViewController {
+  
+  // MARK: - Properties
+  
+  var arrPic = [UIImage(named: "pic1"),
+                UIImage(named: "pic2"),
+                UIImage(named: "pic3"),
+                UIImage(named: "pic4"),
+                UIImage(named: "pic5")]
+  var timer: Timer?
+  var currentCellIndex = 0
+  
   
   // MARK: - IBOoutLet
   
@@ -18,14 +29,8 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
   @IBOutlet weak var signUpEmpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
   
-  var arrPic = [UIImage(named: "pic1"),
-                UIImage(named: "pic2"),
-                UIImage(named: "pic3"),
-                UIImage(named: "pic4"),
-                UIImage(named: "pic5")]
   
-  var timer: Timer?
-  var currentCellIndex = 0
+  // MARK: - View controller lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -33,13 +38,14 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     collectionView.delegate = self
     collectionView.dataSource = self
     pageControl.numberOfPages = arrPic.count
-    
     signUpBossBtn.cmShadow()
     signUpEmpBtn.cmShadow()
     LoginBtn.cmShadow()
     startTimer()
     navigationItem.setHidesBackButton(true, animated: true)
   }
+  
+  // MARK: - Methods
   
   
   func startTimer(){
@@ -56,7 +62,10 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     collectionView.scrollToItem(at: IndexPath(item: currentCellIndex, section: 0), at: .centeredHorizontally, animated: true)
     pageControl.currentPage = currentCellIndex
   }
-  
+}
+// MARK: - Table data source
+
+extension HomeVC: UICollectionViewDataSource {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return arrPic.count
@@ -68,8 +77,11 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     cell.imageCollection.image = arrPic[indexPath.row]
     return cell
   }
-  
-  
+}
+
+// MARK: - Navigation
+
+extension HomeVC: UICollectionViewDelegateFlowLayout,UICollectionViewDelegate{
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
   }
@@ -79,6 +91,7 @@ class HomeVC: UIViewController , UICollectionViewDelegate, UICollectionViewDataS
     return 0
   }
 }
+
 
 extension HomeVC :Storyboarded{
   static var storyboardName: StoryboardName = .main

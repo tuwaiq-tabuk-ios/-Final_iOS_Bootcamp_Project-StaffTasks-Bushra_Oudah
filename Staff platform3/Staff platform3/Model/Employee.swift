@@ -11,8 +11,9 @@ import FirebaseFirestore
 
 
   struct Employee: Codable , Identifiable {
-       
-      
+    
+    // MARK: - Properties
+    
   @DocumentID var id : String?  = UUID().uuidString
      var name:String?
     let email:String?
