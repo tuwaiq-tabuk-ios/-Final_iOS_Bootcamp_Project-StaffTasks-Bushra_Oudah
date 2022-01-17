@@ -57,7 +57,7 @@ class EmployeeVC: UIViewController {
             print("doc.documentID\(doc.documentID)")
             let name = doc.data()["name"] as? String
             let id = doc.data()["idNumber"] as? String
-            let employees = Employee(id:doc.documentID, name: name, email: nil, phone: nil, idNumber: id,task: nil,evaluation: nil, resignation: nil, holiday: nil,active: nil,user:nil,zoomURL: nil)
+            let employees = Employee(id:doc.documentID, name: name, email: nil, phone: nil, idNumber: id,task: nil,evaluation: nil, resignation: nil, holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
             self.employee.append(employees)
             
           }

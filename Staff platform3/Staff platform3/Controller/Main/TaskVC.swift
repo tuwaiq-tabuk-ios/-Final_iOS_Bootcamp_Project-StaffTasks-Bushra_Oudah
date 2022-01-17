@@ -45,7 +45,7 @@ class TaskVC: UIViewController {
                               task: task,
                               evaluation: nil,
                               resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: nil)
+                              holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
           
           self.employee.append(emp)
           print("Document data")

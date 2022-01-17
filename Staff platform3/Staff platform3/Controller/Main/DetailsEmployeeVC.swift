@@ -26,7 +26,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate,UINavigationControllerDe
   
   // MARK: - IBOutlets
   
-  @IBOutlet weak var imageCleact: UIImageView!
+  @IBOutlet weak var logoImage: UIImageView!
   @IBOutlet weak var zoomBtn: UIButton!
   @IBOutlet weak var dowlondPayrollBtn: UIButton!
   @IBOutlet weak var openPayrollBtn: UIButton!
@@ -35,7 +35,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate,UINavigationControllerDe
   @IBOutlet weak var addTasksBtn: UIButton!
   @IBOutlet weak var activeInactiveLabel: UILabel!
   @IBOutlet weak var activeSwitch: UISwitch!
-  
+  @IBOutlet weak var resignationLabel: UILabel!
   
   // MARK: - View controller lifecycle
   
@@ -47,6 +47,7 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate,UINavigationControllerDe
     addTasksBtn.cmShadow()
     addEvaluationBtn.cmShadow()
     nameLabel.text = employee?.name
+    readHoliday()
   }
   
   
@@ -122,6 +123,30 @@ class DetailsEmployeeVC: UIViewController, WKUIDelegate,UINavigationControllerDe
     
     self.present(alert, animated: true, completion: nil)
   }
+  @IBAction func acceptHoliday(_ sender:Any){
+      let alert = UIAlertController(title: "تم قبول الاجازة ", message: "تم قبول الاجازة  ", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+  
+  }
+  @IBAction func rejectHoliday(_ sender: UIButton) {
+      let alert = UIAlertController(title: "تم رفض الاجازة ", message: "تم رفض الاجازة سوف يوصل اشعار الى الموظف برفض الاجازة ", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+  }
+  
+  func readHoliday(){
+      let resignation = self.db.collection("Users").document((self.employee?.id)!)
+      resignation.getDocument { (document, error) in
+          if let document = document, document.exists {
+              self.resignationLabel.text = document.data()?["resignation"] as? String
+              _ = Employee.init(id: nil, name: nil, email: nil, phone: nil, idNumber: nil, task: nil, evaluation: nil, resignation: self.resignationLabel.text, holiday: nil, active: nil, user: nil, zoomURL: nil, payroll: nil)
+              
+          }
+      }
+  }
+  
+
   
   
   @IBAction func activeSwitchPressed(_ sender: Any) {

@@ -18,6 +18,7 @@ class SettingVC: UIViewController,WKUIDelegate{
   var pdfView = PDFView()
   var pdfURL: URL!
   let db = Firestore.firestore()
+  let storage = Storage.storage()
   
   // MARK: - IBOutlets
   
@@ -60,12 +61,35 @@ class SettingVC: UIViewController,WKUIDelegate{
   
   
   @IBAction func payrollPressed(_ sender: UIButton) {
-    guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
-    let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
-    let downloadTask = urlSession.downloadTask(with: url)
-    downloadTask.resume()
-  }
-  
+//    if  let user = Auth.auth().currentUser?.uid{
+//          let docRef = db.collection("Users").document(user)
+//
+//          docRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                 let payroll = document.data()?["payroll"] as? String
+//              _ = Employee(name: nil,
+//                           email: nil,
+//                           phone: nil,
+//                           idNumber: nil,
+//                           task: nil,
+//                           evaluation: nil,
+//                           resignation: nil,
+//                           holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
+//
+//              print("Document data")
+                guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdfhttps://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
+
+                        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+
+                        let downloadTask = urlSession.downloadTask(with: url)
+                        downloadTask.resume()
+                
+//            } else {
+//              print("Document does not exist\(error?.localizedDescription)")
+//            }
+//          }
+//
+        }
   
   @IBAction func zoomURLPressed(_ sender: UIButton) {
     if  let user = Auth.auth().currentUser?.uid{
@@ -93,7 +117,7 @@ class SettingVC: UIViewController,WKUIDelegate{
                               task: nil,
                               evaluation: nil,
                               resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: zoomURL)
+                              holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
           print("Document data")
         }else{
           print("Document does not exist\(error?.localizedDescription)")
