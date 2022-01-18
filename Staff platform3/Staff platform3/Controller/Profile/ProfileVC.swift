@@ -57,7 +57,7 @@ class ProfileVC: UIViewController {
                        task: nil,
                        evaluation: nil,
                        resignation: nil,
-                       holiday: nil,active: nil,user:nil,zoomURL: nil)
+                       holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
           
           print("Document data")
         } else {

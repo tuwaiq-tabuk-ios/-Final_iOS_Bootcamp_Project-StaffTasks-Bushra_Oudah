@@ -50,7 +50,7 @@ class EvaluationVC: UIViewController{
                               task: nil,
                               evaluation: evaluation,
                               resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: nil)
+                              holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
           
           
           self.employee.append(emp)

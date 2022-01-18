@@ -25,8 +25,10 @@ class SignUpBossVC: UIViewController {
   @IBOutlet weak var passwordTF: CMTextField!
   @IBOutlet weak var signUpBtn: UIButton!
   @IBOutlet weak var loginBtn: UIButton!
+  @IBOutlet weak var confirmPassTF: CMTextField!
   
  
+  
   // MARK: - View controller lifecycle
   
   override func viewDidLoad() {
@@ -40,6 +42,7 @@ class SignUpBossVC: UIViewController {
   // MARK: - Methods
   
   @IBAction func signUpPressed(_ sender: UIButton) {
+    if passwordTF.text == confirmPassTF.text{
     Auth.auth().createUser(withEmail: emailTF.text!,
                            password: passwordTF.text!) { authDataResult, error in
       if error == nil{
@@ -61,7 +64,16 @@ class SignUpBossVC: UIViewController {
         self.present(alert, animated: true, completion: nil)
       }
     }
+      
+    }else{
+      let alert = UIAlertController(title: "Error",message: "Check Conforom Password", preferredStyle: UIAlertControllerStyle.alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+      print("Error")
+    }
+    
   }
+  
   
   
   func saveBoss(_ boss: Boss) {

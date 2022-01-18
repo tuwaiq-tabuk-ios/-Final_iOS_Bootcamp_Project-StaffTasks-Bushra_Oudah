@@ -27,6 +27,7 @@ class SignUpEmpVC: UIViewController {
   @IBOutlet weak var SignUpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
   
+  @IBOutlet weak var confirmPassTF: CMTextField!
   
   // MARK: - View controller lifecycle
   
@@ -42,31 +43,41 @@ class SignUpEmpVC: UIViewController {
   
   
   @IBAction func signUpPressed(_ sender: UIButton) {
-    Auth.auth().createUser(withEmail: emaiTF.text!,
-                           password: passwordTF.text!) { authResult, error in
-      if error == nil{
-        self.employee = Employee.init(name: self.nameTF.text!,
-                                      email: self.emaiTF.text!,
-                                      phone: self.mobileTF.text!,
-                                      idNumber: self.idTF.text!,
-                                      task: nil ,evaluation: nil, resignation: nil,
-                                      holiday: nil,active: nil,user:nil,zoomURL: nil)
-        self.saveEmployee(self.employee)
-        print("Sign Up Successful")
-        let vc = EmployeeTBC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-      }else{
-        print("Error\(error?.localizedDescription)")
-        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    if passwordTF.text == confirmPassTF.text{
+      Auth.auth().createUser(withEmail: emaiTF.text!,
+                             password: passwordTF.text!) { authResult, error in
+        if error == nil{
+          self.employee = Employee.init(name: self.nameTF.text!,
+                                        email: self.emaiTF.text!,
+                                        phone: self.mobileTF.text!,
+                                        idNumber: self.idTF.text!,
+                                        task: nil ,evaluation: nil, resignation: nil,
+                                        holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
+          self.saveEmployee(self.employee)
+          print("Sign Up Successful")
+          let vc = EmployeeTBC.instantiate()
+          self.navigationController?.pushViewController(vc, animated: true)
+          let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
+          alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+        }else{
+          print("Error\(error?.localizedDescription)")
+          let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
+          alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+          self.present(alert, animated: true, completion: nil)
+        }
       }
+      
+      
+    }else{
+      let alert = UIAlertController(title: "Error",message: "Check Conforom Password", preferredStyle: UIAlertControllerStyle.alert)
+      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+      self.present(alert, animated: true, completion: nil)
+      print("Error")
     }
+    
   }
-  
+
   
   func saveEmployee(_ employee: Employee) {
     let docData: [String: Any] = [

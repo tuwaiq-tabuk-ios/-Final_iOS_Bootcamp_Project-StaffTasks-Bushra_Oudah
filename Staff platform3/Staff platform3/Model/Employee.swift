@@ -15,15 +15,16 @@ import FirebaseFirestore
     // MARK: - Properties
     
   @DocumentID var id : String?  = UUID().uuidString
-     var name:String?
-    let email:String?
-    var phone:String?
-    let idNumber:String?
-    let task:String?
-    let evaluation:String?
-    let resignation:String?
-    let holiday:String?
-    let active:String?
+     var name: String?
+    let email: String?
+    var phone: String?
+    let idNumber: String?
+    let task: String?
+    let evaluation: String?
+    let resignation: String?
+    let holiday: String?
+    let active: String?
     let user: DocumentReference?
-    let zoomURL:String?
+    let zoomURL: String?
+    let payroll: String?
   }
