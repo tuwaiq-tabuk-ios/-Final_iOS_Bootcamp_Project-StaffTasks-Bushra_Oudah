@@ -45,9 +45,6 @@ class EditeMobileVC : UIViewController {
         print("Document successfully updated")
       }
     }
-    let alert1 = UIAlertController(title: "succeeded", message: "The Phone Number has been changed", preferredStyle: UIAlertControllerStyle.alert)
-                alert1.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert1, animated: true, completion: nil)
   }
 }
 

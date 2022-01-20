@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class SignUpEmpVC: UIViewController {
+class SignUpEmpVC: UIViewController,AlertsPresenting {
   
   // MARK: - Properties
   
@@ -20,7 +20,7 @@ class SignUpEmpVC: UIViewController {
   
   @IBOutlet weak var imageLogo: UIImageView!
   @IBOutlet weak var nameTF: CMTextField!
-  @IBOutlet weak var emaiTF: CMTextField!
+  @IBOutlet weak var emailTF: CMTextField!
   @IBOutlet weak var mobileTF: CMTextField!
   @IBOutlet weak var idTF: CMTextField!
   @IBOutlet weak var passwordTF: CMTextField!
@@ -39,44 +39,46 @@ class SignUpEmpVC: UIViewController {
     self.dismissKeyboard()
   }
   
-  // MARK: - Methods
+  // MARK: - IBAction
   
   
   @IBAction func signUpPressed(_ sender: UIButton) {
-    if passwordTF.text == confirmPassTF.text{
-      Auth.auth().createUser(withEmail: emaiTF.text!,
-                             password: passwordTF.text!) { authResult, error in
-        if error == nil{
-          self.employee = Employee.init(name: self.nameTF.text!,
-                                        email: self.emaiTF.text!,
-                                        phone: self.mobileTF.text!,
-                                        idNumber: self.idTF.text!,
-                                        task: nil ,evaluation: nil, resignation: nil,
-                                        holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
-          self.saveEmployee(self.employee)
-          print("Sign Up Successful")
-          let vc = EmployeeTBC.instantiate()
-          self.navigationController?.pushViewController(vc, animated: true)
-          let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
-        }else{
-          print("Error\(error?.localizedDescription)")
-          let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-          alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-          self.present(alert, animated: true, completion: nil)
+    do{
+      let email = try emailTF.validatedText(validationType: .email)
+//      let password = try passwordTF.validatedText(validationType: .password)
+      let password = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
+      let passConfirm = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
+//      let  passConfirm = try confirmPassTF.validatedText(validationType: .password)
+      if password == passConfirm{
+        Auth.auth().createUser(withEmail: email,
+                               password: password) { authResult, error in
+          if error == nil{
+            self.employee = Employee.init(name: self.nameTF.text!,
+                                          email: self.emailTF.text!,
+                                          phone: self.mobileTF.text!,
+                                          idNumber: self.idTF.text!,
+                                          task: nil ,evaluation: nil, resignation: nil,
+                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
+            self.saveEmployee(self.employee)
+            print("Sign Up Successful")
+            let vc = EmployeeTBC.instantiate()
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.showAlert(title: "Staff Task", message: "Welcome")
+          }else{
+            print("Error\(error?.localizedDescription)")
+            self.showAlert(title: "Error", message: error?.localizedDescription)
+          }
         }
+      }else{
+        self.showAlert(title: "Error", message: "Check Conforom Password")
       }
-      
-      
-    }else{
-      let alert = UIAlertController(title: "Error",message: "Check Conforom Password", preferredStyle: UIAlertControllerStyle.alert)
-      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-      self.present(alert, animated: true, completion: nil)
-      print("Error")
     }
-    
+    catch(let error){
+      self.showAlert(title: "Error", message: (error as! ValidationError).message )
+    }
   }
+  
+  // MARK: - Methods
 
   
   func saveEmployee(_ employee: Employee) {

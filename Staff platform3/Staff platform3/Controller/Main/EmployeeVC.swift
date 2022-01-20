@@ -125,7 +125,7 @@ extension EmployeeVC: UITableViewDelegate {
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == K.Storyboard.segueIdentifierDetailsEmployeeVC {
-      let destination =  segue.destination as! DetailsEmployeeVC
+      let destination =  segue.destination as! EmployeeDetailsVC
       if let row = tabelView.indexPathForSelectedRow?.row {
         destination.employee = employee[ row ]
         

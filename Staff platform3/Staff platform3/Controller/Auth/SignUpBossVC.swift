@@ -9,7 +9,8 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-class SignUpBossVC: UIViewController {
+class SignUpBossVC: UIViewController,AlertsPresenting {
+//  static let shared = FSUserManger()
   // MARK: - Properties
   
   let db = Firestore.firestore()
@@ -39,41 +40,46 @@ class SignUpBossVC: UIViewController {
     self.dismissKeyboard()
   }
   
-  // MARK: - Methods
+  // MARK: - IBAction
   
   @IBAction func signUpPressed(_ sender: UIButton) {
-    if passwordTF.text == confirmPassTF.text{
-    Auth.auth().createUser(withEmail: emailTF.text!,
-                           password: passwordTF.text!) { authDataResult, error in
-      if error == nil{
-        self.boss = Boss.init(name: self.nameTF.text!,
-                              phone: self.mobileTF.text!,
-                              email: self.emailTF.text!,
-                              id: self.idTF.text!)
-        self.saveBoss(self.boss)
-        print("Sign Up Successful")
-        let vc = BossTBC.instantiate()
-        self.navigationController?.pushViewController(vc, animated: true)
-        let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+    do{
+      let email = try emailTF.validatedText(validationType: .email)
+//      let password = try passwordTF.validatedText(validationType: .password)
+      let password = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
+//      let  passConfirm = try confirmPassTF.validatedText(validationType: .password)
+//
+      
+      let passConfirm = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
+      if password == passConfirm{
+      Auth.auth().createUser(withEmail: email,
+                             password: password) { authDataResult, error in
+        if error == nil{
+          self.boss = Boss.init(name: self.nameTF.text!,
+                                phone: self.mobileTF.text!,
+                                email: self.emailTF.text!,
+                                id: self.idTF.text!)
+          self.saveBoss(self.boss)
+          print("Sign Up Successful")
+          let vc = BossTBC.instantiate()
+          self.navigationController?.pushViewController(vc, animated: true)
+          self.showAlert(title: "Staff Task", message: "Welcome")
+        }else{
+          print("Error \(error?.localizedDescription)")
+          self.showAlert(title: "Error", message: error?.localizedDescription)
+        }
+      }
       }else{
-        print("Error \(error?.localizedDescription)")
-        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
+        self.showAlert(title: "Error", message: "Check Conforom Password")
+        print("Error")
       }
     }
-      
-    }else{
-      let alert = UIAlertController(title: "Error",message: "Check Conforom Password", preferredStyle: UIAlertControllerStyle.alert)
-      alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-      self.present(alert, animated: true, completion: nil)
-      print("Error")
+    catch(let error){
+      self.showAlert(title: "Error", message: (error as! ValidationError).message )
     }
-    
   }
   
+  // MARK: - Methods
   
   
   func saveBoss(_ boss: Boss) {

@@ -19,7 +19,7 @@ class SettingBossVC: UIViewController {
     overrideUserInterfaceStyle = .light
   }
   
-  // MARK: - Methods
+  // MARK: - IBAction
   
   
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) {
