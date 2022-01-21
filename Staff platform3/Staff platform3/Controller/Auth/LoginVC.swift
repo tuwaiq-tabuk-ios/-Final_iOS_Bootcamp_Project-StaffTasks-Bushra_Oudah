@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController,AlertsPresenting {
   
   // MARK: - Properties
   
@@ -39,52 +39,55 @@ class LoginVC: UIViewController {
   // MARK: - Methods
   
   @IBAction func loginPreesed(_ sender: UIButton) {
-    Auth.auth().signIn(withEmail: emailTF.text!,
-                       password: passwordTF.text!)
-    { [weak self] authResult, error in
-      guard let self = self else { return }
-      if error == nil{
-        print("Login Successful")
-        if let email  = Auth.auth().currentUser?.email {
-          self.db.collection("Users").whereField("email", isEqualTo: email).getDocuments(){ (querySnapshot, err) in
-            if let err = err {
-              print("Error getting documents: \(err)")
-            } else {
-              guard let documents = querySnapshot?.documents else {
-                print("Error fetching documents: \(error!)")
-                return
-              }
-              if let firstResult = documents.first{
-                if let type = firstResult.data()["userType"] as? String{
-                  let userType = UserType(rawValue: type)
-                  switch userType {
-                  case .BOSS:
-                    let vc = BossTBC.instantiate()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                  case .EMPLOYEE:
-                    let vc = EmployeeTBC.instantiate()
-                    self.navigationController?.pushViewController(vc, animated: true)
-                    let alert = UIAlertController(title: "succeeded", message: "User Login", preferredStyle: UIAlertControllerStyle.alert)
-                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                  case .none:
-                    fatalError("Unexptcted case")
+    do{
+      let email = try emailTF.validatedText(validationType: .requiredField(field: "email"))
+      let password = try passwordTF.validatedText(validationType: .requiredField(field: "password"))
+      Auth.auth().signIn(withEmail: email,
+                         password: password)
+      { [weak self] authResult, error in
+        guard let self = self else { return }
+        if error == nil{
+          print("Login Successful")
+          if let emailTF  = Auth.auth().currentUser?.email {
+            self.db.collection("Users").whereField("email", isEqualTo: emailTF).getDocuments(){ (querySnapshot, err) in
+              if let err = err {
+                print("Error getting documents: \(err)")
+              } else {
+                guard let documents = querySnapshot?.documents else {
+                  print("Error fetching documents: \(error!)")
+                  return
+                }
+                if let firstResult = documents.first{
+                  if let type = firstResult.data()["userType"] as? String{
+                    let userType = UserType(rawValue: type)
+                    switch userType {
+                    case .BOSS:
+                      let vc = BossTBC.instantiate()
+                      self.navigationController?.pushViewController(vc, animated: true)
+                      self.showAlert(title: "Login", message: "Login Success")
+                    case .EMPLOYEE:
+                      let vc = EmployeeTBC.instantiate()
+                      self.navigationController?.pushViewController(vc, animated: true)
+                      self.showAlert(title: "Login", message: "Login Success")
+                    case .none:
+                      fatalError("Unexptcted case")
+                    }
                   }
                 }
               }
             }
           }
+        }else{
+          print("error\(error?.localizedDescription)")
+          self.showAlert(title: "Error", message: error?.localizedDescription)
         }
-      }else{
-        print("error\(error?.localizedDescription)")
-        let alert = UIAlertController(title: "Error",message: error?.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
       }
+    }catch(let error){
+      self.showAlert(title: "Error", message: (error as!  ValidationError).message)
     }
+    
   }
 }
-
 // MARK: - Navigation
 
 

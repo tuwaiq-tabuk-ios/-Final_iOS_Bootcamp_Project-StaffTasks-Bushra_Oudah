@@ -53,9 +53,6 @@ class HolidayVC: UIViewController {
         print("Document successfully updated")
       }
     }
-    let alert1 = UIAlertController(title: "succeeded", message: "The Date has been sent", preferredStyle: UIAlertControllerStyle.alert)
-                alert1.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert1, animated: true, completion: nil)
   }
 }
 

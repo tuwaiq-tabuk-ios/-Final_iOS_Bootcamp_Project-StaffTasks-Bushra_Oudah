@@ -37,8 +37,5 @@ class EditePasswordVC: UIViewController  {
         print("Error \(error?.localizedDescription)")
       }
     }
-    let alert1 = UIAlertController(title: "succeeded", message: "The password has been changed", preferredStyle: UIAlertControllerStyle.alert)
-                alert1.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert1, animated: true, completion: nil)
   }
 }

@@ -10,7 +10,7 @@ import Firebase
 import PDFKit
 import FirebaseFirestore
 import WebKit
-class SettingVC: UIViewController,WKUIDelegate{
+class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
   
   // MARK: - Properties
   
@@ -23,7 +23,6 @@ class SettingVC: UIViewController,WKUIDelegate{
   // MARK: - IBOutlets
   
   @IBOutlet weak var imageLog: UIImageView!
-  @IBOutlet weak var resignationBtn: UIButton!
   @IBOutlet weak var updatePassBtn: UIButton!
   @IBOutlet weak var updateEmailBtn: UIButton!
   @IBOutlet weak var updateMobileBtn: UIButton!
@@ -36,7 +35,7 @@ class SettingVC: UIViewController,WKUIDelegate{
   override func viewDidLoad() {
     super.viewDidLoad()
     overrideUserInterfaceStyle = .light
-    resignationBtn.cmShadow()
+   
     updatePassBtn.cmShadow()
     updateEmailBtn.cmShadow()
     updateMobileBtn.cmShadow()
@@ -45,7 +44,7 @@ class SettingVC: UIViewController,WKUIDelegate{
     ZoomBtn.cmShadow()
     
   }
-  // MARK: - Methods
+  // MARK: - IBAction
   
   
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) {   let firebaseAuth = Auth.auth()
@@ -61,34 +60,35 @@ class SettingVC: UIViewController,WKUIDelegate{
   
   
   @IBAction func payrollPressed(_ sender: UIButton) {
-//    if  let user = Auth.auth().currentUser?.uid{
-//          let docRef = db.collection("Users").document(user)
-//
-//          docRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                 let payroll = document.data()?["payroll"] as? String
-//              _ = Employee(name: nil,
-//                           email: nil,
-//                           phone: nil,
-//                           idNumber: nil,
-//                           task: nil,
-//                           evaluation: nil,
-//                           resignation: nil,
-//                           holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
-//
-//              print("Document data")
-                guard let url = URL(string: "https://www.tutorialspoint.com/swift/swift_tutorial.pdfhttps://www.tutorialspoint.com/swift/swift_tutorial.pdf") else { return }
+    if  let user = Auth.auth().currentUser?.uid{
+              let docRef = db.collection("Users").document(user)
+              docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                                let payroll = document.data()?["payroll"] as? String
+                             _ = Employee(name: nil,
+                                          email: nil,
+                                          phone: nil,
+                                          idNumber: nil,
+                                          task: nil,
+                                          evaluation: nil,
+                                          resignation: nil,
+                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
+               
+                             print("Document data")
+                guard let url = URL(string:payroll ?? "\(self.showAlert(title: "Error", message: "There is no salary for the employee "))")
+                  else { return }
+                            let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
 
-                        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
+                            let downloadTask = urlSession.downloadTask(with: url)
+                            downloadTask.resume()
+                  self.showAlert(title: "DO", message: "The Payroll PDF Downloaded")
+                } else {
+                  print("Document does not exist\(error?.localizedDescription)")
+                }
+              }
 
-                        let downloadTask = urlSession.downloadTask(with: url)
-                        downloadTask.resume()
-                
-//            } else {
-//              print("Document does not exist\(error?.localizedDescription)")
-//            }
-//          }
-//
+            }
+
         }
   
   @IBAction func zoomURLPressed(_ sender: UIButton) {
@@ -106,30 +106,32 @@ class SettingVC: UIViewController,WKUIDelegate{
           self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
           self.webView.uiDelegate = self
           view = webView
-          let myURL = URL(string:zoomURL!)
-          let myRequest = URLRequest(url: myURL!)
-          webView.load(myRequest)
-          print(zoomURL)
-          let emp  = Employee(name:nil,
-                              email: nil,
-                              phone: nil,
-                              idNumber: nil,
-                              task: nil,
-                              evaluation: nil,
-                              resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
-          print("Document data")
-        }else{
-          print("Document does not exist\(error?.localizedDescription)")
+          if let myURL = URL(string:zoomURL ?? "\(self.showAlert(title: "Oops!", message: "The Boss hasn't sent you the link yet "))"){
+            let myRequest = URLRequest(url: myURL)
+            webView.load(myRequest)
+          }
+
+            print(zoomURL)
+            let emp  = Employee(name:nil,
+                                email: nil,
+                                phone: nil,
+                                idNumber: nil,
+                                task: nil,
+                                evaluation: nil,
+                                resignation: nil,
+                                holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
+            print("Document data")
+          }else{
+            print("Document does not exist\(error?.localizedDescription)")
+          }
         }
       }
     }
-  }
 }
 
 // MARK: - Navigation
 
-extension SettingVC:  URLSessionDownloadDelegate {
+extension SettingEmpVC:  URLSessionDownloadDelegate {
   func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
     print("downloadLocation:", location)
     // create destination URL with the original pdf name

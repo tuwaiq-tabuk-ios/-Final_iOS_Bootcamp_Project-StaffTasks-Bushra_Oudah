@@ -11,7 +11,7 @@ import Firebase
 import FirebaseFirestore
 
 
-class ProfileVC: UIViewController {
+class ProfileEmpVC: UIViewController {
   
   // MARK: - Properties
   
