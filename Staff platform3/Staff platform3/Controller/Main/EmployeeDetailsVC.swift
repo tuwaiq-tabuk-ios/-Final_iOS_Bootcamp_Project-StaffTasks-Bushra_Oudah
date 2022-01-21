@@ -165,10 +165,12 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
                      resignation: nil,
                      holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
         print("Document data")
-        guard let url = URL(string:payroll!) else { return }
+
+        guard let myURL = URL(string:payroll ?? "\(self.showAlert(title: "Done", message: "The payroll downloaded "))")
+        else { return }
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
         
-        let downloadTask = urlSession.downloadTask(with: url)
+        let downloadTask = urlSession.downloadTask(with: myURL)
         downloadTask.resume()
         self.showAlert(title: "succeeded", message: "File downloaded")
       } else {

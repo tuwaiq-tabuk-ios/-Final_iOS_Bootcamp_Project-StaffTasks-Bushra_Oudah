@@ -106,26 +106,27 @@ class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
           self.webView = WKWebView(frame: .zero, configuration: webConfiguration)
           self.webView.uiDelegate = self
           view = webView
-          let myURL = URL(string:zoomURL ?? "\(self.showAlert(title: "Oops!", message: "The Boss hasn't sent you the link yet "))")
-          
-          let myRequest = URLRequest(url: myURL!)
-          webView.load(myRequest)
-          print(zoomURL)
-          let emp  = Employee(name:nil,
-                              email: nil,
-                              phone: nil,
-                              idNumber: nil,
-                              task: nil,
-                              evaluation: nil,
-                              resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
-          print("Document data")
-        }else{
-          print("Document does not exist\(error?.localizedDescription)")
+          if let myURL = URL(string:zoomURL ?? "\(self.showAlert(title: "Oops!", message: "The Boss hasn't sent you the link yet "))"){
+            let myRequest = URLRequest(url: myURL)
+            webView.load(myRequest)
+          }
+
+            print(zoomURL)
+            let emp  = Employee(name:nil,
+                                email: nil,
+                                phone: nil,
+                                idNumber: nil,
+                                task: nil,
+                                evaluation: nil,
+                                resignation: nil,
+                                holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
+            print("Document data")
+          }else{
+            print("Document does not exist\(error?.localizedDescription)")
+          }
         }
       }
     }
-  }
 }
 
 // MARK: - Navigation
