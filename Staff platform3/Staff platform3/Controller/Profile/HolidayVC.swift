@@ -22,6 +22,7 @@ class HolidayVC: UIViewController {
   @IBOutlet weak var displayDateLabel: UILabel!
   @IBOutlet weak var addDateBtn: UIButton!
   
+  @IBOutlet weak var timeOfVicationTF: UITextField!
   // MARK: - View controller lifecycle
   
   override func viewDidLoad() {
@@ -45,7 +46,8 @@ class HolidayVC: UIViewController {
   @IBAction func addDatePressed(_ sender: UIButton) {
     let washingtonRef = db.collection("Users").document(Auth.auth().currentUser!.uid)
     washingtonRef.updateData([
-      "holiday": displayDateLabel.text!
+      "holiday": displayDateLabel.text,
+      "timeOfVicationTF":timeOfVicationTF.text
     ]) { err in
       if let err = err {
         print("Error updating document: \(err)")

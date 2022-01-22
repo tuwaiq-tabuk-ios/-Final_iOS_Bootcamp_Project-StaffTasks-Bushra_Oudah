@@ -19,6 +19,8 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
   let db = Firestore.firestore()
   var employees = [Employee]()
   var employee: Employee?
+  var employeeTask: Task?
+  var employeeEvalution: Evaluation?
   var image:UIImage? = nil
   var pdfURL: URL!
   var webView: WKWebView!
@@ -38,6 +40,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
   @IBOutlet weak var acceptanceBtn: UIButton!
   @IBOutlet weak var rejectBtn: UIButton!
   @IBOutlet weak var nameHolidayLabel: UILabel!
+  @IBOutlet weak var timeOfVicationLabel: UILabel!
   
   // MARK: - View controller lifecycle
   
@@ -50,8 +53,8 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
     openPayrollBtn.cmShadow()
     downloadPayrollBtn.cmShadow()
     zoomBtn.cmShadow()
-    acceptanceBtn.cmShadow()
-    rejectBtn.cmShadow()
+//    acceptanceBtn.cmShadow()
+//    rejectBtn.cmShadow()
     
     
   }
@@ -63,37 +66,46 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
     resignation.getDocument { (document, error) in
       if let document = document, document.exists {
         self.holidayLabel.text = document.data()?["resignation"] as? String
+        self.timeOfVicationLabel.text = document.data()?["timeOfVication"] as? String
         _ = Employee.init(id: nil,
                           name: nil,
                           email: nil,
                           phone: nil,
-                          idNumber: nil, task: nil, evaluation: nil, resignation: self.holidayLabel.text, holiday: nil, active: nil, user: nil, zoomURL: nil, payroll: nil)
+                          idNumber: nil, task: nil, evaluation: nil, resignation: self.holidayLabel.text, holiday: nil, active: nil, user: nil, zoomURL: nil, payroll: nil, timeOfVication:  self.timeOfVicationLabel.text )
       }
     }
   }
   // MARK: - IBAction
 
-  
+
   @IBAction func addTasksPressed(_ sender: Any) {
     let alert = UIAlertController(title: "Task",
                                   message: "Enter Task ",
                                   preferredStyle: .alert)
+
+    
     alert.addTextField { textField in
+
       textField.placeholder = "Enter Task"
     }
+    
     alert.addAction(UIAlertAction(title: "Ok",
                                   style: .default,
                                   handler: {  [weak alert] (_) in
+      
       let textField = alert?.textFields![0]
+      
       print(" - self.employee: \(String(describing: self.employee))")
       print(" - self.employee?.id: \(String(describing: self.employee?.id))")
+
+      print(" - self.employee?.id: \(String(describing: self.employeeTask?.id))")
       let bookRef =
-      self.db.collection("Users")
-        .document((self.employee?.id)!)
+      self.db.collection("Task").document(UUID().uuidString)
       let task = textField!.text!
       print(" ------- Task: \(task)")
-      bookRef.updateData([
-        "task": task
+      bookRef.setData([
+        "task": task,
+        "UserRef":self.employee?.id
       ]) { err in
         if let err = err {
           print("Error updating document: \(err)")
@@ -122,9 +134,12 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
                                   handler: {  [weak alert] (_) in
       let textField = alert?.textFields![0]
       print("Text field: \(textField!.text)")
-      let bookRef = self.db.collection("Users").document((self.employee?.id)!)
-      bookRef.updateData([
-        "evaluation":textField!.text
+      print(" - self.employee?.id: \(String(describing: self.employeeEvalution?.id))")
+      let bookRef = self.db.collection("Evalution").document(UUID().uuidString)
+      bookRef.setData([
+        "evaluation":textField!.text,
+       
+        "UserRef" :self.employee?.id
       ])
       { err in
         if let err = err {
@@ -163,7 +178,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
                      task: nil,
                      evaluation: nil,
                      resignation: nil,
-                     holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
+                     holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll, timeOfVication: nil)
         print("Document data")
 
         guard let myURL = URL(string:payroll ?? "\(self.showAlert(title: "Done", message: "The payroll downloaded "))")

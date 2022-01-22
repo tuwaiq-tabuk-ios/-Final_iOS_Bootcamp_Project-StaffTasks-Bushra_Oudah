@@ -28,3 +28,6 @@ Managers and employees
    - Videoconference with Zoom embeded in the app.
    - Change language (Arabic - English)
 
+## Demo
+![](StaffTaskBoss.gif)
+![](StaffTaskEemployee.gif)

@@ -6,7 +6,7 @@ class TaskVC: UIViewController {
   
   // MARK: - Properties
   let db = Firestore.firestore()
-  var employee = [Employee]()
+  var task = [Task]()
   
   // MARK: - IBOutlets
   
@@ -27,42 +27,36 @@ class TaskVC: UIViewController {
   // MARK: - Methods
   
   func readTask(){
-    if  let user = Auth.auth().currentUser?.uid{
-      let docRef = db.collection("Users").document(user)
-      docRef.getDocument { (document, error) in
-        if let document = document, document.exists {
-          if let error = error {
-            print(error.localizedDescription)
-            return
-          }
-          let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-          let task = document.data()?["task"] as? String
-          print(task)
-          let emp  = Employee(name:nil,
-                              email: nil,
-                              phone: nil,
-                              idNumber: nil,
-                              task: task,
-                              evaluation: nil,
-                              resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
-          
-          self.employee.append(emp)
-          print("Document data")
-          self.tabelView.reloadData()
-        } else {
-          print("Document does not exist\(error?.localizedDescription)")
+    db
+      .collection("Task")
+      .addSnapshotListener { (querySnapshot, error) in
+        guard let documents = querySnapshot?.documents else {
+          print("Error fetching documents: \(error!)")
+          return
         }
+        
+        self.task = []
+        
+        for doc in documents {
+          if (doc.data()["UserRef"] as? String == Auth.auth().currentUser?.uid) {
+            print("doc.documentID\(doc.documentID)")
+            let task = doc.data()["task"] as? String
+            let tasks = Task.init(id: doc.documentID, task: task, user: nil)
+            self.task.append(tasks)
+            
+          }
+        }
+        self.tabelView.reloadData()
       }
-    }
   }
+
 }
   // MARK: - Table data source
   extension TaskVC: UITableViewDataSource {
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return employee.count
+    return task.count
   }
   }
   
@@ -73,7 +67,7 @@ class TaskVC: UIViewController {
     
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskCell
-    cell.nameLabel.text = employee[indexPath.row].task
+    cell.nameLabel.text = task[indexPath.row].task
     return cell
   }
   

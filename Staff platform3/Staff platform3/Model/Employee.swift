@@ -27,4 +27,5 @@ import FirebaseFirestore
     let user: DocumentReference?
     let zoomURL: String?
     let payroll: String?
+    let timeOfVication: String?
   }

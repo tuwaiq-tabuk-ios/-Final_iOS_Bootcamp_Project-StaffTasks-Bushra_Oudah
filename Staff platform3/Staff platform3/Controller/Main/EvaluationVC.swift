@@ -10,7 +10,7 @@ class EvaluationVC: UIViewController{
   // MARK: - Properties
   
   let db = Firestore.firestore()
-  var employee = [Employee]()
+  var evaluation = [Evaluation]()
   
   // MARK: - IBOutlets
   
@@ -32,36 +32,29 @@ class EvaluationVC: UIViewController{
   // MARK: - Methods
   
   func readEvaluation(){
-    if  let user = Auth.auth().currentUser?.uid{
-      let docRef = db.collection("Users").document(user)
-      docRef.getDocument { (document, error) in
-        if let document = document, document.exists {
-          if let error = error {
-            print(error.localizedDescription)
-            return
-          }
-          let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-          let evaluation = document.data()?["evaluation"] as? String
-          print(evaluation)
-          let emp  = Employee(name:nil,
-                              email: nil,
-                              phone: nil,
-                              idNumber: nil,
-                              task: nil,
-                              evaluation: evaluation,
-                              resignation: nil,
-                              holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
-          
-          
-          self.employee.append(emp)
-          print("Document data")
-          self.tabelView.reloadData()
-        } else {
-          print("Document does not exist\(error?.localizedDescription)")
+    db
+      .collection("Task")
+      .addSnapshotListener { (querySnapshot, error) in
+        guard let documents = querySnapshot?.documents else {
+          print("Error fetching documents: \(error!)")
+          return
         }
+        
+        self.evaluation = []
+        
+        for doc in documents {
+          if (doc.data()["UserRef"] as? String == Auth.auth().currentUser?.uid) {
+            print("doc.documentID\(doc.documentID)")
+            let evaluation = doc.data()["Evalution"] as? String
+            let evaluations = Evaluation.init(id: doc.documentID, evaluation:evaluation, user: nil)
+            self.evaluation.append(evaluations)
+            
+          }
+        }
+        self.tabelView.reloadData()
       }
-    }
   }
+
 }
   // MARK: - Table data source
 
@@ -69,7 +62,7 @@ class EvaluationVC: UIViewController{
   
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return employee.count
+    return evaluation.count
   }
   
   
@@ -82,7 +75,7 @@ extension EvaluationVC: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "EvaluationCell") as! EvaluationCell
-    cell.evaluationLabel.text = employee[indexPath.row].evaluation
+    cell.evaluationLabel.text = evaluation[indexPath.row].evaluation
     return cell
   }
 }

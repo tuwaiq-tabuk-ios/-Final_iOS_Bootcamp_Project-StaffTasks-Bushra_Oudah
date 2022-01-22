@@ -51,3 +51,16 @@ extension UIViewController {
     view.endEditing(true)
   }
 }
+extension SceneDelegate{
+    func setRootVC(vc:UIViewController){
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+    }
+}
+
+extension UIViewController{
+    var sceneDelegate:SceneDelegate{
+        return (self.view.window?.windowScene?.delegate)! as! SceneDelegate
+    }
+}
+

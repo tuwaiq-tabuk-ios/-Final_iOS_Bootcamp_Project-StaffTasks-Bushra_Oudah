@@ -68,7 +68,6 @@ class LoginVC: UIViewController,AlertsPresenting {
                     case .EMPLOYEE:
                       let vc = EmployeeTBC.instantiate()
                       self.navigationController?.pushViewController(vc, animated: true)
-                      self.showAlert(title: "Login", message: "Login Success")
                     case .none:
                       fatalError("Unexptcted case")
                     }

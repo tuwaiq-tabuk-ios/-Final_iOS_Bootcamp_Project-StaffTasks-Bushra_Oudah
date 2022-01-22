@@ -45,20 +45,23 @@ class SignUpEmpVC: UIViewController,AlertsPresenting {
   @IBAction func signUpPressed(_ sender: UIButton) {
     do{
       let email = try emailTF.validatedText(validationType: .email)
-//      let password = try passwordTF.validatedText(validationType: .password)
+
       let password = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
       let passConfirm = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
-//      let  passConfirm = try confirmPassTF.validatedText(validationType: .password)
+      let phone = try mobileTF.validatedText(validationType: .requiredField(field: "Phone Number"))
+      let name = try nameTF.validatedText(validationType: .username)
+      let id = try idTF.validatedText(validationType: .requiredField(field: "ID"))
+
       if password == passConfirm{
         Auth.auth().createUser(withEmail: email,
                                password: password) { authResult, error in
           if error == nil{
-            self.employee = Employee.init(name: self.nameTF.text!,
-                                          email: self.emailTF.text!,
-                                          phone: self.mobileTF.text!,
-                                          idNumber: self.idTF.text!,
+            self.employee = Employee.init(name: name,
+                                          email: email,
+                                          phone: phone,
+                                          idNumber: id,
                                           task: nil ,evaluation: nil, resignation: nil,
-                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
+                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil, timeOfVication: nil)
             self.saveEmployee(self.employee)
             print("Sign Up Successful")
             let vc = EmployeeTBC.instantiate()
@@ -70,7 +73,7 @@ class SignUpEmpVC: UIViewController,AlertsPresenting {
           }
         }
       }else{
-        self.showAlert(title: "Error", message: "Check Conforom Password")
+        self.showAlert(title: "Error", message: "Check confirm Password")
       }
     }
     catch(let error){

@@ -10,7 +10,7 @@ import Firebase
 import FirebaseFirestore
 
 class SignUpBossVC: UIViewController,AlertsPresenting {
-//  static let shared = FSUserManger()
+
   // MARK: - Properties
   
   let db = Firestore.firestore()
@@ -45,20 +45,26 @@ class SignUpBossVC: UIViewController,AlertsPresenting {
   @IBAction func signUpPressed(_ sender: UIButton) {
     do{
       let email = try emailTF.validatedText(validationType: .email)
-//      let password = try passwordTF.validatedText(validationType: .password)
+
       let password = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
-//      let  passConfirm = try confirmPassTF.validatedText(validationType: .password)
-//
+
       
       let passConfirm = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
+    let phone = try mobileTF
+        .validatedText(validationType: .requiredField(field: "Phone Number"))
+      let name = try nameTF.validatedText(validationType: .username)
+      let id = try  idTF.validatedText(validationType: .requiredField(field: "ID"))
+      
+      
+ 
       if password == passConfirm{
       Auth.auth().createUser(withEmail: email,
                              password: password) { authDataResult, error in
         if error == nil{
-          self.boss = Boss.init(name: self.nameTF.text!,
-                                phone: self.mobileTF.text!,
-                                email: self.emailTF.text!,
-                                id: self.idTF.text!)
+          self.boss = Boss.init(name: name,
+                                phone: phone,
+                                email: email,
+                                id: id)
           self.saveBoss(self.boss)
           print("Sign Up Successful")
           let vc = BossTBC.instantiate()
@@ -70,7 +76,7 @@ class SignUpBossVC: UIViewController,AlertsPresenting {
         }
       }
       }else{
-        self.showAlert(title: "Error", message: "Check Conforom Password")
+        self.showAlert(title: "Error", message: "Check confirm Password")
         print("Error")
       }
     }

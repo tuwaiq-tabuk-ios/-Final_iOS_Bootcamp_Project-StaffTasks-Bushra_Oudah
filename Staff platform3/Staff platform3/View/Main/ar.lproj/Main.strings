@@ -21,7 +21,7 @@
 "7eW-Ba-15j.configuration.title" = "ارسال";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7eW-Ba-15j"; */
-"7eW-Ba-15j.normalTitle" = "Button";
+"7eW-Ba-15j.normalTitle" = "تغيير الرقم السري";
 
 /* Class = "UILabel"; text = "Task"; ObjectID = "84e-Ws-t45"; */
 "84e-Ws-t45.text" = "مهام";
@@ -30,7 +30,7 @@
 "84f-dv-qmf.configuration.title" = "اضافة تقييم ";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "84f-dv-qmf"; */
-"84f-dv-qmf.normalTitle" = "Button";
+"84f-dv-qmf.normalTitle" = "تغيير رقم الجوال";
 
 /* Class = "UIButton"; normalTitle = "Edite Email"; ObjectID = "8dc-O3-7zK"; */
 "8dc-O3-7zK.normalTitle" = "تعديل الايميل";
@@ -57,7 +57,7 @@
 "Djh-OJ-AGe.configuration.title" = "اجتماع";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Djh-OJ-AGe"; */
-"Djh-OJ-AGe.normalTitle" = "Button";
+"Djh-OJ-AGe.normalTitle" = "تغيير الايميل";
 
 /* Class = "UITextField"; placeholder = "Reason For Resignation"; ObjectID = "EJ7-j7-yGL"; */
 "EJ7-j7-yGL.placeholder" = "سبب الاستقاله";
