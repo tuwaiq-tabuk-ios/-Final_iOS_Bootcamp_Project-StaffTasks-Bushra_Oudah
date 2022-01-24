@@ -26,7 +26,6 @@ class SignUpEmpVC: UIViewController,AlertsPresenting {
   @IBOutlet weak var passwordTF: CMTextField!
   @IBOutlet weak var SignUpBtn: UIButton!
   @IBOutlet weak var LoginBtn: UIButton!
-  
   @IBOutlet weak var confirmPassTF: CMTextField!
   
   // MARK: - View controller lifecycle
@@ -45,13 +44,11 @@ class SignUpEmpVC: UIViewController,AlertsPresenting {
   @IBAction func signUpPressed(_ sender: UIButton) {
     do{
       let email = try emailTF.validatedText(validationType: .email)
-
       let password = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
       let passConfirm = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
       let phone = try mobileTF.validatedText(validationType: .requiredField(field: "Phone Number"))
       let name = try nameTF.validatedText(validationType: .username)
       let id = try idTF.validatedText(validationType: .requiredField(field: "ID"))
-
       if password == passConfirm{
         Auth.auth().createUser(withEmail: email,
                                password: password) { authResult, error in

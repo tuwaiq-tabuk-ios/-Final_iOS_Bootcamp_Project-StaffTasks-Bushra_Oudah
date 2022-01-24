@@ -10,7 +10,7 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 
-struct Task:Codable , Identifiable{
+struct Task: Codable , Identifiable{
   @DocumentID var id : String?  = UUID().uuidString
   let task:String?
   let user: DocumentReference?

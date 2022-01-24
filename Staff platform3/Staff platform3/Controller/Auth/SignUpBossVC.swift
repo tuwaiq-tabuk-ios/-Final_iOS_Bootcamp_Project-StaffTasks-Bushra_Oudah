@@ -45,18 +45,12 @@ class SignUpBossVC: UIViewController,AlertsPresenting {
   @IBAction func signUpPressed(_ sender: UIButton) {
     do{
       let email = try emailTF.validatedText(validationType: .email)
-
       let password = try confirmPassTF.validatedText(validationType: .requiredField(field: "Password"))
-
-      
       let passConfirm = try passwordTF.validatedText(validationType: .requiredField(field: "Password"))
     let phone = try mobileTF
         .validatedText(validationType: .requiredField(field: "Phone Number"))
       let name = try nameTF.validatedText(validationType: .username)
       let id = try  idTF.validatedText(validationType: .requiredField(field: "ID"))
-      
-      
- 
       if password == passConfirm{
       Auth.auth().createUser(withEmail: email,
                              password: password) { authDataResult, error in

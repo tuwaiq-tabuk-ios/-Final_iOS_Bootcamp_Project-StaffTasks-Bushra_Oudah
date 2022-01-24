@@ -70,6 +70,4 @@ class TaskVC: UIViewController {
     cell.nameLabel.text = task[indexPath.row].task
     return cell
   }
-  
-
 }

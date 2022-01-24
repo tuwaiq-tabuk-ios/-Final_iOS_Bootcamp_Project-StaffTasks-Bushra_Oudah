@@ -12,7 +12,4 @@ struct K {
   struct Storyboard {
     static let segueIdentifierDetailsEmployeeVC = "go_to_DetailsEmployeeVC"
   }
-  
-  
-  
 }

@@ -33,7 +33,7 @@ class EvaluationVC: UIViewController{
   
   func readEvaluation(){
     db
-      .collection("Task")
+      .collection("Evalution")
       .addSnapshotListener { (querySnapshot, error) in
         guard let documents = querySnapshot?.documents else {
           print("Error fetching documents: \(error!)")
@@ -45,7 +45,7 @@ class EvaluationVC: UIViewController{
         for doc in documents {
           if (doc.data()["UserRef"] as? String == Auth.auth().currentUser?.uid) {
             print("doc.documentID\(doc.documentID)")
-            let evaluation = doc.data()["Evalution"] as? String
+            let evaluation = doc.data()["evaluation"] as? String
             let evaluations = Evaluation.init(id: doc.documentID, evaluation:evaluation, user: nil)
             self.evaluation.append(evaluations)
             

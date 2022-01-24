@@ -1,15 +1,15 @@
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "0GI-Pn-VcM"; */
-"0GI-Pn-VcM.placeholder" = "الرقم السري ";
+"0GI-Pn-VcM.placeholder" = "الرقم السري";
 
 /* Class = "UILabel"; text = "Date"; ObjectID = "18s-AK-Pbu"; */
 "18s-AK-Pbu.text" = "التاريخ";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "1Q7-T1-CHx"; */
-"1Q7-T1-CHx.text" = "Label";
-
 /* Class = "UITabBarItem"; title = "Setting"; ObjectID = "1dw-s8-sOj"; */
 "1dw-s8-sOj.title" = "الاعدادات";
+
+/* Class = "UIButton"; normalTitle = "Open Payroll"; ObjectID = "57j-p0-qdD"; */
+"57j-p0-qdD.normalTitle" = "فتح كشف الراتب";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "582-mB-M4Y"; */
 "582-mB-M4Y.normalTitle" = "حفظ";
@@ -17,50 +17,38 @@
 /* Class = "UITabBarItem"; title = "Add"; ObjectID = "6S4-H8-013"; */
 "6S4-H8-013.title" = "اضافة";
 
-/* Class = "UIButton"; configuration.title = "Send"; ObjectID = "7eW-Ba-15j"; */
-"7eW-Ba-15j.configuration.title" = "ارسال";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7eW-Ba-15j"; */
-"7eW-Ba-15j.normalTitle" = "تغيير الرقم السري";
+/* Class = "UILabel"; text = "Holiday"; ObjectID = "7U8-IN-rK7"; */
+"7U8-IN-rK7.text" = "اجازه";
 
 /* Class = "UILabel"; text = "Task"; ObjectID = "84e-Ws-t45"; */
 "84e-Ws-t45.text" = "مهام";
 
-/* Class = "UIButton"; configuration.title = "Add Evalution"; ObjectID = "84f-dv-qmf"; */
-"84f-dv-qmf.configuration.title" = "اضافة تقييم ";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "84f-dv-qmf"; */
-"84f-dv-qmf.normalTitle" = "تغيير رقم الجوال";
-
 /* Class = "UIButton"; normalTitle = "Edite Email"; ObjectID = "8dc-O3-7zK"; */
-"8dc-O3-7zK.normalTitle" = "تعديل الايميل";
+"8dc-O3-7zK.normalTitle" = "تعديلرالايميل";
+
+/* Class = "UILabel"; text = "Duration of Holiday"; ObjectID = "9lE-nj-YeK"; */
+"9lE-nj-YeK.text" = "مدة الاجازه";
 
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "A79-Mm-Tqb"; */
 "A79-Mm-Tqb.placeholder" = "الايميل";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "ASl-oM-29E"; */
-"ASl-oM-29E.normalTitle" = " اشتراك";
+"ASl-oM-29E.normalTitle" = "اشتراك";
 
 /* Class = "UITabBarItem"; title = "Profile"; ObjectID = "Aa5-3n-rKG"; */
-"Aa5-3n-rKG.title" = "الملف الشخصي";
+"Aa5-3n-rKG.title" = "ملف تعريفي";
 
-/* Class = "UIButton"; normalTitle = "Resignation"; ObjectID = "Bd8-dg-55Z"; */
-"Bd8-dg-55Z.normalTitle" = "تسجيل";
+/* Class = "UIButton"; normalTitle = "Zoom"; ObjectID = "BEl-YU-kEY"; */
+"BEl-YU-kEY.normalTitle" = "اجتماع";
 
 /* Class = "UITabBarItem"; title = "setting"; ObjectID = "D9M-r1-zBX"; */
-"D9M-r1-zBX.title" = "الاعدادات";
+"D9M-r1-zBX.title" = "اعدادت";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "DXj-ab-Mzi"; */
 "DXj-ab-Mzi.placeholder" = "الاسم";
 
-/* Class = "UIButton"; configuration.title = "Zoom"; ObjectID = "Djh-OJ-AGe"; */
-"Djh-OJ-AGe.configuration.title" = "اجتماع";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Djh-OJ-AGe"; */
-"Djh-OJ-AGe.normalTitle" = "تغيير الايميل";
-
-/* Class = "UITextField"; placeholder = "Reason For Resignation"; ObjectID = "EJ7-j7-yGL"; */
-"EJ7-j7-yGL.placeholder" = "سبب الاستقاله";
+/* Class = "UIButton"; normalTitle = "Zoom"; ObjectID = "Djh-OJ-AGe"; */
+"Djh-OJ-AGe.normalTitle" = "اجتماع";
 
 /* Class = "UIButton"; normalTitle = "Payroll"; ObjectID = "F9S-fK-tcE"; */
 "F9S-fK-tcE.normalTitle" = "كشف الراتب";
@@ -71,38 +59,26 @@
 /* Class = "UILabel"; text = " Name"; ObjectID = "H1N-fb-Rzy"; */
 "H1N-fb-Rzy.text" = " الاسم";
 
-/* Class = "UIButton"; configuration.title = " Download Payroll"; ObjectID = "HQm-ym-oWy"; */
-"HQm-ym-oWy.configuration.title" = " تنزيل كشف الراتب";
+/* Class = "UILabel"; text = "holiday"; ObjectID = "Hgv-pP-Bwx"; */
+"Hgv-pP-Bwx.text" = "اجازه";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HQm-ym-oWy"; */
-"HQm-ym-oWy.normalTitle" = "Button";
-
-/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "Hrk-HM-5w4"; */
-"Hrk-HM-5w4.configuration.title" = "تسجيل دخول";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Hrk-HM-5w4"; */
-"Hrk-HM-5w4.normalTitle" = "Button";
-
-/* Class = "UIButton"; configuration.title = "Zoom"; ObjectID = "I7g-5f-RWt"; */
-"I7g-5f-RWt.configuration.title" = "اجتماع";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "I7g-5f-RWt"; */
-"I7g-5f-RWt.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "Hrk-HM-5w4"; */
+"Hrk-HM-5w4.normalTitle" = "دخول";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "Ifn-aY-jzj"; */
 "Ifn-aY-jzj.normalTitle" = "اشتراك";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "JEe-QQ-pm1"; */
-"JEe-QQ-pm1.text" = "Label";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "K0q-f9-nFM"; */
-"K0q-f9-nFM.normalTitle" = "Button";
+/* Class = "UILabel"; text = "Evaluation"; ObjectID = "JEe-QQ-pm1"; */
+"JEe-QQ-pm1.text" = "التقييم";
 
 /* Class = "UITabBarItem"; title = "Profile"; ObjectID = "K84-fA-AQL"; */
-"K84-fA-AQL.title" = "الملف الشخصي ";
+"K84-fA-AQL.title" = "الملف التعريفي";
 
 /* Class = "UIButton"; normalTitle = "Send"; ObjectID = "KsU-Hu-wrt"; */
 "KsU-Hu-wrt.normalTitle" = "ارسال";
+
+/* Class = "UIButton"; normalTitle = "Acceptance"; ObjectID = "L1j-TQ-eAn"; */
+"L1j-TQ-eAn.normalTitle" = "موافقه";
 
 /* Class = "UITextField"; placeholder = "New Password"; ObjectID = "MBV-x7-iiZ"; */
 "MBV-x7-iiZ.placeholder" = "الرقم السري الجديد";
@@ -116,17 +92,14 @@
 /* Class = "UITextField"; placeholder = "Email"; ObjectID = "NS0-8g-CGN"; */
 "NS0-8g-CGN.placeholder" = "الايميل";
 
-/* Class = "UIButton"; configuration.title = "Edite Email"; ObjectID = "Nma-Gp-ZtM"; */
-"Nma-Gp-ZtM.configuration.title" = "تعديل الايميل";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Nma-Gp-ZtM"; */
-"Nma-Gp-ZtM.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Edit Email"; ObjectID = "Nma-Gp-ZtM"; */
+"Nma-Gp-ZtM.normalTitle" = "تعديل الايميل";
 
 /* Class = "UITabBarItem"; title = "Task"; ObjectID = "OCJ-Jg-Id1"; */
-"OCJ-Jg-Id1.title" = "المهام";
+"OCJ-Jg-Id1.title" = "مهام";
 
-/* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "PPQ-KH-yqb"; */
-"PPQ-KH-yqb.placeholder" = "رقم الجوال";
+/* Class = "UITextField"; placeholder = "+966 055 111 111"; ObjectID = "PPQ-KH-yqb"; */
+"PPQ-KH-yqb.placeholder" = "+966 055 111 111";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "PV7-1C-oma"; */
 "PV7-1C-oma.placeholder" = "الرقم السري";
@@ -135,7 +108,7 @@
 "RkT-qd-FhL.normalTitle" = "تعديل الرقم السري";
 
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "S6w-aO-Yr3"; */
-"S6w-aO-Yr3.normalTitle" = "تسجيل الدخول";
+"S6w-aO-Yr3.normalTitle" = "الدخول";
 
 /* Class = "UITextField"; placeholder = "New mobile"; ObjectID = "SGa-ts-aYv"; */
 "SGa-ts-aYv.placeholder" = "رقم الجوال الجديد";
@@ -143,35 +116,29 @@
 /* Class = "UITextField"; placeholder = "Id"; ObjectID = "V6r-Zr-wjE"; */
 "V6r-Zr-wjE.placeholder" = "الرقم الوظيفي";
 
-/* Class = "UIButton"; configuration.title = "Edite Mobile"; ObjectID = "Wg5-aI-AoA"; */
-"Wg5-aI-AoA.configuration.title" = "تعديل رقم الجوال";
+/* Class = "UILabel"; text = "Name"; ObjectID = "WSk-cO-7D8"; */
+"WSk-cO-7D8.text" = "الاسم";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Wg5-aI-AoA"; */
-"Wg5-aI-AoA.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Edit Mobile"; ObjectID = "Wg5-aI-AoA"; */
+"Wg5-aI-AoA.normalTitle" = "تعديل رقم الجوال";
 
-/* Class = "UIButton"; configuration.title = "Edite Password"; ObjectID = "Xu4-RA-t4f"; */
-"Xu4-RA-t4f.configuration.title" = "تعديل الرقم السري";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Xu4-RA-t4f"; */
-"Xu4-RA-t4f.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Edit the Password"; ObjectID = "Xu4-RA-t4f"; */
+"Xu4-RA-t4f.normalTitle" = "تعديل الرقم السري";
 
 /* Class = "UIButton"; normalTitle = "Sign Up Boss"; ObjectID = "YAR-PJ-3gU"; */
-"YAR-PJ-3gU.normalTitle" = "تسجيل جديد للمدير";
+"YAR-PJ-3gU.normalTitle" = "تسجيل دخول للمدير";
 
 /* Class = "UILabel"; text = " Email"; ObjectID = "ZAW-Z1-TAx"; */
 "ZAW-Z1-TAx.text" = " الايميل";
 
-/* Class = "UIButton"; configuration.title = "open payroll"; ObjectID = "ZyG-Cm-LGh"; */
-"ZyG-Cm-LGh.configuration.title" = "فتح كشف الراتب";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZyG-Cm-LGh"; */
-"ZyG-Cm-LGh.normalTitle" = "Button";
-
 /* Class = "UILabel"; text = " Email"; ObjectID = "aTg-RI-Cjs"; */
 "aTg-RI-Cjs.text" = " الايميل";
 
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "ckb-cb-Nyh"; */
+"ckb-cb-Nyh.placeholder" = "تاكيد الرقم السري";
+
 /* Class = "UITabBarItem"; title = "Item"; ObjectID = "d2K-3C-Aa7"; */
-"d2K-3C-Aa7.title" = "عنصر";
+"d2K-3C-Aa7.title" = "Item";
 
 /* Class = "UIButton"; normalTitle = "Save"; ObjectID = "dAL-AR-gjq"; */
 "dAL-AR-gjq.normalTitle" = "حفظ";
@@ -182,26 +149,26 @@
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "ekJ-13-VBx"; */
 "ekJ-13-VBx.normalTitle" = "تسجيل الدخول";
 
-/* Class = "UILabel"; text = " iD"; ObjectID = "iyp-c9-0s0"; */
+/* Class = "UILabel"; text = "Label"; ObjectID = "eub-av-Xbc"; */
+"eub-av-Xbc.text" = "Label";
+
+/* Class = "UILabel"; text = " ID"; ObjectID = "iyp-c9-0s0"; */
 "iyp-c9-0s0.text" = " الرقم الوظيفي";
 
-/* Class = "UIButton"; configuration.title = "Add Tasks"; ObjectID = "izk-vb-vDd"; */
-"izk-vb-vDd.configuration.title" = " اضافة مهام";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "izk-vb-vDd"; */
-"izk-vb-vDd.normalTitle" = "Button";
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "j3Y-f4-byO"; */
+"j3Y-f4-byO.placeholder" = "تاكيد الرقم السري";
 
 /* Class = "UILabel"; text = " Phon"; ObjectID = "k14-Vz-NVK"; */
-"k14-Vz-NVK.text" = " رقم الجوال";
+"k14-Vz-NVK.text" = " جوال";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "lBm-i0-5Mm"; */
 "lBm-i0-5Mm.text" = "Label";
 
 /* Class = "UIButton"; normalTitle = "Sign Up Employee"; ObjectID = "lYC-mN-UB7"; */
-"lYC-mN-UB7.normalTitle" = "تسجيل جديد للموظفين";
+"lYC-mN-UB7.normalTitle" = "تسجيل دخول الموظف";
 
 /* Class = "UIButton"; normalTitle = "Forget Password"; ObjectID = "lmU-Ah-94V"; */
-"lmU-Ah-94V.normalTitle" = "هل نسيت الرقم السري ";
+"lmU-Ah-94V.normalTitle" = "نسان الرقم السري";
 
 /* Class = "UITextField"; placeholder = "Password"; ObjectID = "oUm-H4-nHL"; */
 "oUm-H4-nHL.placeholder" = "الرقم السري";
@@ -209,11 +176,8 @@
 /* Class = "UIBarButtonItem"; title = "SignOut"; ObjectID = "odU-JJ-QVP"; */
 "odU-JJ-QVP.title" = "تسجيل خروج";
 
-/* Class = "UIButton"; configuration.title = "Add Date"; ObjectID = "ol1-Se-cWO"; */
-"ol1-Se-cWO.configuration.title" = "اضافة تاريخ";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ol1-Se-cWO"; */
-"ol1-Se-cWO.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "Send"; ObjectID = "ol1-Se-cWO"; */
+"ol1-Se-cWO.normalTitle" = "ارسال";
 
 /* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "sgh-vH-Lkx"; */
 "sgh-vH-Lkx.normalTitle" = "اشتراك";
@@ -221,17 +185,17 @@
 /* Class = "UIButton"; normalTitle = "Login"; ObjectID = "sn8-GN-wDv"; */
 "sn8-GN-wDv.normalTitle" = "تسجيل دخول";
 
-/* Class = "UILabel"; text = "Active - In Active"; ObjectID = "tN5-hA-8pi"; */
-"tN5-hA-8pi.text" = "نشط - غير نشط";
-
 /* Class = "UILabel"; text = " Phon"; ObjectID = "uJ8-aF-uJ0"; */
 "uJ8-aF-uJ0.text" = " رقم الجوال";
 
-/* Class = "UIButton"; configuration.title = "holiday"; ObjectID = "w0h-5H-V6o"; */
-"w0h-5H-V6o.configuration.title" = "الاجازات";
+/* Class = "UIButton"; normalTitle = "Download Payroll"; ObjectID = "vY4-8D-THo"; */
+"vY4-8D-THo.normalTitle" = "تنزيل كشف الراتب";
 
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "w0h-5H-V6o"; */
-"w0h-5H-V6o.normalTitle" = "Button";
+/* Class = "UIButton"; normalTitle = "holiday"; ObjectID = "w0h-5H-V6o"; */
+"w0h-5H-V6o.normalTitle" = "اجازه";
+
+/* Class = "UIButton"; normalTitle = "Add Evaluation"; ObjectID = "w5r-fj-EQ0"; */
+"w5r-fj-EQ0.normalTitle" = "اضافة تقييم";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "wHC-s9-veI"; */
 "wHC-s9-veI.placeholder" = "الاسم";
@@ -239,17 +203,23 @@
 /* Class = "UILabel"; text = " iD"; ObjectID = "wQK-3V-uUw"; */
 "wQK-3V-uUw.text" = " الرقم الوظيفي";
 
-/* Class = "UILabel"; text = "Label"; ObjectID = "wZu-ZP-3DE"; */
-"wZu-ZP-3DE.text" = "Label";
-
 /* Class = "UITextField"; placeholder = " New Email"; ObjectID = "wcB-FX-ufZ"; */
 "wcB-FX-ufZ.placeholder" = " الايميل الجديد";
 
 /* Class = "UIBarButtonItem"; title = "SignOut"; ObjectID = "xAx-ML-9hd"; */
 "xAx-ML-9hd.title" = "تسجيل خروج";
 
+/* Class = "UIButton"; normalTitle = "To Reject"; ObjectID = "yJa-7C-Tdg"; */
+"yJa-7C-Tdg.normalTitle" = "تم الرفض";
+
 /* Class = "UIButton"; normalTitle = "Edite Mobile"; ObjectID = "yrh-6E-3AU"; */
 "yrh-6E-3AU.normalTitle" = "تعديل رقم الجوال";
 
-/* Class = "UITextField"; placeholder = "Mobile"; ObjectID = "z95-Om-vPI"; */
-"z95-Om-vPI.placeholder" = "رقم الجوال";
+/* Class = "UITextField"; placeholder = "+966 055 111 111"; ObjectID = "z95-Om-vPI"; */
+"z95-Om-vPI.placeholder" = "+966 055 111 111";
+
+/* Class = "UILabel"; text = "active - InActive"; ObjectID = "zXn-n6-ciR"; */
+"zXn-n6-ciR.text" = "نشط -غير نشط";
+
+/* Class = "UIButton"; normalTitle = "Add Tasks"; ObjectID = "ztu-4x-aLa"; */
+"ztu-4x-aLa.normalTitle" = "اضافة مهام";

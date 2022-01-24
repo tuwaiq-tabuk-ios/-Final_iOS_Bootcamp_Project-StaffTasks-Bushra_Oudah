@@ -53,8 +53,8 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
     openPayrollBtn.cmShadow()
     downloadPayrollBtn.cmShadow()
     zoomBtn.cmShadow()
-//    acceptanceBtn.cmShadow()
-//    rejectBtn.cmShadow()
+    acceptanceBtn.cmShadow( cornerRadius: 10, borderWidth: 10)
+    rejectBtn.cmShadow(cornerRadius: 10, borderWidth: 10)
     
     
   }
@@ -65,27 +65,27 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
     let resignation = self.db.collection("Users").document((self.employee?.id)!)
     resignation.getDocument { (document, error) in
       if let document = document, document.exists {
-        self.holidayLabel.text = document.data()?["resignation"] as? String
+        self.holidayLabel.text = document.data()?["holiday"] as? String
         self.timeOfVicationLabel.text = document.data()?["timeOfVication"] as? String
         _ = Employee.init(id: nil,
                           name: nil,
                           email: nil,
                           phone: nil,
-                          idNumber: nil, task: nil, evaluation: nil, resignation: self.holidayLabel.text, holiday: nil, active: nil, user: nil, zoomURL: nil, payroll: nil, timeOfVication:  self.timeOfVicationLabel.text )
+                          idNumber: nil, task: nil, evaluation: nil, resignation: nil, holiday: self.holidayLabel.text, active: nil, user: nil, zoomURL: nil, payroll: nil, timeOfVication:  self.timeOfVicationLabel.text )
       }
     }
   }
   // MARK: - IBAction
-
-
+  
+  
   @IBAction func addTasksPressed(_ sender: Any) {
     let alert = UIAlertController(title: "Task",
                                   message: "Enter Task ",
                                   preferredStyle: .alert)
-
+    
     
     alert.addTextField { textField in
-
+      
       textField.placeholder = "Enter Task"
     }
     
@@ -97,7 +97,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
       
       print(" - self.employee: \(String(describing: self.employee))")
       print(" - self.employee?.id: \(String(describing: self.employee?.id))")
-
+      
       print(" - self.employee?.id: \(String(describing: self.employeeTask?.id))")
       let bookRef =
       self.db.collection("Task").document(UUID().uuidString)
@@ -133,12 +133,14 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
                                   style: .default,
                                   handler: {  [weak alert] (_) in
       let textField = alert?.textFields![0]
-      print("Text field: \(textField!.text)")
+      print(" - self.employee: \(String(describing: self.employee))")
+      print(" - self.employee?.id: \(String(describing: self.employee?.id))")
       print(" - self.employee?.id: \(String(describing: self.employeeEvalution?.id))")
       let bookRef = self.db.collection("Evalution").document(UUID().uuidString)
+      let evaluation = textField!.text!
+      print(" ------- evaluation: \(evaluation)")
       bookRef.setData([
-        "evaluation":textField!.text,
-       
+        "evaluation": evaluation,
         "UserRef" :self.employee?.id
       ])
       { err in
@@ -147,7 +149,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
           self.showAlert(title: "Error", message: err.localizedDescription)
         } else {
           print("Document successfully updated")
-
+          
           self.showAlert(title: "succeeded", message: "The Evalution has been added")
         }
         print("Text field: \(textField!.text)")
@@ -180,7 +182,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
                      resignation: nil,
                      holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll, timeOfVication: nil)
         print("Document data")
-
+        
         guard let myURL = URL(string:payroll ?? "\(self.showAlert(title: "Done", message: "The payroll downloaded "))")
         else { return }
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: OperationQueue())
@@ -222,7 +224,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
         }
         print("Text field: \(textField!.text)")
       }
-
+      
     }))
     self.present(alert, animated: true, completion: nil)
   }
@@ -245,7 +247,7 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
         }
       }
       switchActive.setOn(true, animated: true)
-
+      
     }else{
       let bookRef = self.db.collection("Users").document((self.employee?.id)!)
       bookRef.updateData([
@@ -273,7 +275,8 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
   
   @IBAction func rejectPreesed(_ sender: Any) {
     db.collection("Users").document((self.employee?.id)!).updateData([
-      "holiday": FieldValue.delete(),]) { err in
+      "holiday": FieldValue.delete(),
+      "timeOfVication":FieldValue.delete()]) { err in
         if let err = err {
           print("Error updating document: \(err)")
           self.showAlert(title: "Er", message: err.localizedDescription)

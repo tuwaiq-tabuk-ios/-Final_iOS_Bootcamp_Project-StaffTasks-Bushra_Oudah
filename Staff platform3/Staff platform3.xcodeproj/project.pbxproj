@@ -57,10 +57,10 @@
 		3F3DE9A2277B27C700819A64 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		3F3EDA0927905C8A0019FDB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3F3EDA0B27940EC30019FDB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		3F3EDA0C27940EC30019FDB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		3F5B5819279C3CD200571195 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3F5B581B279C415200571195 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		3F7F5F3B279ED54B00A2BCBF /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3F7F5F3C279ED54B00A2BCBF /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		3F873517277453E1002AEDCF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3F96015727779D380050C35C /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		3F96015927779D9C0050C35C /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
@@ -498,7 +498,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FDCE8D227723EEE00150B8C /* Base */,
-				3F3EDA0C27940EC30019FDB7 /* ar */,
+				3F7F5F3C279ED54B00A2BCBF /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FDCE8D727723EF100150B8C /* Base */,
-				3F3EDA0B27940EC30019FDB7 /* ar */,
+				3F7F5F3B279ED54B00A2BCBF /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
