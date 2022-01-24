@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Oqt-cG-UdL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ybe-zK-py2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -1287,45 +1287,43 @@
                                                     <action selector="addDatePressed:" destination="yuZ-0l-S3l" eventType="touchUpInside" id="dUT-5k-fqb"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-nj-YeK">
-                                                <rect key="frame" x="40" y="480" width="100" height="45"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration of Holiday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lE-nj-YeK">
+                                                <rect key="frame" x="20" y="480" width="124.5" height="45"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="100" id="ffI-43-Tiw"/>
-                                                    <constraint firstAttribute="height" constant="45" id="gNS-tp-qch"/>
+                                                    <constraint firstAttribute="height" constant="45" id="aVJ-02-wOP"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aUb-3w-AJi">
-                                                <rect key="frame" x="160" y="480" width="200" height="45"/>
+                                                <rect key="frame" x="180" y="480" width="200" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="sUH-xP-9ua"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.97647058959999999" green="0.9529411793" blue="0.93725490570000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
+                                            <constraint firstItem="9lE-nj-YeK" firstAttribute="leading" secondItem="ZXc-AK-z3L" secondAttribute="leading" constant="20" id="4lh-9u-wuI"/>
+                                            <constraint firstItem="9lE-nj-YeK" firstAttribute="top" secondItem="aUb-3w-AJi" secondAttribute="top" id="ChJ-Bg-mXL"/>
                                             <constraint firstItem="NxR-ON-4gN" firstAttribute="centerX" secondItem="ZXc-AK-z3L" secondAttribute="centerX" id="I6c-v2-Jd8"/>
                                             <constraint firstItem="18s-AK-Pbu" firstAttribute="top" secondItem="81Y-IY-3Oa" secondAttribute="bottom" constant="40" id="ICa-bN-p4N"/>
                                             <constraint firstAttribute="trailing" secondItem="18s-AK-Pbu" secondAttribute="trailing" constant="40" id="JcU-4H-kM9"/>
+                                            <constraint firstItem="ol1-Se-cWO" firstAttribute="top" secondItem="9lE-nj-YeK" secondAttribute="bottom" constant="20" id="Kkw-VB-6km"/>
                                             <constraint firstItem="18s-AK-Pbu" firstAttribute="leading" secondItem="ZXc-AK-z3L" secondAttribute="leading" constant="40" id="L3y-sU-Syi"/>
                                             <constraint firstItem="NxR-ON-4gN" firstAttribute="top" secondItem="ZXc-AK-z3L" secondAttribute="top" constant="40" id="Lfx-n3-7Ua"/>
                                             <constraint firstItem="81Y-IY-3Oa" firstAttribute="leading" secondItem="ZXc-AK-z3L" secondAttribute="leading" constant="40" id="Ryi-6P-eVV"/>
                                             <constraint firstItem="81Y-IY-3Oa" firstAttribute="top" secondItem="ZXc-AK-z3L" secondAttribute="top" constant="180" id="TBz-6V-ZIf"/>
                                             <constraint firstAttribute="trailing" secondItem="ol1-Se-cWO" secondAttribute="trailing" constant="40" id="TJf-9v-evw"/>
                                             <constraint firstAttribute="trailing" secondItem="81Y-IY-3Oa" secondAttribute="trailing" constant="40" id="Tig-oo-Pdq"/>
-                                            <constraint firstItem="9lE-nj-YeK" firstAttribute="top" secondItem="18s-AK-Pbu" secondAttribute="bottom" constant="20" id="VnX-ZK-dcV"/>
-                                            <constraint firstItem="aUb-3w-AJi" firstAttribute="top" secondItem="9lE-nj-YeK" secondAttribute="top" id="cHz-AC-nf2"/>
-                                            <constraint firstItem="aUb-3w-AJi" firstAttribute="leading" secondItem="9lE-nj-YeK" secondAttribute="trailing" constant="20" id="d0m-Yx-sHf"/>
                                             <constraint firstItem="81Y-IY-3Oa" firstAttribute="centerX" secondItem="ZXc-AK-z3L" secondAttribute="centerX" id="d4k-0y-OGT"/>
                                             <constraint firstItem="ol1-Se-cWO" firstAttribute="leading" secondItem="ZXc-AK-z3L" secondAttribute="leading" constant="40" id="hOo-fA-h3B"/>
                                             <constraint firstItem="aUb-3w-AJi" firstAttribute="top" secondItem="18s-AK-Pbu" secondAttribute="bottom" constant="20" id="irn-Kn-gHM"/>
-                                            <constraint firstItem="ol1-Se-cWO" firstAttribute="top" secondItem="9lE-nj-YeK" secondAttribute="bottom" constant="20" id="ixM-8e-qhV"/>
-                                            <constraint firstItem="9lE-nj-YeK" firstAttribute="leading" secondItem="ZXc-AK-z3L" secondAttribute="leading" constant="40" id="kOv-gN-J0G"/>
-                                            <constraint firstAttribute="trailing" secondItem="aUb-3w-AJi" secondAttribute="trailing" constant="40" id="lhg-cz-c9a"/>
+                                            <constraint firstAttribute="trailing" secondItem="aUb-3w-AJi" secondAttribute="trailing" constant="20" id="lhg-cz-c9a"/>
                                             <constraint firstAttribute="height" constant="800" id="o5m-6K-pEQ"/>
-                                            <constraint firstItem="aUb-3w-AJi" firstAttribute="bottom" secondItem="9lE-nj-YeK" secondAttribute="bottom" id="pwU-dk-4CP"/>
-                                            <constraint firstItem="aUb-3w-AJi" firstAttribute="leading" secondItem="9lE-nj-YeK" secondAttribute="trailing" constant="20" id="zlH-la-pd2"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2138,62 +2136,62 @@
     </scenes>
     <designables>
         <designable name="0GI-Pn-VcM">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="A79-Mm-Tqb">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="DXj-ab-Mzi">
-            <size key="intrinsicContentSize" width="72" height="52.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="FPP-vP-cbq">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="MBV-x7-iiZ">
-            <size key="intrinsicContentSize" width="129" height="52.5"/>
+            <size key="intrinsicContentSize" width="123" height="34"/>
         </designable>
         <designable name="NS0-8g-CGN">
-            <size key="intrinsicContentSize" width="68.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="62.5" height="34"/>
         </designable>
         <designable name="PPQ-KH-yqb">
-            <size key="intrinsicContentSize" width="77.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
         <designable name="PV7-1C-oma">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="SGa-ts-aYv">
-            <size key="intrinsicContentSize" width="110" height="52.5"/>
+            <size key="intrinsicContentSize" width="104" height="34"/>
         </designable>
         <designable name="V6r-Zr-wjE">
-            <size key="intrinsicContentSize" width="46.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="ckb-cb-Nyh">
-            <size key="intrinsicContentSize" width="151.5" height="51"/>
+            <size key="intrinsicContentSize" width="145.5" height="34"/>
         </designable>
         <designable name="eMe-Sg-sWf">
-            <size key="intrinsicContentSize" width="46.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="34"/>
         </designable>
         <designable name="j3Y-f4-byO">
-            <size key="intrinsicContentSize" width="151.5" height="51"/>
+            <size key="intrinsicContentSize" width="145.5" height="34"/>
         </designable>
         <designable name="oUm-H4-nHL">
-            <size key="intrinsicContentSize" width="96.5" height="51"/>
+            <size key="intrinsicContentSize" width="90.5" height="34"/>
         </designable>
         <designable name="wHC-s9-veI">
-            <size key="intrinsicContentSize" width="72" height="52.5"/>
+            <size key="intrinsicContentSize" width="66" height="34"/>
         </designable>
         <designable name="wcB-FX-ufZ">
-            <size key="intrinsicContentSize" width="118" height="56"/>
+            <size key="intrinsicContentSize" width="112" height="34"/>
         </designable>
         <designable name="z95-Om-vPI">
-            <size key="intrinsicContentSize" width="77.5" height="52.5"/>
+            <size key="intrinsicContentSize" width="71.5" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
         <segue reference="YkL-OD-riq"/>
         <segue reference="DH1-vG-kp2"/>
         <segue reference="G6q-5v-ZU7"/>
-        <segue reference="KiR-4f-JKi"/>
+        <segue reference="owy-07-fiV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="500" height="500"/>
