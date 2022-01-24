@@ -97,7 +97,6 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
       
       print(" - self.employee: \(String(describing: self.employee))")
       print(" - self.employee?.id: \(String(describing: self.employee?.id))")
-      
       print(" - self.employee?.id: \(String(describing: self.employeeTask?.id))")
       let bookRef =
       self.db.collection("Task").document(UUID().uuidString)
@@ -149,7 +148,6 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
           self.showAlert(title: "Error", message: err.localizedDescription)
         } else {
           print("Document successfully updated")
-          
           self.showAlert(title: "succeeded", message: "The Evalution has been added")
         }
         print("Text field: \(textField!.text)")
@@ -247,7 +245,6 @@ class EmployeeDetailsVC: UIViewController,WKUIDelegate,UINavigationControllerDel
         }
       }
       switchActive.setOn(true, animated: true)
-      
     }else{
       let bookRef = self.db.collection("Users").document((self.employee?.id)!)
       bookRef.updateData([
