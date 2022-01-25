@@ -12,7 +12,7 @@ import UIKit
 
 
 
-struct Boss:Codable {
+struct Boss: Codable {
   
   // MARK: - Properties
   

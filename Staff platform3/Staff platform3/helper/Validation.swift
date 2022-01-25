@@ -65,6 +65,7 @@ class AgeValidator: ValidatorConvertible {
   }
 }
 
+
 struct RequiredFieldValidator: ValidatorConvertible {
   private let fieldName: String
   
@@ -102,6 +103,7 @@ struct UserNameValidator: ValidatorConvertible {
   }
 }
 
+
 struct PasswordValidator: ValidatorConvertible {
   func validated(_ value: String) throws -> String {
     guard value != "" else {throw ValidationError("Password is Required")}
@@ -126,6 +128,7 @@ struct PhoneValidator: ValidatorConvertible {
     let result = phoneTest.evaluate(with: value)
     return result
   }
+  
   
   func validated(_ value: String) throws -> String {
     do {

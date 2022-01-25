@@ -15,7 +15,7 @@ import FirebaseFirestore
     // MARK: - Properties
     
   @DocumentID var id : String?  = UUID().uuidString
-     var name: String?
+    var name: String?
     let email: String?
     var phone: String?
     let idNumber: String?
@@ -27,4 +27,5 @@ import FirebaseFirestore
     let user: DocumentReference?
     let zoomURL: String?
     let payroll: String?
+    let timeOfVication: String?
   }

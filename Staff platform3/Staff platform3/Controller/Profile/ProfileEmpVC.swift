@@ -57,7 +57,7 @@ class ProfileEmpVC: UIViewController {
                        task: nil,
                        evaluation: nil,
                        resignation: nil,
-                       holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
+                       holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil, timeOfVication: nil)
           
           print("Document data")
         } else {

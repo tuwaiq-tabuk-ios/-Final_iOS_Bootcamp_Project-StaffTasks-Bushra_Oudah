@@ -26,10 +26,11 @@ class SettingBossVC: UIViewController {
     let firebaseAuth = Auth.auth()
     do {
       try firebaseAuth.signOut()
-      let vc = HomeVC.instantiate()
-      self.navigationController?.pushViewController(vc, animated: true)
+      let vc = UINavigationController(rootViewController: HomeVC.instantiate())
+      self.sceneDelegate.setRootVC(vc: vc)
       print("signOut")
-    } catch let signOutError as NSError {
+    }
+    catch let signOutError as NSError {
       print("Error signing out: %@", signOutError)
     }
   }

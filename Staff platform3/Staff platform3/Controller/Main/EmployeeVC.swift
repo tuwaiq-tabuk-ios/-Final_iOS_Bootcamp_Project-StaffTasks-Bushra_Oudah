@@ -56,8 +56,7 @@ class EmployeeVC: UIViewController {
           if (doc.data()["userType"] as? String == UserType.EMPLOYEE.rawValue) {
             print("doc.documentID\(doc.documentID)")
             let name = doc.data()["name"] as? String
-            let id = doc.data()["idNumber"] as? String
-            let employees = Employee(id:doc.documentID, name: name, email: nil, phone: nil, idNumber: id,task: nil,evaluation: nil, resignation: nil, holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil)
+            let employees = Employee(id:doc.documentID, name: name, email: nil, phone: nil, idNumber: nil,task: nil,evaluation: nil, resignation: nil, holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: nil, timeOfVication: nil)
             self.employee.append(employees)
             
           }
@@ -83,7 +82,7 @@ extension EmployeeVC: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "EmployeeCell") as! EmployeeCell
     cell.nameLabel.text = employee[indexPath.row].name
-    cell.idLabel.text = employee[indexPath.row].id
+   
     return cell
   }
   

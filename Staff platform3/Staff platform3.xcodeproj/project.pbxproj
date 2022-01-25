@@ -12,6 +12,8 @@
 		3F3DE9A3277B27C700819A64 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A2277B27C700819A64 /* Validation.swift */; };
 		3F3DE9A5277DA94A00819A64 /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */; };
 		3F3EDA0A27905C8A0019FDB7 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3EDA0927905C8A0019FDB7 /* Constants.swift */; };
+		3F5B581A279C3CD200571195 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B5819279C3CD200571195 /* Task.swift */; };
+		3F5B581C279C415200571195 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B581B279C415200571195 /* Evaluation.swift */; };
 		3F873518277453E1002AEDCF /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F873517277453E1002AEDCF /* HomeVC.swift */; };
 		3F96015827779D380050C35C /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015727779D380050C35C /* EmployeeCell.swift */; };
 		3F96015A27779D9C0050C35C /* EvaluationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F96015927779D9C0050C35C /* EvaluationCell.swift */; };
@@ -55,8 +57,10 @@
 		3F3DE9A2277B27C700819A64 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3F3DE9A4277DA94A00819A64 /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		3F3EDA0927905C8A0019FDB7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3F3EDA0B27940EC30019FDB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		3F3EDA0C27940EC30019FDB7 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		3F5B5819279C3CD200571195 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		3F5B581B279C415200571195 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		3F7F5F3B279ED54B00A2BCBF /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		3F7F5F3C279ED54B00A2BCBF /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		3F873517277453E1002AEDCF /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		3F96015727779D380050C35C /* EmployeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		3F96015927779D9C0050C35C /* EvaluationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationCell.swift; sourceTree = "<group>"; };
@@ -297,6 +301,8 @@
 			children = (
 				3FA1C6D527750A0900220BE1 /* Boss.swift */,
 				3FA1C6D727750A3600220BE1 /* Employee.swift */,
+				3F5B5819279C3CD200571195 /* Task.swift */,
+				3F5B581B279C415200571195 /* Evaluation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				3FA2C9F727748EC6000B5F4D /* ProfileEmpVC.swift in Sources */,
 				3FA1C6E22777799900220BE1 /* EvaluationVC.swift in Sources */,
 				3FDCE8EA2772513500150B8C /* LoginVC.swift in Sources */,
+				3F5B581A279C3CD200571195 /* Task.swift in Sources */,
 				3F9ABE772785AE4900A7A390 /* EmployeeVC.swift in Sources */,
 				3FA2C9FD27749859000B5F4D /* EditeEmailVC.swift in Sources */,
 				3FDCE8CC27723EEE00150B8C /* AppDelegate.swift in Sources */,
@@ -477,6 +484,7 @@
 				3FDCE8CE27723EEE00150B8C /* SceneDelegate.swift in Sources */,
 				3FA1C6D827750A3600220BE1 /* Employee.swift in Sources */,
 				3FF3B07727818F7000237893 /* CollectionViewCell.swift in Sources */,
+				3F5B581C279C415200571195 /* Evaluation.swift in Sources */,
 				3F9ABE792786159600A7A390 /* SettingBossVC.swift in Sources */,
 				3FA2C9FF27749AB6000B5F4D /* EditeMobileVC.swift in Sources */,
 				3F3EDA0A27905C8A0019FDB7 /* Constants.swift in Sources */,
@@ -490,7 +498,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FDCE8D227723EEE00150B8C /* Base */,
-				3F3EDA0C27940EC30019FDB7 /* ar */,
+				3F7F5F3C279ED54B00A2BCBF /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -499,7 +507,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3FDCE8D727723EF100150B8C /* Base */,
-				3F3EDA0B27940EC30019FDB7 /* ar */,
+				3F7F5F3B279ED54B00A2BCBF /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

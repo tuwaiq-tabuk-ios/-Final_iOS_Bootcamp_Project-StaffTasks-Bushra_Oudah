@@ -10,6 +10,8 @@ import Firebase
 import PDFKit
 import FirebaseFirestore
 import WebKit
+
+
 class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
   
   // MARK: - Properties
@@ -50,8 +52,10 @@ class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
   @IBAction func signOutPressed(_ sender: UIBarButtonItem) {   let firebaseAuth = Auth.auth()
     do {
       try firebaseAuth.signOut()
-      let vc = HomeVC.instantiate()
-      self.navigationController?.pushViewController(vc, animated: true)
+      let vc = UINavigationController(rootViewController: HomeVC.instantiate())
+      
+      self.sceneDelegate.setRootVC(vc: vc)
+      
       print("signOut")
     } catch let signOutError as NSError {
       print("Error signing out: %@", signOutError)
@@ -72,7 +76,7 @@ class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
                                           task: nil,
                                           evaluation: nil,
                                           resignation: nil,
-                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll)
+                                          holiday: nil,active: nil,user:nil,zoomURL: nil, payroll: payroll, timeOfVication: nil)
                
                              print("Document data")
                 guard let url = URL(string:payroll ?? "\(self.showAlert(title: "Error", message: "There is no salary for the employee "))")
@@ -119,7 +123,7 @@ class SettingEmpVC: UIViewController,WKUIDelegate,AlertsPresenting{
                                 task: nil,
                                 evaluation: nil,
                                 resignation: nil,
-                                holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil)
+                                holiday: nil,active: nil,user:nil,zoomURL: zoomURL, payroll: nil, timeOfVication: nil)
             print("Document data")
           }else{
             print("Document does not exist\(error?.localizedDescription)")
